@@ -1,0 +1,92 @@
+============================================================================
+[2026-09-08 05:36:50] g67k-d192-ce2epoch 0 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  그래서에 레에에에에에 대해에요.
+REPEAT  그래서에 레,요.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  그래서, 에 대해에 대해에에에요.
+REPEAT  그래서, 에 대해요.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  그래서, 별에 대해에 대해에 대해
+REPEAT  그래서, 별에 대해요.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  이런에 대해에 대해에 대해에 대해에 대해
+REPEAT  이런에 대해,하요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  이런에 대해에 대해에 대해에 대해에 대해
+REPEAT  이런에 대해, 레요.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  이런에 레에 대해에 대해에 대해
+REPEAT  이런에 레,요.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  그래서, 에 대해에 대해에 대해에 대해
+REPEAT  그래서, 에 대해요.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  이런에 대해에 대해에에 에 대해에요.
+REPEAT  이런에 대해, 년요.
+
+  greedy  korean% 75.5   repl% 0.0   rep_uni% 55.0   rep_bi% 43.4   distinct 7
+  repeat  korean% 65.0   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 7
+
+============================================================================
+[2026-09-08 05:56:56] g67k-d192-ce2epoch 1 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  와 와 와 
+REPEAT  와아죠.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  와 와 와 
+REPEAT  와아에서정죠.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  와 와 
+REPEAT  와아에서 아죠.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  와 와 와 와
+REPEAT  와아죠.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  와 와 와 
+REPEAT  와 아아죠.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  와 와 와 와
+REPEAT  와아죠.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  와 와 
+REPEAT  와아에서 아죠.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  와 와 
+REPEAT  와아에서정죠.
+
+  greedy  korean% 51.8   repl% 0.0   rep_uni% 68.0   rep_bi% 61.6   distinct 3
+  repeat  korean% 76.6   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 4
+

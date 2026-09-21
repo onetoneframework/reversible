@@ -1,0 +1,34 @@
+[
+  {
+    "arch": "conv",
+    "K": 2,
+    "batch": 32,
+    "activation_peak_bytes_cachefree": 5845504,
+    "activation_bytes_cached": 14099456,
+    "parameter_bytes": 73728
+  },
+  {
+    "arch": "conv",
+    "K": 4,
+    "batch": 32,
+    "activation_peak_bytes_cachefree": 5845504,
+    "activation_bytes_cached": 25188352,
+    "parameter_bytes": 147456
+  },
+  {
+    "arch": "conv",
+    "K": 8,
+    "batch": 32,
+    "activation_peak_bytes_cachefree": 5845504,
+    "activation_bytes_cached": 47366144,
+    "parameter_bytes": 294912
+  },
+  {
+    "arch": "conv",
+    "K": 16,
+    "batch": 32,
+    "activation_peak_bytes_cachefree": 5845504,
+    "activation_bytes_cached": 91721728,
+    "parameter_bytes": 589824
+  }
+]

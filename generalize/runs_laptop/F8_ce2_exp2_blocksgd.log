@@ -1,0 +1,5 @@
+{"train": 66853, "valid": 3518, "params": 4878336, "dim": 192, "cfg": {"softmax": true, "pow2": true, "exp2": true, "quantw": false, "sgd": false, "name": "hinge_exp2_pow21_blocksgd"}, "loss": "hinge", "opt": "blocksgd", "momentum_bits": 7, "lr": 0.0003}
+  ep0   train_hinge nan | valid tok 0.00% | greedy chrF 0.00 BLEU 0.00 exact 0/400 | 10.4m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 

@@ -1,0 +1,49 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 20,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 3,
+  "loss": "ww",
+  "margin": 1.0,
+  "attn": "softmax",
+  "pow2": 1,
+  "opt": "adam",
+  "momentum_bits": 0,
+  "eval_rows": 400,
+  "seed": 0,
+  "out": "<local>/F4_ww_softmax_adam.json"
+ },
+ "cfg": {
+  "softmax": true,
+  "pow2": true,
+  "exp2": false,
+  "quantw": false,
+  "sgd": false,
+  "name": "ww_softmax_pow21_adam"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_loss": 426.9564738368537,
+   "minutes": 8.0,
+   "valid_token_acc": 11.927717332758807,
+   "chrf": 3.4897620576257786,
+   "bleu": 3.0308994822815354,
+   "exact": 0,
+   "rows": 400
+  },
+  {
+   "epoch": 1,
+   "train_loss": 203.03274893114568,
+   "minutes": 16.3,
+   "valid_token_acc": 16.777981256059462,
+   "chrf": 5.188464812383413,
+   "bleu": 4.856242840709905,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 5.188464812383413
+}

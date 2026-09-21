@@ -1,0 +1,1484 @@
+{
+  "config": {
+    "mode": "train",
+    "corpus": "both",
+    "max_pairs": 0,
+    "vocab_size": 5000,
+    "max_len": 16,
+    "valid_frac": 0.05,
+    "dim": 192,
+    "ffn_hidden": 384,
+    "k_enc": 2,
+    "k_dec": 4,
+    "enc_pattern": "",
+    "dec_pattern": "ccaf",
+    "tok_mode": "char",
+    "score_leak": null,
+    "max_tok": 14,
+    "batch": 32,
+    "epochs": 7,
+    "lr_bits": 1,
+    "state_bits": 16,
+    "weight_bits": 10,
+    "accum_bits": 32,
+    "hidden_bits": 16,
+    "seed": 0,
+    "threads": 12,
+    "eval_every": 1,
+    "patience": 8,
+    "subs_pairs": 25000,
+    "subs_pool": 0,
+    "base_pairs": 0,
+    "base_pool": 0,
+    "min_char_count": 20,
+    "max_eval": 512,
+    "momentum_bits": 7,
+    "score_exp2": 3,
+    "score_exp2_cap": 12,
+    "exp2_diag": false,
+    "attn_score_bits": 0,
+    "attn_mass_bits": 0,
+    "scheduled_sampling": 0,
+    "positional": 16,
+    "prefix_corrupt": 0,
+    "query_anchor": false,
+    "snapshot_epochs": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "probe_file": "C:\\Project\\OnetoneFramework\\framework\\res\\Platform\\Python\\reversible\\generalize\\runs_laptop\\g67k_d192_w10_ce2_r5swa_probe.txt",
+    "run_tag": "g67k-d192-w10-ce2-r5swa",
+    "chunk_head": 0,
+    "show_samples": 10,
+    "depths": [
+      2,
+      4,
+      8
+    ],
+    "out": "C:\\Project\\OnetoneFramework\\framework\\res\\Platform\\Python\\reversible\\generalize\\runs_laptop\\g67k_d192_w10_ce2_r5swa.json",
+    "save_ckpt": "C:\\Project\\OnetoneFramework\\framework\\res\\Platform\\Python\\reversible\\generalize\\runs_laptop\\g67k_d192_w10_ce2_r5swa.pt",
+    "resume": "C:\\Project\\OnetoneFramework\\framework\\res\\Platform\\Python\\reversible\\generalize\\runs_laptop\\g67k_d192_w10_ce2_r4swa_last.pt",
+    "ckpt": "jako_model.pt",
+    "text": []
+  },
+  "data": {
+    "corpus": "both",
+    "zip": "tatoeba+ted2020",
+    "sha256": "a06cd974a19751280ec0be0cd3b52000630eb96ee6563fc9965dc18471327be1/f7a3a4b7f4d02532d4eb253fb0e474f7d15f1d14cb26ced39bc37fdbf40c7b9d",
+    "ja_file": "combined",
+    "ko_file": "combined",
+    "raw_lines": 359300,
+    "url": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2023-04-12/moses/ja-ko.txt.zip ; https://object.pouta.csc.fi/OPUS-TED2020/v1/moses/ja-ko.txt.zip",
+    "license": "CC-BY 2.0 FR ; CC BY-NC-ND 4.0 (TED)",
+    "cite": "OPUS Tatoeba v2023-04-12 ; OPUS TED2020 v1",
+    "clean_stats": {
+      "raw": 359300,
+      "empty": 3395,
+      "length": 53073,
+      "script": 97,
+      "dupe": 3021,
+      "acceptance": 1734,
+      "kept": 297980
+    },
+    "subtitle_filter": null,
+    "pairs_after_max_tok": {
+      "ted2020": 69889,
+      "tatoeba": 482
+    },
+    "pairs_after_limit": 70371,
+    "vocab_size": 5000,
+    "max_len": 16,
+    "train_encoded": 66853,
+    "valid_encoded": 3518,
+    "train_by_corpus": {
+      "ted2020": 66393,
+      "tatoeba": 460
+    },
+    "valid_by_corpus": {
+      "ted2020": 3496,
+      "tatoeba": 22
+    },
+    "tokenizer": "tok_both_a20_5000_char.json"
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "train_hinge_per_token": 3.9244,
+      "train_token_acc": 24.731,
+      "train_margin_active_frac": 0.7832,
+      "param_grad_nonzero_pct": 31.921,
+      "weights_moved_since_init_pct": 43.913,
+      "grad_exponent_min": -41,
+      "grad_exponent_max": -29,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 1692,
+      "max_weight": 512,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 99.997,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 463.2,
+      "wall_seconds": 1525.6,
+      "process_rss_mb": 689.7,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 5545,
+          "all_token_acc": 22.795,
+          "hinge_per_token": 4.1291,
+          "eos_recall": 94.531,
+          "eos_false_positive": 1.073,
+          "content_acc": 10.0773,
+          "content_hinge": 5.1712,
+          "high_freq_acc": 27.869,
+          "punct_acc": 27.007,
+          "eos_share_of_correct": 38.29,
+          "class_tokens": {
+            "content": 3493,
+            "high_freq": 1403,
+            "eos": 512,
+            "punct": 137
+          },
+          "position_acc": {
+            "pos0": 10.352,
+            "pos1": 15.43,
+            "pos2": 14.706,
+            "pos3": 16.403,
+            "pos4-7": 17.942,
+            "pos8+": 39.379
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 10.092,
+              "content_hinge": 5.1731,
+              "content_tokens": 3478
+            }
+          },
+          "balanced_content_acc": 10.092,
+          "balanced_content_hinge": 5.1731
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 11.2723,
+            "pos0_acc": 10.156
+          },
+          "shuffled": {
+            "content_acc": 8.5938,
+            "pos0_acc": 0.781
+          },
+          "zeroed": {
+            "content_acc": 8.817,
+            "pos0_acc": 1.562
+          },
+          "content_acc_gap_real_minus_shuffled": 2.6785,
+          "pos0_acc_gap_real_minus_shuffled": 9.375,
+          "sequences": 128
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "괜찮은 괜찮아요.",
+              "저는 와 권리로 갔습니다.",
+              "H: 괜찮을 봅시다.",
+              "H 귀를 놓고",
+              "그럴 괜찮은 뭔가 있습니다.",
+              "뭔가  괜찮아요.",
+              "뭔가 없었을 돼.",
+              "하지만 뭔가 시작되었지요."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 68.3,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 18.2,
+            "repeat_bigram_pct": 3.6,
+            "distinct_outputs": 8,
+            "mean_len": 11.0,
+            "median_len": 11,
+            "len_ratio_vs_reference": 1.313,
+            "eos_positions": [
+              8,
+              10,
+              10,
+              8,
+              10,
+              9,
+              9,
+              8
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "괜찮은데!",
+              "저는 와서 배우리로 가져 있죠.",
+              "H: 그렇지 못합니다.",
+              "H: 그렇지 않아요.",
+              "그럴 괜찮은 어려움을까요?",
+              "뭔가 그걸로 가까?",
+              "뭔가 없었을 수 있죠.",
+              "하지만 뭔가 시작되었지요."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 69.7,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 0.0,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 8,
+            "mean_len": 11.88,
+            "median_len": 12,
+            "len_ratio_vs_reference": 1.418,
+            "eos_positions": [
+              6,
+              11,
+              7,
+              7,
+              11,
+              9,
+              8,
+              8
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 4.1291,
+      "valid_token_acc": 22.795,
+      "valid_margin_active_frac": 0.8029,
+      "valid_logit_std": 36.128,
+      "valid_margin_true_minus_best_wrong": -2.501,
+      "valid_tatoeba": {
+        "token_acc": 26.131,
+        "hinge_per_token": 3.9648,
+        "tokens": 199
+      },
+      "valid_ted2020": {
+        "token_acc": 22.769,
+        "hinge_per_token": 4.1392,
+        "tokens": 5547
+      },
+      "select_gap": 2.6785,
+      "select_real_minus_zeroed": 2.4553,
+      "select_score": 10.092,
+      "select_tiebreak": 5.1731,
+      "saved_best": true,
+      "validations_since_best": 0
+    },
+    {
+      "epoch": 1,
+      "train_hinge_per_token": 4.0571,
+      "train_token_acc": 23.831,
+      "train_margin_active_frac": 0.7907,
+      "param_grad_nonzero_pct": 34.151,
+      "weights_moved_since_init_pct": 47.417,
+      "grad_exponent_min": -45,
+      "grad_exponent_max": -23,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 885,
+      "max_weight": 512,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 99.996,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 347.3,
+      "wall_seconds": 4069.0,
+      "process_rss_mb": 547.7,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 5545,
+          "all_token_acc": 23.625,
+          "hinge_per_token": 4.2543,
+          "eos_recall": 95.898,
+          "eos_false_positive": 1.252,
+          "content_acc": 10.2204,
+          "content_hinge": 5.3118,
+          "high_freq_acc": 30.506,
+          "punct_acc": 24.818,
+          "eos_share_of_correct": 37.48,
+          "class_tokens": {
+            "content": 3493,
+            "high_freq": 1403,
+            "eos": 512,
+            "punct": 137
+          },
+          "position_acc": {
+            "pos0": 11.133,
+            "pos1": 14.258,
+            "pos2": 15.098,
+            "pos3": 16.008,
+            "pos4-7": 18.839,
+            "pos8+": 41.304
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 10.2645,
+              "content_hinge": 5.3151,
+              "content_tokens": 3478
+            }
+          },
+          "balanced_content_acc": 10.2645,
+          "balanced_content_hinge": 5.3151
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 10.3795,
+            "pos0_acc": 11.719
+          },
+          "shuffled": {
+            "content_acc": 6.9196,
+            "pos0_acc": 1.562
+          },
+          "zeroed": {
+            "content_acc": 8.4821,
+            "pos0_acc": 3.125
+          },
+          "content_acc_gap_real_minus_shuffled": 3.4599,
+          "pos0_acc_gap_real_minus_shuffled": 10.157,
+          "sequences": 128
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "꽤 쉬운을 맺고",
+              "저는 꿈을 허리에 있습니다.",
+              "팔에 대해 생각해보죠.",
+              "쉬운 규칙을 늘어.",
+              "꽤 늘에 꽤 늘어.",
+              "팔에 듣고 싶어.",
+              "별한 규모가 없어요.",
+              "이걸 어떻게 시작에 시작했습니다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 71.3,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 16.7,
+            "repeat_bigram_pct": 3.8,
+            "distinct_outputs": 8,
+            "mean_len": 11.62,
+            "median_len": 11,
+            "len_ratio_vs_reference": 1.388,
+            "eos_positions": [
+              9,
+              9,
+              7,
+              11,
+              11,
+              9,
+              9,
+              7
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "꽤나.",
+              "저는 꿈을 수학에 대해 이야기입니다.",
+              "팔에 대해 생각해보죠.",
+              "쉬운을 수 있습니다.",
+              "꽤나.",
+              "팔에 대해 이야기하시겠지요.",
+              "별한 일에 대해 잘못된 것이 아닙니다.",
+              "이걸 어떻게 시작에 대해 봅시다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 72.5,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 0.0,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 7,
+            "mean_len": 12.88,
+            "median_len": 15,
+            "len_ratio_vs_reference": 1.537,
+            "eos_positions": [
+              4,
+              10,
+              7,
+              6,
+              4,
+              9,
+              11,
+              9
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 4.2543,
+      "valid_token_acc": 23.625,
+      "valid_margin_active_frac": 0.7915,
+      "valid_logit_std": 40.236,
+      "valid_margin_true_minus_best_wrong": -2.477,
+      "valid_tatoeba": {
+        "token_acc": 27.136,
+        "hinge_per_token": 4.1156,
+        "tokens": 199
+      },
+      "valid_ted2020": {
+        "token_acc": 23.616,
+        "hinge_per_token": 4.2616,
+        "tokens": 5547
+      },
+      "select_gap": 3.4599,
+      "select_real_minus_zeroed": 1.8974,
+      "select_score": 10.2645,
+      "select_tiebreak": 5.3151,
+      "saved_best": true,
+      "validations_since_best": 0
+    },
+    {
+      "epoch": 2,
+      "train_hinge_per_token": 4.0782,
+      "train_token_acc": 24.098,
+      "train_margin_active_frac": 0.7878,
+      "param_grad_nonzero_pct": 33.11,
+      "weights_moved_since_init_pct": 49.488,
+      "grad_exponent_min": -45,
+      "grad_exponent_max": -22,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 483,
+      "max_weight": 512,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 99.999,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 320.9,
+      "wall_seconds": 6605.4,
+      "process_rss_mb": 547.3,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 5545,
+          "all_token_acc": 23.336,
+          "hinge_per_token": 4.2402,
+          "eos_recall": 97.07,
+          "eos_false_positive": 2.325,
+          "content_acc": 10.3636,
+          "content_hinge": 5.2877,
+          "high_freq_acc": 27.512,
+          "punct_acc": 35.766,
+          "eos_share_of_correct": 38.41,
+          "class_tokens": {
+            "content": 3493,
+            "high_freq": 1403,
+            "eos": 512,
+            "punct": 137
+          },
+          "position_acc": {
+            "pos0": 10.352,
+            "pos1": 15.625,
+            "pos2": 15.49,
+            "pos3": 16.798,
+            "pos4-7": 18.786,
+            "pos8+": 39.814
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 10.4083,
+              "content_hinge": 5.2898,
+              "content_tokens": 3478
+            }
+          },
+          "balanced_content_acc": 10.4083,
+          "balanced_content_hinge": 5.2898
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 10.6027,
+            "pos0_acc": 9.375
+          },
+          "shuffled": {
+            "content_acc": 7.4777,
+            "pos0_acc": 3.906
+          },
+          "zeroed": {
+            "content_acc": 7.8125,
+            "pos0_acc": 4.688
+          },
+          "content_acc_gap_real_minus_shuffled": 3.125,
+          "pos0_acc_gap_real_minus_shuffled": 5.469,
+          "sequences": 128
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "G: 와우고",
+              "저는 대학교를 맡고",
+              "갑자: 봅시다.",
+              "G: 꽤 꽤 군요.",
+              "꽤 어려는 어려가가",
+              "GG: 뜻합니다.",
+              "글쎄요, 몰랐죠.",
+              "됐을 시작했고"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 63.7,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 18.4,
+            "repeat_bigram_pct": 4.7,
+            "distinct_outputs": 8,
+            "mean_len": 8.62,
+            "median_len": 9,
+            "len_ratio_vs_reference": 1.03,
+            "eos_positions": [
+              7,
+              8,
+              7,
+              9,
+              9,
+              7,
+              8,
+              6
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "G: 네,",
+              "저는 대학교를 맡고",
+              "갑자: 자리를 내려합니다.",
+              "G: 네,",
+              "꽤 어려는 것들을 보죠.",
+              "G: 아주 큰 도움을까요?",
+              "글쎄요, 전혀 없습니다.",
+              "됐을 시작했고"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 59.1,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 0.0,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 7,
+            "mean_len": 10.12,
+            "median_len": 13,
+            "len_ratio_vs_reference": 1.209,
+            "eos_positions": [
+              5,
+              8,
+              9,
+              5,
+              9,
+              9,
+              7,
+              6
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 4.2402,
+      "valid_token_acc": 23.336,
+      "valid_margin_active_frac": 0.7998,
+      "valid_logit_std": 40.994,
+      "valid_margin_true_minus_best_wrong": -2.337,
+      "valid_tatoeba": {
+        "token_acc": 27.136,
+        "hinge_per_token": 4.0352,
+        "tokens": 199
+      },
+      "valid_ted2020": {
+        "token_acc": 23.292,
+        "hinge_per_token": 4.2504,
+        "tokens": 5547
+      },
+      "select_gap": 3.125,
+      "select_real_minus_zeroed": 2.7902,
+      "select_score": 10.4083,
+      "select_tiebreak": 5.2898,
+      "saved_best": true,
+      "validations_since_best": 0
+    },
+    {
+      "epoch": 3,
+      "train_hinge_per_token": 4.0519,
+      "train_token_acc": 24.34,
+      "train_margin_active_frac": 0.7856,
+      "param_grad_nonzero_pct": 34.486,
+      "weights_moved_since_init_pct": 50.53,
+      "grad_exponent_min": -46,
+      "grad_exponent_max": -23,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 290,
+      "max_weight": 512,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 99.997,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 307.8,
+      "wall_seconds": 9184.5,
+      "process_rss_mb": 572.2,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 5545,
+          "all_token_acc": 23.156,
+          "hinge_per_token": 4.1805,
+          "eos_recall": 94.922,
+          "eos_false_positive": 1.113,
+          "content_acc": 12.568,
+          "content_hinge": 5.02,
+          "high_freq_acc": 22.666,
+          "punct_acc": 29.927,
+          "eos_share_of_correct": 37.85,
+          "class_tokens": {
+            "content": 3493,
+            "high_freq": 1403,
+            "eos": 512,
+            "punct": 137
+          },
+          "position_acc": {
+            "pos0": 12.109,
+            "pos1": 14.453,
+            "pos2": 16.078,
+            "pos3": 15.217,
+            "pos4-7": 18.153,
+            "pos8+": 40.062
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 12.6222,
+              "content_hinge": 5.023,
+              "content_tokens": 3478
+            }
+          },
+          "balanced_content_acc": 12.6222,
+          "balanced_content_hinge": 5.023
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 14.8438,
+            "pos0_acc": 12.5
+          },
+          "shuffled": {
+            "content_acc": 9.933,
+            "pos0_acc": 1.562
+          },
+          "zeroed": {
+            "content_acc": 8.5938,
+            "pos0_acc": 2.344
+          },
+          "content_acc_gap_real_minus_shuffled": 4.9108,
+          "pos0_acc_gap_real_minus_shuffled": 10.938,
+          "sequences": 128
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "아버지는 갔죠.",
+              "저는 당연학교에 대해 배우고",
+              "B: 자 이제 아시겠죠?",
+              "저는 항상 그런 것을 좋아합니다.",
+              "아버지는 어떻게 된거죠.",
+              "BF 와우는거죠.",
+              "아는 말할 수 없는거죠.",
+              "시작해보면에서 시작해보죠."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 71.1,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 5.6,
+            "repeat_bigram_pct": 3.1,
+            "distinct_outputs": 8,
+            "mean_len": 12.88,
+            "median_len": 13,
+            "len_ratio_vs_reference": 1.537,
+            "eos_positions": [
+              6,
+              10,
+              9,
+              6,
+              7,
+              9,
+              8,
+              9
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "아버지는 갔죠.",
+              "저는 당연학교에 대해 배우고",
+              "B: 자 이제 아시겠죠?",
+              "저는 항상 그런 것을 좋아합니다.",
+              "아버지는 어떻게 된거죠.",
+              "BFI는거죠.",
+              "아는 말할 수 없는거죠.",
+              "시작해보면에서부터 시작했습니다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 69.8,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 1.6,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 8,
+            "mean_len": 13.0,
+            "median_len": 13,
+            "len_ratio_vs_reference": 1.552,
+            "eos_positions": [
+              6,
+              10,
+              9,
+              6,
+              7,
+              7,
+              8,
+              8
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 4.1805,
+      "valid_token_acc": 23.156,
+      "valid_margin_active_frac": 0.8025,
+      "valid_logit_std": 41.996,
+      "valid_margin_true_minus_best_wrong": -2.407,
+      "valid_tatoeba": {
+        "token_acc": 25.126,
+        "hinge_per_token": 4.0503,
+        "tokens": 199
+      },
+      "valid_ted2020": {
+        "token_acc": 23.202,
+        "hinge_per_token": 4.188,
+        "tokens": 5547
+      },
+      "select_gap": 4.9108,
+      "select_real_minus_zeroed": 6.25,
+      "select_score": 12.6222,
+      "select_tiebreak": 5.023,
+      "saved_best": true,
+      "validations_since_best": 0
+    },
+    {
+      "epoch": 4,
+      "train_hinge_per_token": 4.0154,
+      "train_token_acc": 24.502,
+      "train_margin_active_frac": 0.7838,
+      "param_grad_nonzero_pct": 33.36,
+      "weights_moved_since_init_pct": 51.378,
+      "grad_exponent_min": -46,
+      "grad_exponent_max": -23,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 154,
+      "max_weight": 512,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 99.999,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 304.0,
+      "wall_seconds": 11621.6,
+      "process_rss_mb": 542.1,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 5545,
+          "all_token_acc": 24.022,
+          "hinge_per_token": 4.0564,
+          "eos_recall": 97.07,
+          "eos_false_positive": 2.742,
+          "content_acc": 12.5394,
+          "content_hinge": 4.953,
+          "high_freq_acc": 24.02,
+          "punct_acc": 43.796,
+          "eos_share_of_correct": 37.31,
+          "class_tokens": {
+            "content": 3493,
+            "high_freq": 1403,
+            "eos": 512,
+            "punct": 137
+          },
+          "position_acc": {
+            "pos0": 12.695,
+            "pos1": 13.867,
+            "pos2": 16.471,
+            "pos3": 16.206,
+            "pos4-7": 20.317,
+            "pos8+": 40.062
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 12.5072,
+              "content_hinge": 4.9572,
+              "content_tokens": 3478
+            }
+          },
+          "balanced_content_acc": 12.5072,
+          "balanced_content_hinge": 4.9572
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 12.8348,
+            "pos0_acc": 14.062
+          },
+          "shuffled": {
+            "content_acc": 9.0402,
+            "pos0_acc": 1.562
+          },
+          "zeroed": {
+            "content_acc": 10.1562,
+            "pos0_acc": 3.125
+          },
+          "content_acc_gap_real_minus_shuffled": 3.7946,
+          "pos0_acc_gap_real_minus_shuffled": 12.5,
+          "sequences": 128
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "이걸 한번 해보죠.",
+              "저는 이걸로서 배우고학을 배웠습니다.",
+              "한번 더 잘못된다고 생각하시겠어.",
+              "이건 정말로, 정말로,",
+              "어쩌면",
+              "물건은,",
+              "아니면도 않은 없어요.",
+              "그래서 저는 준비되었습니다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 78.1,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 6.3,
+            "repeat_bigram_pct": 4.2,
+            "distinct_outputs": 8,
+            "mean_len": 11.75,
+            "median_len": 12,
+            "len_ratio_vs_reference": 1.403,
+            "eos_positions": [
+              7,
+              13,
+              13,
+              7,
+              3,
+              4,
+              7,
+              7
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "이걸 한번 해보죠.",
+              "저는 이걸로서 배우고학을 했습니다.",
+              "한번 더 잘못된다고 생각하시겠어.",
+              "이건 정말로,",
+              "어쩌면",
+              "물건은,",
+              "아니면도 않은 없어요.",
+              "그래서 저는 준비되었습니다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 78.5,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 0.0,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 8,
+            "mean_len": 11.0,
+            "median_len": 12,
+            "len_ratio_vs_reference": 1.313,
+            "eos_positions": [
+              7,
+              11,
+              13,
+              4,
+              3,
+              4,
+              7,
+              7
+            ],
+            "lexical_anchor_hits": 1,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 4.0564,
+      "valid_token_acc": 24.022,
+      "valid_margin_active_frac": 0.7928,
+      "valid_logit_std": 41.936,
+      "valid_margin_true_minus_best_wrong": -2.17,
+      "valid_tatoeba": {
+        "token_acc": 24.623,
+        "hinge_per_token": 3.9296,
+        "tokens": 199
+      },
+      "valid_ted2020": {
+        "token_acc": 23.959,
+        "hinge_per_token": 4.0636,
+        "tokens": 5547
+      },
+      "select_gap": 3.7946,
+      "select_real_minus_zeroed": 2.6786,
+      "select_score": 12.5072,
+      "select_tiebreak": 4.9572,
+      "validations_since_best": 1
+    },
+    {
+      "epoch": 5,
+      "train_hinge_per_token": 3.9838,
+      "train_token_acc": 24.756,
+      "train_margin_active_frac": 0.7816,
+      "param_grad_nonzero_pct": 33.189,
+      "weights_moved_since_init_pct": 51.953,
+      "grad_exponent_min": -46,
+      "grad_exponent_max": -23,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 81,
+      "max_weight": 512,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 99.997,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 99.997,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 321.0,
+      "wall_seconds": 13208.6,
+      "process_rss_mb": 575.4,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 5545,
+          "all_token_acc": 24.509,
+          "hinge_per_token": 4.1683,
+          "eos_recall": 94.922,
+          "eos_false_positive": 1.371,
+          "content_acc": 12.8543,
+          "content_hinge": 5.156,
+          "high_freq_acc": 27.156,
+          "punct_acc": 31.387,
+          "eos_share_of_correct": 35.76,
+          "class_tokens": {
+            "content": 3493,
+            "high_freq": 1403,
+            "eos": 512,
+            "punct": 137
+          },
+          "position_acc": {
+            "pos0": 15.039,
+            "pos1": 14.258,
+            "pos2": 17.059,
+            "pos3": 16.403,
+            "pos4-7": 19.208,
+            "pos8+": 41.925
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 12.8522,
+              "content_hinge": 5.1564,
+              "content_tokens": 3478
+            }
+          },
+          "balanced_content_acc": 12.8522,
+          "balanced_content_hinge": 5.1564
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 13.7277,
+            "pos0_acc": 16.406
+          },
+          "shuffled": {
+            "content_acc": 8.7054,
+            "pos0_acc": 3.125
+          },
+          "zeroed": {
+            "content_acc": 10.1562,
+            "pos0_acc": 3.125
+          },
+          "content_acc_gap_real_minus_shuffled": 5.0223,
+          "pos0_acc_gap_real_minus_shuffled": 13.281,
+          "sequences": 128
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "그냥 괜찮은",
+              "저는 그 학생님을 배웠습니다.",
+              "B: 네.",
+              "그냥 괜찮은",
+              "굉장한 일은",
+              "물어도 광고 있습니다.",
+              "괜찮은 아니면",
+              "어떻게 작업을 멈추지지지요"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 73.9,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 2.3,
+            "repeat_bigram_pct": 1.2,
+            "distinct_outputs": 7,
+            "mean_len": 9.0,
+            "median_len": 7,
+            "len_ratio_vs_reference": 1.075,
+            "eos_positions": [
+              6,
+              9,
+              5,
+              6,
+              6,
+              7,
+              6,
+              11
+            ],
+            "lexical_anchor_hits": 2,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "그냥 괜찮은",
+              "저는 그 학생님을 배웠습니다.",
+              "B: 네.",
+              "그냥 괜찮은",
+              "굉장한 일은",
+              "물어도 광고 있습니다.",
+              "괜찮은 아니면",
+              "어떻게 작업을 멈추지 않습니다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 72.8,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 0.0,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 7,
+            "mean_len": 9.38,
+            "median_len": 7,
+            "len_ratio_vs_reference": 1.119,
+            "eos_positions": [
+              6,
+              9,
+              5,
+              6,
+              6,
+              7,
+              6,
+              9
+            ],
+            "lexical_anchor_hits": 2,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 4.1683,
+      "valid_token_acc": 24.509,
+      "valid_margin_active_frac": 0.7849,
+      "valid_logit_std": 42.838,
+      "valid_margin_true_minus_best_wrong": -2.344,
+      "valid_tatoeba": {
+        "token_acc": 27.638,
+        "hinge_per_token": 3.9849,
+        "tokens": 199
+      },
+      "valid_ted2020": {
+        "token_acc": 24.446,
+        "hinge_per_token": 4.1743,
+        "tokens": 5547
+      },
+      "select_gap": 5.0223,
+      "select_real_minus_zeroed": 3.5715,
+      "select_score": 12.8522,
+      "select_tiebreak": 5.1564,
+      "saved_best": true,
+      "validations_since_best": 0
+    },
+    {
+      "epoch": 6,
+      "train_hinge_per_token": 3.968,
+      "train_token_acc": 24.757,
+      "train_margin_active_frac": 0.7811,
+      "param_grad_nonzero_pct": 33.777,
+      "weights_moved_since_init_pct": 52.441,
+      "grad_exponent_min": -45,
+      "grad_exponent_max": -23,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 148,
+      "max_weight": 512,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 99.996,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 334.6,
+      "wall_seconds": 14784.6,
+      "process_rss_mb": 584.1,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 5545,
+          "all_token_acc": 24.058,
+          "hinge_per_token": 4.2283,
+          "eos_recall": 95.508,
+          "eos_false_positive": 1.311,
+          "content_acc": 12.1958,
+          "content_hinge": 5.0867,
+          "high_freq_acc": 27.156,
+          "punct_acc": 27.737,
+          "eos_share_of_correct": 36.66,
+          "class_tokens": {
+            "content": 3493,
+            "high_freq": 1403,
+            "eos": 512,
+            "punct": 137
+          },
+          "position_acc": {
+            "pos0": 9.18,
+            "pos1": 12.891,
+            "pos2": 16.078,
+            "pos3": 17.194,
+            "pos4-7": 20.528,
+            "pos8+": 41.18
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 12.1334,
+              "content_hinge": 5.0891,
+              "content_tokens": 3478
+            }
+          },
+          "balanced_content_acc": 12.1334,
+          "balanced_content_hinge": 5.0891
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 13.6161,
+            "pos0_acc": 9.375
+          },
+          "shuffled": {
+            "content_acc": 8.7054,
+            "pos0_acc": 2.344
+          },
+          "zeroed": {
+            "content_acc": 9.4866,
+            "pos0_acc": 4.688
+          },
+          "content_acc_gap_real_minus_shuffled": 4.9107,
+          "pos0_acc_gap_real_minus_shuffled": 7.031,
+          "sequences": 128
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "괜찮은 괜찮습니다.",
+              "제 학생님이란이 생물학이요.",
+              "JH 괜찮아요,",
+              "청중이 괜찮습니다.",
+              "JA: 맞죠?",
+              "JC: 멈추어.",
+              "괜찮은 없습니다.",
+              "그래서 준비가 시작했습니다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 64.2,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 11.3,
+            "repeat_bigram_pct": 3.6,
+            "distinct_outputs": 8,
+            "mean_len": 10.25,
+            "median_len": 10,
+            "len_ratio_vs_reference": 1.224,
+            "eos_positions": [
+              8,
+              12,
+              8,
+              8,
+              6,
+              9,
+              5,
+              7
+            ],
+            "lexical_anchor_hits": 2,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "괜찮은 어떨어.",
+              "제 학생님이란 게임입니다.",
+              "JH: 자세요?",
+              "청중이요.",
+              "JA: 맞죠?",
+              "JC: 자세요?",
+              "괜찮은 없습니다.",
+              "그래서 준비가 시작했습니다."
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 61.9,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 0.0,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 8,
+            "mean_len": 9.25,
+            "median_len": 8,
+            "len_ratio_vs_reference": 1.104,
+            "eos_positions": [
+              8,
+              9,
+              7,
+              5,
+              6,
+              7,
+              5,
+              7
+            ],
+            "lexical_anchor_hits": 2,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 4.2283,
+      "valid_token_acc": 24.058,
+      "valid_margin_active_frac": 0.7886,
+      "valid_logit_std": 43.953,
+      "valid_margin_true_minus_best_wrong": -2.388,
+      "valid_tatoeba": {
+        "token_acc": 25.628,
+        "hinge_per_token": 4.191,
+        "tokens": 199
+      },
+      "valid_ted2020": {
+        "token_acc": 24.013,
+        "hinge_per_token": 4.2335,
+        "tokens": 5547
+      },
+      "select_gap": 4.9107,
+      "select_real_minus_zeroed": 4.1295,
+      "select_score": 12.1334,
+      "select_tiebreak": 5.0891,
+      "validations_since_best": 1
+    }
+  ],
+  "before": {
+    "tokens": 343,
+    "hinge_per_token": 81.5656,
+    "token_acc": 0.0,
+    "margin_active_frac": 1.0,
+    "logit_std": 21.539,
+    "margin_true_minus_best_wrong": -80.566,
+    "chrf": 0.125,
+    "bleu": 0.75,
+    "seq_exact_match": 0.0,
+    "samples": [
+      [
+        "怖くて泣いていたら",
+        "그러면 겁에 질리고 울었겠지요.",
+        "眠길뺏쉼 テ躁担扇 1コン蜘電혔죽雨"
+      ],
+      [
+        "これを知ること無しに何を予想していたでしょうか?",
+        "이 사실을 모른다면 어떤 예측을 했을까요?",
+        "緑깜]塔覇질画箇鮮貿]품産覚祭"
+      ],
+      [
+        "どうやってやるのか?",
+        "어떻게 이런 일을 할 수 있을까요?",
+        "緑品김わり町咳텅能ベ 정指픽 때문繋숫"
+      ],
+      [
+        "倫理的英雄を賞賛してください",
+        "인정해 주세요.",
+        "迅緑盛緑즘맴覇泊댔댈걀飽참緑み"
+      ],
+      [
+        "これこそがタイムマシンなのです",
+        "이것이 우리의 타임머신입니다.",
+        "깎影響躇副声−mスの외믹新しい 유墓盾졸"
+      ],
+      [
+        "私は単純で明快な説明を信じません",
+        "저는 뻔한 이야기는 믿지 않습니다.",
+        "른緑김精 책祭緑가를利팔歪販重迫 가지고"
+      ],
+      [
+        "これは単なる飾り言葉ではありません",
+        "그건 그저 싯구가 아니에요.",
+        "ート緑銃寛覇질覇羊 단딛붐与え붐洗だと"
+      ],
+      [
+        "さぁ 立って",
+        "자, 일어나.",
+        "緑メメ苛 뭐움貿メ貿メ付け夜た特ことが"
+      ],
+      [
+        "ほとんどの人は みな合理的なのです",
+        "거의 모든 이들이 합리적입니다.",
+        "町셨緑精奥 때문에色 대 私の[崇게奥浄긴"
+      ],
+      [
+        "「女性 全員ですか?」",
+        "\"노년 여성들 전부요?",
+        "緑繋貰担素晴らしい精蝕グ老랬部 도豊종 올"
+      ]
+    ]
+  },
+  "after": {
+    "tokens": 343,
+    "hinge_per_token": 4.9329,
+    "token_acc": 21.866,
+    "margin_active_frac": 0.8017,
+    "logit_std": 44.044,
+    "margin_true_minus_best_wrong": -3.292,
+    "chrf": 8.585,
+    "bleu": 7.553,
+    "seq_exact_match": 0.0,
+    "samples": [
+      [
+        "怖くて泣いていたら",
+        "그러면 겁에 질리고 울었겠지요.",
+        "괜찮은 괜찮습니다."
+      ],
+      [
+        "これを知ること無しに何を予想していたでしょうか?",
+        "이 사실을 모른다면 어떤 예측을 했을까요?",
+        "하지만 이걸 걱정하는 걸까요?"
+      ],
+      [
+        "どうやってやるのか?",
+        "어떻게 이런 일을 할 수 있을까요?",
+        "그래서 어떻게 할 수 있는 걸까요?"
+      ],
+      [
+        "倫理的英雄を賞賛してください",
+        "인정해 주세요.",
+        "먼저 곧바이 앉아있습니다."
+      ],
+      [
+        "これこそがタイムマシンなのです",
+        "이것이 우리의 타임머신입니다.",
+        "그리고 이 꿈이 굉장히 갔습니다."
+      ],
+      [
+        "私は単純で明快な説明を信じません",
+        "저는 뻔한 이야기는 믿지 않습니다.",
+        "제일은 쉽지 않아요."
+      ],
+      [
+        "これは単なる飾り言葉ではありません",
+        "그건 그저 싯구가 아니에요.",
+        "이것은 쉽지 않아요."
+      ],
+      [
+        "さぁ 立って",
+        "자, 일어나.",
+        "JH 괜찮습니다."
+      ],
+      [
+        "ほとんどの人は みな合理的なのです",
+        "거의 모든 이들이 합리적입니다.",
+        "굉장히 논리적인 것이라고 합니다."
+      ],
+      [
+        "「女性 全員ですか?」",
+        "\"노년 여성들 전부요?",
+        "\"여년이 괜찮아?"
+      ]
+    ]
+  },
+  "activation": {
+    "encoder_cached_activation_bytes": 9666560,
+    "encoder_cachefree_peak_bytes": 5726208,
+    "decoder_cached_activation_bytes": 21053440,
+    "decoder_cachefree_peak_bytes": 7299072,
+    "parameter_bytes": 39026688,
+    "encoder_memory_bytes": 1572864,
+    "token_buffer_bytes": 12288
+  },
+  "params": 4878336,
+  "total_wall_seconds": 14793.7
+}

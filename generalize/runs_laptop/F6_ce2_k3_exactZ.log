@@ -1,0 +1,9 @@
+{"train": 66853, "valid": 3518, "params": 4878336, "dim": 192, "cfg": {"softmax": true, "pow2": true, "exp2": true, "quantw": false, "sgd": false, "name": "hinge_exp2_pow21_adam"}, "loss": "hinge", "opt": "adam", "momentum_bits": 0, "lr": 0.0003}
+  ep0   train_hinge 5.776 | valid tok 13.60% | greedy chrF 1.94 BLEU 1.73 exact 0/400 | 10.0m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 굉은 굉가 굉가 굉가 굉이 
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 이 굉을 굉을 굉을 굉을 굉을
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 이 굉은 뭘 뭘 뭘 뭘 뭘
+  ep1   train_hinge 5.333 | valid tok 15.06% | greedy chrF 4.01 BLEU 2.92 exact 0/400 | 23.7m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 혼을 혼이
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 이 혼을 혼을 봅시다.
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 이걸 뭘 수

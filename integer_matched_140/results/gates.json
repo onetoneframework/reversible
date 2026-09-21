@@ -1,0 +1,190 @@
+{
+  "A_exact_inverse": {
+    "passed": true,
+    "detail": {
+      "gate": 2,
+      "encoder_inverse_exact": true,
+      "decoder_inverse_exact": true,
+      "encoder_max_abs_state": 132,
+      "decoder_max_abs_state": 184,
+      "passed": true
+    }
+  },
+  "B_cachefree_equals_cached": {
+    "passed": true,
+    "detail": {
+      "gate": 3,
+      "tensors_compared": 19,
+      "all_mantissas_equal": true,
+      "all_exponents_equal": true,
+      "first_mismatch_index": null,
+      "stats_match": true,
+      "passed": true
+    }
+  },
+  "C_step_equivalence": {
+    "passed": true,
+    "detail": {
+      "gate": 4,
+      "steps": 8,
+      "first_divergent_step": null,
+      "passed": true
+    }
+  },
+  "H1_attention_adjoint_cosine_relu_mirror": {
+    "passed": true,
+    "note": "gate 5 as written; its float mirror has no exp2 branch, so it runs under SCORE_EXP2=None/SCORE_LEAK=None and validates the shared Wq/Wk/Wv/Wo adjoint, not the exp2 score-weight adjoint",
+    "detail": {
+      "gate": 5,
+      "production_hidden_bits": 16,
+      "rows": [
+        {
+          "adjoint_bits": 6,
+          "gW_q": 1.0,
+          "gW_k": 1.0,
+          "gW_v": 1.0,
+          "gW_o": 0.9998
+        },
+        {
+          "adjoint_bits": 12,
+          "gW_q": 1.0,
+          "gW_k": 1.0,
+          "gW_v": 1.0,
+          "gW_o": 1.0
+        },
+        {
+          "adjoint_bits": 20,
+          "gW_q": 1.0,
+          "gW_k": 1.0,
+          "gW_v": 1.0,
+          "gW_o": 1.0
+        }
+      ],
+      "adjoint_width_sweep": [
+        {
+          "hidden_bits": 10,
+          "max_abs_grad_mantissa": 983171072,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 12,
+          "max_abs_grad_mantissa": 992804864,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 16,
+          "max_abs_grad_mantissa": 995373056,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 20,
+          "max_abs_grad_mantissa": 995633920,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 24,
+          "max_abs_grad_mantissa": 995639760,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 30,
+          "max_abs_grad_mantissa": 801523876,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 40,
+          "max_abs_grad_mantissa": 801523876,
+          "near_int64_limit": false
+        }
+      ],
+      "note": "adjoint magnitudes above ~2**24 overflow int64 inside the adjoint GEMMs; the hinge adjoint is bounded by 2**hidden_bits so production never enters that regime",
+      "passed": true
+    }
+  },
+  "H2_coupled_adjoint_live": {
+    "passed": true,
+    "configured_coupled": true,
+    "coupled_differs_from_diagonal": true,
+    "differing_entries": 21,
+    "entries": 147,
+    "note": "coupled minus diagonal must be nonzero or the row-coupling term is dead"
+  },
+  "D_causality": {
+    "passed": true,
+    "cuts": {
+      "1": {
+        "gate": "A",
+        "cut": 1,
+        "leaked": [],
+        "decoder_state_before_cut_identical": true,
+        "logits_before_cut_identical": true,
+        "logits_after_cut_changed": true,
+        "passed": true
+      },
+      "3": {
+        "gate": "A",
+        "cut": 3,
+        "leaked": [],
+        "decoder_state_before_cut_identical": true,
+        "logits_before_cut_identical": true,
+        "logits_after_cut_changed": true,
+        "passed": true
+      },
+      "6": {
+        "gate": "A",
+        "cut": 6,
+        "leaked": [],
+        "decoder_state_before_cut_identical": true,
+        "logits_before_cut_identical": true,
+        "logits_after_cut_changed": true,
+        "passed": true
+      }
+    }
+  },
+  "E_pad_invariance": {
+    "passed": true,
+    "note": "gate model built with a 24-row positional table because gate_b pads to 24",
+    "detail": {
+      "gate": "B",
+      "padded_lengths": [
+        10,
+        16,
+        24
+      ],
+      "differs": [],
+      "passed": true
+    }
+  },
+  "F_masked_memory_invariance": {
+    "passed": true,
+    "detail": {
+      "gate": "C",
+      "garbage_rows": 4,
+      "decoder_state_identical": true,
+      "logits_identical": true,
+      "passed": true
+    }
+  },
+  "G_positional_on": {
+    "passed": true,
+    "rows": 16
+  },
+  "I_blocksgd_stable": {
+    "passed": true,
+    "shift": 12,
+    "param_bits": 12,
+    "lr_bits": 1,
+    "momentum_bits": 0
+  },
+  "J_one_batch_range": {
+    "passed": true,
+    "tokens": 175,
+    "hinge_sum": 17221,
+    "margin_active": 175,
+    "max_gradient_mantissa": 1037221888,
+    "int64_headroom_bits": 62,
+    "gemm_float64_calls": 115,
+    "gemm_int64_calls": 0
+  },
+  "all_passed": true
+}

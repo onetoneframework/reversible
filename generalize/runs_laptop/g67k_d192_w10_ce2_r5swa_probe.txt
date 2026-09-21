@@ -1,0 +1,322 @@
+============================================================================
+[2026-09-09 12:32:14] g67k-d192-w10-ce2-r5swaepoch 0 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  괜찮은 괜찮아요.
+REPEAT  괜찮은데!
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 와 권리로 갔습니다.
+REPEAT  저는 와서 배우리로 가져 있죠.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  H: 괜찮을 봅시다.
+REPEAT  H: 그렇지 못합니다.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  H 귀를 놓고
+REPEAT  H: 그렇지 않아요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  그럴 괜찮은 뭔가 있습니다.
+REPEAT  그럴 괜찮은 어려움을까요?
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  뭔가  괜찮아요.
+REPEAT  뭔가 그걸로 가까?
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  뭔가 없었을 돼.
+REPEAT  뭔가 없었을 수 있죠.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  하지만 뭔가 시작되었지요.
+REPEAT  하지만 뭔가 시작되었지요.
+
+  greedy  korean% 68.3   repl% 0.0   rep_uni% 18.2   rep_bi% 3.6    distinct 8
+  repeat  korean% 69.7   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+============================================================================
+[2026-09-09 13:14:36] g67k-d192-w10-ce2-r5swaepoch 1 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  꽤 쉬운을 맺고
+REPEAT  꽤나.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 꿈을 허리에 있습니다.
+REPEAT  저는 꿈을 수학에 대해 이야기입니다.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  팔에 대해 생각해보죠.
+REPEAT  팔에 대해 생각해보죠.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  쉬운 규칙을 늘어.
+REPEAT  쉬운을 수 있습니다.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  꽤 늘에 꽤 늘어.
+REPEAT  꽤나.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  팔에 듣고 싶어.
+REPEAT  팔에 대해 이야기하시겠지요.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  별한 규모가 없어요.
+REPEAT  별한 일에 대해 잘못된 것이 아닙니다.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  이걸 어떻게 시작에 시작했습니다.
+REPEAT  이걸 어떻게 시작에 대해 봅시다.
+
+  greedy  korean% 71.3   repl% 0.0   rep_uni% 16.7   rep_bi% 3.8    distinct 8
+  repeat  korean% 72.5   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 7
+
+============================================================================
+[2026-09-09 13:56:54] g67k-d192-w10-ce2-r5swaepoch 2 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  G: 와우고
+REPEAT  G: 네,
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 대학교를 맡고
+REPEAT  저는 대학교를 맡고
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  갑자: 봅시다.
+REPEAT  갑자: 자리를 내려합니다.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  G: 꽤 꽤 군요.
+REPEAT  G: 네,
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  꽤 어려는 어려가가
+REPEAT  꽤 어려는 것들을 보죠.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  GG: 뜻합니다.
+REPEAT  G: 아주 큰 도움을까요?
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  글쎄요, 몰랐죠.
+REPEAT  글쎄요, 전혀 없습니다.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  됐을 시작했고
+REPEAT  됐을 시작했고
+
+  greedy  korean% 63.7   repl% 0.0   rep_uni% 18.4   rep_bi% 4.7    distinct 8
+  repeat  korean% 59.1   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 7
+
+============================================================================
+[2026-09-09 14:39:53] g67k-d192-w10-ce2-r5swaepoch 3 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  아버지는 갔죠.
+REPEAT  아버지는 갔죠.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 당연학교에 대해 배우고
+REPEAT  저는 당연학교에 대해 배우고
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  B: 자 이제 아시겠죠?
+REPEAT  B: 자 이제 아시겠죠?
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  저는 항상 그런 것을 좋아합니다.
+REPEAT  저는 항상 그런 것을 좋아합니다.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  아버지는 어떻게 된거죠.
+REPEAT  아버지는 어떻게 된거죠.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  BF 와우는거죠.
+REPEAT  BFI는거죠.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  아는 말할 수 없는거죠.
+REPEAT  아는 말할 수 없는거죠.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  시작해보면에서 시작해보죠.
+REPEAT  시작해보면에서부터 시작했습니다.
+
+  greedy  korean% 71.1   repl% 0.0   rep_uni% 5.6    rep_bi% 3.1    distinct 8
+  repeat  korean% 69.8   repl% 0.0   rep_uni% 1.6    rep_bi% 0.0    distinct 8
+
+============================================================================
+[2026-09-09 15:20:29] g67k-d192-w10-ce2-r5swaepoch 4 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  이걸 한번 해보죠.
+REPEAT  이걸 한번 해보죠.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 이걸로서 배우고학을 배웠습니다.
+REPEAT  저는 이걸로서 배우고학을 했습니다.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  한번 더 잘못된다고 생각하시겠어.
+REPEAT  한번 더 잘못된다고 생각하시겠어.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  이건 정말로, 정말로,
+REPEAT  이건 정말로,
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  어쩌면
+REPEAT  어쩌면
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  물건은,
+REPEAT  물건은,
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  아니면도 않은 없어요.
+REPEAT  아니면도 않은 없어요.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  그래서 저는 준비되었습니다.
+REPEAT  그래서 저는 준비되었습니다.
+
+  greedy  korean% 78.1   repl% 0.0   rep_uni% 6.3    rep_bi% 4.2    distinct 8
+  repeat  korean% 78.5   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+============================================================================
+[2026-09-09 15:46:55] g67k-d192-w10-ce2-r5swaepoch 5 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  그냥 괜찮은
+REPEAT  그냥 괜찮은
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 그 학생님을 배웠습니다.
+REPEAT  저는 그 학생님을 배웠습니다.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  B: 네.
+REPEAT  B: 네.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  그냥 괜찮은
+REPEAT  그냥 괜찮은
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  굉장한 일은
+REPEAT  굉장한 일은
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  물어도 광고 있습니다.
+REPEAT  물어도 광고 있습니다.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  괜찮은 아니면
+REPEAT  괜찮은 아니면
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  어떻게 작업을 멈추지지지요
+REPEAT  어떻게 작업을 멈추지 않습니다.
+
+  greedy  korean% 73.9   repl% 0.0   rep_uni% 2.3    rep_bi% 1.2    distinct 7
+  repeat  korean% 72.8   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 7
+
+============================================================================
+[2026-09-09 16:13:11] g67k-d192-w10-ce2-r5swaepoch 6 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  괜찮은 괜찮습니다.
+REPEAT  괜찮은 어떨어.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  제 학생님이란이 생물학이요.
+REPEAT  제 학생님이란 게임입니다.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  JH 괜찮아요,
+REPEAT  JH: 자세요?
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  청중이 괜찮습니다.
+REPEAT  청중이요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  JA: 맞죠?
+REPEAT  JA: 맞죠?
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  JC: 멈추어.
+REPEAT  JC: 자세요?
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  괜찮은 없습니다.
+REPEAT  괜찮은 없습니다.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  그래서 준비가 시작했습니다.
+REPEAT  그래서 준비가 시작했습니다.
+
+  greedy  korean% 64.2   repl% 0.0   rep_uni% 11.3   rep_bi% 3.6    distinct 8
+  repeat  korean% 61.9   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+

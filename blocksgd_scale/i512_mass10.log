@@ -1,0 +1,11 @@
+  sample  私はそれを変えるべく活動しています  ->  저는 그것을 바꾸는 과제에 착수했어요.
+  sample  真実とはちょっと違います それはさておき  ->  이건 전부 진실이 아닐겁니다.
+  sample  議論を交わして  ->  그것에 대해 이야기하고,
+  sample  これは良き教訓です  ->  그래서 우리에게 좋은 교훈인거죠.
+{"pairs": 512, "vocab": 5000, "max_len": 16, "dim": 96, "k_dec": 4, "dec_pattern": "ccaf", "lr_bits": 1, "optimizer_stable": true, "train_prefix_corruption": 0.0, "train_scheduled_sampling": 0.0, "eval_prefix_corruption": 0.0, "positional": 16, "attn_row_mass_bits": 10, "attn_score_bits": 0, "score_exp2": 3, "exp2_coupled": true, "query_anchor": false, "causal_fix": "mask-aware pow2norm"}
+
+ epoch   tf_all% tf_content%      pos0%   greedy     give1     give3     real%     shuf%  zero%
+     0     0.036      0.0290    0.00    0/512      0      0    0.0000    0.0000    0.0000  0.2m
+   150     7.103      1.1870    1.76    0/512      0      0    1.1628    0.2326    1.8605  17.5m
+   300    13.349      5.2693    2.73    0/512      0      0    4.8837    1.1628    4.4186  37.5m
+   450    12.566      5.0955    1.76    0/512      0      0    6.0465    1.6279    3.0233  58.9m

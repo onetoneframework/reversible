@@ -1,0 +1,38 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 20,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 3,
+  "loss": "hinge",
+  "attn": "softmax",
+  "pow2": 1,
+  "opt": "blocksgd",
+  "momentum_bits": 7,
+  "eval_rows": 400,
+  "seed": 0,
+  "out": "<local>/F3_hinge_softmax_blocksgd.json"
+ },
+ "cfg": {
+  "softmax": true,
+  "pow2": true,
+  "exp2": false,
+  "quantw": false,
+  "sgd": false,
+  "name": "hinge_softmax_pow21_blocksgd"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_loss": NaN,
+   "minutes": 12.7,
+   "valid_token_acc": 0.0,
+   "chrf": 0.0,
+   "bleu": 0.0,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 0.0
+}

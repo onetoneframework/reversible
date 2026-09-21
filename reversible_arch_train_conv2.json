@@ -1,0 +1,30 @@
+[
+  {
+    "arch": "conv",
+    "K": 8,
+    "seed": 1,
+    "epochs": 2,
+    "batch": 128,
+    "accuracy": 0.4887999892234802,
+    "inverse_exact": true,
+    "parameter_count": 36864,
+    "max_activation": 535,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "wall_seconds": 144.3
+  },
+  {
+    "arch": "conv",
+    "K": 8,
+    "seed": 2,
+    "epochs": 2,
+    "batch": 128,
+    "accuracy": 0.49459999799728394,
+    "inverse_exact": true,
+    "parameter_count": 36864,
+    "max_activation": 583,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "wall_seconds": 98.9
+  }
+]

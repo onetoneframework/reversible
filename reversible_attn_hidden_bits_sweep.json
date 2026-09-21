@@ -1,0 +1,44 @@
+[
+  {
+    "arch": "attn",
+    "hidden_bits": 8,
+    "seeds": 3,
+    "acc_mean_pct": 8.63,
+    "acc_std_pct": 1.07,
+    "per_seed_pct": [
+      9.09,
+      7.4,
+      9.39
+    ],
+    "inverse_exact": true,
+    "state_wrap_frac": 0.0
+  },
+  {
+    "arch": "attn",
+    "hidden_bits": 12,
+    "seeds": 3,
+    "acc_mean_pct": 9.33,
+    "acc_std_pct": 0.36,
+    "per_seed_pct": [
+      8.94,
+      9.66,
+      9.39
+    ],
+    "inverse_exact": true,
+    "state_wrap_frac": 0.0
+  },
+  {
+    "arch": "attn",
+    "hidden_bits": 16,
+    "seeds": 3,
+    "acc_mean_pct": 11.79,
+    "acc_std_pct": 6.8,
+    "per_seed_pct": [
+      13.01,
+      4.46,
+      17.9
+    ],
+    "inverse_exact": true,
+    "state_wrap_frac": 0.0
+  }
+]

@@ -1,0 +1,52 @@
+output head: integer base-2 cross-entropy (shift 0, cap 20, norm exact)
+split momentum: 16 source-pathway tensors at 0 bits, 9 target-side tensors at 7 bits
+{"corpus": "both", "train_pairs": 66853, "train_by_corpus": {"ted2020": 66393, "tatoeba": 460}, "valid_by_corpus": {"ted2020": 3496, "tatoeba": 22}, "valid_pairs": 3518, "vocab": 5000, "params": 4878336, "dim": 192, "k_enc": 2, "k_dec": 4, "state_bits": 16, "weight_bits": 10, "accum_bits": 32, "hidden_bits": 16, "lr_bits": 1, "optimizer_stable": true, "train_prefix_corruption": 0.0, "train_scheduled_sampling": 0.0, "eval_prefix_corruption": 0.0, "query_anchor": false, "positional_encoding": 16, "attn_row_mass_bits": 0, "score_exp2": 3, "exp2_coupled": true, "momentum_bits": 7, "threads": 12}
+resumed from C:\Project\OnetoneFramework\framework\res\Platform\Python\reversible\generalize\runs_laptop\g67k_d192_w10_ce2_avg16_18.pt (epoch 3)
+  ep0   all 22.922% content 12.5966% bal 12.6509% | cont r/s/z 13.505/ 8.147/ 9.375 gap +5.3572 | pos0 r/s/z 16.41/ 0.00/ 4.69 | eosFP  1.51% eos_sh  38.5% | anchors 2/8 blank 0 len 11.1 kor 74% rep 2.8%
+{"epoch": 0, "train_hinge_per_token": 4.1024, "train_token_acc": 24.766, "train_margin_active_frac": 0.7822, "param_grad_nonzero_pct": 31.983, "weights_moved_since_init_pct": 43.738, "grad_exponent_min": -44, "grad_exponent_max": -20, "state_wrap_frac": 0.0, "accum_saturations": 936, "max_weight": 512, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 383.7, "wall_seconds": 1841.4, "process_rss_mb": 1067.8, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 22.922, "hinge_per_token": 5.2105, "eos_recall": 95.703, "eos_false_positive": 1.51, "content_acc": 12.5966, "content_hinge": 6.2018, "high_freq_acc": 21.383, "punct_acc": 29.927, "eos_share_of_correct": 38.55, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 15.82, "pos1": 13.086, "pos2": 16.863, "pos3": 14.032, "pos4-7": 17.995, "pos8+": 38.82}, "by_corpus": {"ted2020": {"content_acc": 12.6509, "content_hinge": 6.2056, "content_tokens": 3478}}, "balanced_content_acc": 12.6509, "balanced_content_hinge": 6.2056}, "source_conditioning": {"real": {"content_acc": 13.5045, "pos0_acc": 16.406}, "shuffled": {"content_acc": 8.1473, "pos0_acc": 0.0}, "zeroed": {"content_acc": 9.375, "pos0_acc": 4.688}, "content_acc_gap_real_minus_shuffled": 5.3572, "pos0_acc_gap_real_minus_shuffled": 16.406, "sequences": 128}, "free_running": {"greedy": {"outputs": ["옛도 하시오.", "저는 그 학생님이 필요합니다.", "엎질이 보세요.", "오늘 여러분도 보세요.", "그는 어떠한 일이죠.", "たい수수수도 하시고", "엎질도 아니고요.", "수치는 것은 시작되고 있나요?"], "blank_outputs": 0, "korean_pct": 74.0, "replacement_pct": 0.0, "repeat_unigram_pct": 2.8, "repeat_bigram_pct": 1.6, "distinct_outputs": 8, "mean_len": 11.12, "median_len": 11, "len_ratio_vs_reference": 1.328, "eos_positions": [7, 8, 6, 5, 6, 9, 7, 9], "lexical_anchor_hits": 2, "lexical_anchor_max": 8}, "repeat": {"outputs": ["옛도 하시오.", "저는 그 학생님이 필요합니다.", "엎질이 보세요.", "오늘 여러분도 보세요.", "그는 어떠한 일이죠.", "たい수도 하시간이 필요합니다.", "엎질도 아니고요.", "수치는 것은 시작되고 있나요?"], "blank_outputs": 0, "korean_pct": 73.8, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 11.88, "median_len": 12, "len_ratio_vs_reference": 1.418, "eos_positions": [7, 8, 6, 5, 6, 10, 7, 9], "lexical_anchor_hits": 2, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 5.2105, "valid_token_acc": 22.922, "valid_margin_active_frac": 0.7989, "valid_logit_std": 42.546, "valid_margin_true_minus_best_wrong": -3.412, "valid_tatoeba": {"token_acc": 24.121, "hinge_per_token": 5.0603, "tokens": 199}, "valid_ted2020": {"token_acc": 22.931, "hinge_per_token": 5.2198, "tokens": 5547}, "select_gap": 5.3572, "select_real_minus_zeroed": 4.1295, "select_score": 12.6509, "select_tiebreak": 6.2056, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 23:51:36] g67k-d192-w10-ce2-r4swaepoch 0 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  옛도 하시오.
+REPEAT  옛도 하시오.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 그 학생님이 필요합니다.
+REPEAT  저는 그 학생님이 필요합니다.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  엎질이 보세요.
+REPEAT  엎질이 보세요.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  오늘 여러분도 보세요.
+REPEAT  오늘 여러분도 보세요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  그는 어떠한 일이죠.
+REPEAT  그는 어떠한 일이죠.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  たい수수수도 하시고
+REPEAT  たい수도 하시간이 필요합니다.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  엎질도 아니고요.
+REPEAT  엎질도 아니고요.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  수치는 것은 시작되고 있나요?
+REPEAT  수치는 것은 시작되고 있나요?
+
+  greedy  korean% 74.0   repl% 0.0   rep_uni% 2.8    rep_bi% 1.6    distinct 8
+  repeat  korean% 73.8   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+

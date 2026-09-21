@@ -1,0 +1,43 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 12,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 4,
+  "loss": "hinge",
+  "margin": 1.0,
+  "ce2": true,
+  "ce2_shift": 0,
+  "ce2_pow2z": false,
+  "ce2_cap": 20,
+  "attn": "exp2",
+  "pow2": 1,
+  "opt": "blocksgd",
+  "momentum_bits": 7,
+  "eval_rows": 400,
+  "seed": 0,
+  "out": "<local>/F8_ce2_exp2_blocksgd.json"
+ },
+ "cfg": {
+  "softmax": true,
+  "pow2": true,
+  "exp2": true,
+  "quantw": false,
+  "sgd": false,
+  "name": "hinge_exp2_pow21_blocksgd"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_loss": NaN,
+   "minutes": 10.4,
+   "valid_token_acc": 0.0,
+   "chrf": 0.0,
+   "bleu": 0.0,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 0.0
+}

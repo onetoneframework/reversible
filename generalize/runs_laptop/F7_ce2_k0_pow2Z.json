@@ -1,0 +1,43 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 12,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 5,
+  "loss": "hinge",
+  "margin": 1.0,
+  "ce2": true,
+  "ce2_shift": 0,
+  "ce2_pow2z": true,
+  "ce2_cap": 20,
+  "attn": "exp2",
+  "pow2": 1,
+  "opt": "adam",
+  "momentum_bits": 0,
+  "eval_rows": 400,
+  "seed": 0,
+  "out": "<local>/F7_ce2_k0_pow2Z.json"
+ },
+ "cfg": {
+  "softmax": true,
+  "pow2": true,
+  "exp2": true,
+  "quantw": false,
+  "sgd": false,
+  "name": "hinge_exp2_pow21_adam"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_loss": 18.39513538527653,
+   "minutes": 6.8,
+   "valid_token_acc": 0.05924808790261769,
+   "chrf": 0.13288292735587862,
+   "bleu": 0.0336222315744505,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 0.13288292735587862
+}

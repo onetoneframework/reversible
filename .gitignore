@@ -1,0 +1,21 @@
+# Model checkpoints. A single one is tens of megabytes; 24 of them once made a
+# 2.6 GB push.
+*.pt
+
+# Job output written by generalize/run_jobs.ps1
+generalize/runs/
+
+# Corpus archives fetched on first use; only the trained tokenizers are tracked.
+_jako_data/*.zip
+_jako_data/*.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Scratch output from ad-hoc runs
+*.err
+*.pid

@@ -1,0 +1,6 @@
+{"pairs": 512, "batch": 32, "lr_bits": 1, "weight_bits": 8, "table_bits": 8, "momentum_bits": 7, "source_momentum_bits": 0, "shift": 12, "TB": 5, "activation_bits": 7, "score_bits": 7, "stable": true, "proj_init_lim": 16, "table_init_lim": 16, "clamp": [-128, 127]}
+
+ epoch   tf_all% tf_content%      pos0%   greedy     give1     give3     real%     shuf%  zero%   sat   |W|max
+     0     0.036      0.0295    0.00    0/512       0      0    0.0000    0.0000  0.0000      0      16  0.3m
+   150    71.056     68.9492   27.73   23/512       0      0   65.8654   24.7596 46.8750      2     128  23.3m
+   300    92.121     91.3518   78.32  218/512       0      0   89.6635   41.1058 57.6923      0     128  46.3m

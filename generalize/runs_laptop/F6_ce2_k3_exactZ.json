@@ -1,0 +1,52 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 12,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 4,
+  "loss": "hinge",
+  "margin": 1.0,
+  "ce2": true,
+  "ce2_shift": 3,
+  "ce2_pow2z": false,
+  "attn": "exp2",
+  "pow2": 1,
+  "opt": "adam",
+  "momentum_bits": 0,
+  "eval_rows": 400,
+  "seed": 0,
+  "out": "<local>/F6_ce2_k3_exactZ.json"
+ },
+ "cfg": {
+  "softmax": true,
+  "pow2": true,
+  "exp2": true,
+  "quantw": false,
+  "sgd": false,
+  "name": "hinge_exp2_pow21_adam"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_loss": 5.775563927724163,
+   "minutes": 10.0,
+   "valid_token_acc": 13.602822363460088,
+   "chrf": 1.9430701284981606,
+   "bleu": 1.7305866910928462,
+   "exact": 0,
+   "rows": 400
+  },
+  {
+   "epoch": 1,
+   "train_loss": 5.333100199111319,
+   "minutes": 23.7,
+   "valid_token_acc": 15.05978670688355,
+   "chrf": 4.012141915800286,
+   "bleu": 2.9152102176623553,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 4.012141915800286
+}

@@ -1,0 +1,325 @@
+{
+  "config": {
+    "mode": "train",
+    "corpus": "both",
+    "max_pairs": 2000,
+    "vocab_size": 5000,
+    "max_len": 16,
+    "valid_frac": 0.05,
+    "dim": 96,
+    "ffn_hidden": 192,
+    "k_enc": 2,
+    "k_dec": 4,
+    "enc_pattern": "",
+    "dec_pattern": "ccaf",
+    "tok_mode": "char",
+    "score_leak": null,
+    "max_tok": 14,
+    "batch": 32,
+    "epochs": 1,
+    "lr_bits": 1,
+    "state_bits": 16,
+    "weight_bits": 8,
+    "accum_bits": 32,
+    "hidden_bits": 16,
+    "seed": 0,
+    "threads": 2,
+    "eval_every": 1,
+    "patience": 5,
+    "subs_pairs": 25000,
+    "subs_pool": 0,
+    "base_pairs": 8000,
+    "base_pool": 0,
+    "min_char_count": 20,
+    "max_eval": 100,
+    "momentum_bits": 7,
+    "score_exp2": 3,
+    "score_exp2_cap": 12,
+    "exp2_diag": false,
+    "attn_score_bits": 0,
+    "attn_mass_bits": 0,
+    "scheduled_sampling": 0,
+    "positional": 16,
+    "prefix_corrupt": 0,
+    "query_anchor": false,
+    "snapshot_epochs": [],
+    "probe_file": "",
+    "run_tag": "",
+    "chunk_head": 0,
+    "show_samples": 2,
+    "depths": [
+      2,
+      4,
+      8
+    ],
+    "out": "<local>/smoke_split.json",
+    "save_ckpt": "<local>/smoke_split.pt",
+    "resume": "",
+    "ckpt": "jako_model.pt",
+    "text": []
+  },
+  "data": {
+    "corpus": "both",
+    "zip": "tatoeba+ted2020",
+    "sha256": "a06cd974a19751280ec0be0cd3b52000630eb96ee6563fc9965dc18471327be1/f7a3a4b7f4d02532d4eb253fb0e474f7d15f1d14cb26ced39bc37fdbf40c7b9d",
+    "ja_file": "combined",
+    "ko_file": "combined",
+    "raw_lines": 359300,
+    "url": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2023-04-12/moses/ja-ko.txt.zip ; https://object.pouta.csc.fi/OPUS-TED2020/v1/moses/ja-ko.txt.zip",
+    "license": "CC-BY 2.0 FR ; CC BY-NC-ND 4.0 (TED)",
+    "cite": "OPUS Tatoeba v2023-04-12 ; OPUS TED2020 v1",
+    "clean_stats": {
+      "raw": 359300,
+      "empty": 3395,
+      "length": 53073,
+      "script": 97,
+      "dupe": 3021,
+      "acceptance": 1734,
+      "kept": 297980
+    },
+    "subtitle_filter": null,
+    "pairs_after_max_tok": {
+      "ted2020": 497,
+      "tatoeba": 3
+    },
+    "pairs_after_limit": 500,
+    "vocab_size": 5000,
+    "max_len": 16,
+    "train_encoded": 475,
+    "valid_encoded": 25,
+    "train_by_corpus": {
+      "ted2020": 472,
+      "tatoeba": 3
+    },
+    "valid_by_corpus": {
+      "ted2020": 25
+    },
+    "tokenizer": "tok_both_a20_5000_char.json"
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "train_hinge_per_token": 87.0388,
+      "train_token_acc": 0.33,
+      "train_margin_active_frac": 0.9971,
+      "param_grad_nonzero_pct": 17.311,
+      "weights_moved_since_init_pct": 2.542,
+      "grad_exponent_min": -27,
+      "grad_exponent_max": -20,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 0,
+      "max_weight": 26,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 411.5,
+      "wall_seconds": 12.5,
+      "process_rss_mb": 807.4,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 265,
+          "all_token_acc": 0.0,
+          "hinge_per_token": 80.2377,
+          "eos_recall": 0.0,
+          "eos_false_positive": 0.0,
+          "content_acc": 0.0,
+          "content_hinge": 84.3876,
+          "high_freq_acc": 0.0,
+          "punct_acc": 0.0,
+          "eos_share_of_correct": 0.0,
+          "class_tokens": {
+            "high_freq": 101,
+            "eos": 25,
+            "content": 129,
+            "punct": 10
+          },
+          "position_acc": {
+            "pos0": 0.0,
+            "pos1": 0.0,
+            "pos2": 0.0,
+            "pos3": 0.0,
+            "pos4-7": 0.0,
+            "pos8+": 0.0
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 0.0,
+              "content_hinge": 84.3876,
+              "content_tokens": 129
+            }
+          },
+          "balanced_content_acc": 0.0,
+          "balanced_content_hinge": 84.3876
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 0.0,
+            "pos0_acc": 0.0
+          },
+          "shuffled": {
+            "content_acc": 0.0,
+            "pos0_acc": 0.0
+          },
+          "zeroed": {
+            "content_acc": 0.0,
+            "pos0_acc": 0.0
+          },
+          "content_acc_gap_real_minus_shuffled": 0.0,
+          "pos0_acc_gap_real_minus_shuffled": 0.0,
+          "sequences": 25
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "託ですから밟셀竜셀셀竜셀히 죽 중 우리의밟 중",
+              "찢汲 걸었어요.폭 친ます胚멤汲胚 걸 걸 걸놀",
+              "렇렇好崇담 전에姪 전에찾託ま 그리고好変ま",
+              "毎落령殺束령隠령束膀殺毎隠령束",
+              "くさん照「樹땅つの漂金룸 이間間金遠漫",
+              "령貰령맘맘티 하고誰령긍톡빈긍자인맘",
+              "敢 더 皆さん 皆さん 10鉱 더諦 친諦撃諦 이것諦撃",
+              "랑 그리고配랑짠적인 전 전적인と햄存在こに爪試"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 44.0,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 32.5,
+            "repeat_bigram_pct": 5.4,
+            "distinct_outputs": 8,
+            "mean_len": 21.75,
+            "median_len": 24,
+            "len_ratio_vs_reference": 2.597,
+            "eos_positions": [
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "lexical_anchor_hits": 0,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "託ですから밟셀竜셀옹ュ刈회휠 중 우리의밟 중",
+              "찢汲 걸었어요.폭 친ます胚멤 이것이위撃 남ても폭",
+              "렇펙 전에好崇9変ま核 이것이휠 그리고영購ま",
+              "毎落령殺束 경험맺#땀喜領毎隠령束",
+              "くさん照「樹땅つの漂金룸 이間큼科送似",
+              "령貰령맘康 증긍께劇펙哀뭐덴誰티",
+              "敢 더 皆さん 皆さん 10鉱 더諦 친諦撃어요.撮嗅였",
+              "랑 그리고配 例햄짠적인こに낮英英깝 전ど깝"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 44.1,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 11.7,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 8,
+            "mean_len": 21.75,
+            "median_len": 23,
+            "len_ratio_vs_reference": 2.597,
+            "eos_positions": [
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "lexical_anchor_hits": 0,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 80.2377,
+      "valid_token_acc": 0.0,
+      "valid_margin_active_frac": 1.0,
+      "valid_logit_std": 24.001,
+      "valid_margin_true_minus_best_wrong": -79.238,
+      "select_gap": 0.0,
+      "select_real_minus_zeroed": 0.0,
+      "select_score": 0.0,
+      "select_tiebreak": 84.3876,
+      "saved_best": true,
+      "validations_since_best": 0
+    }
+  ],
+  "before": {
+    "tokens": 265,
+    "hinge_per_token": 96.1736,
+    "token_acc": 0.0,
+    "margin_active_frac": 1.0,
+    "logit_std": 25.752,
+    "margin_true_minus_best_wrong": -95.174,
+    "chrf": 0.499,
+    "bleu": 3.22,
+    "seq_exact_match": 0.0,
+    "samples": [
+      [
+        "怖くて泣いていたら",
+        "그러면 겁에 질리고 울었겠지요.",
+        "礁쓰には非 (笑)には돌散には홈홈には尖青な"
+      ],
+      [
+        "これを知ること無しに何を予想していたでしょうか?",
+        "이 사실을 모른다면 어떤 예측을 했을까요?",
+        "覧で喧でぷ折妨 것멘들이ける밍喧들이朽"
+      ]
+    ]
+  },
+  "after": {
+    "tokens": 265,
+    "hinge_per_token": 80.2377,
+    "token_acc": 0.0,
+    "margin_active_frac": 1.0,
+    "logit_std": 24.001,
+    "margin_true_minus_best_wrong": -79.238,
+    "chrf": 0.0,
+    "bleu": 3.234,
+    "seq_exact_match": 0.0,
+    "samples": [
+      [
+        "怖くて泣いていたら",
+        "그러면 겁에 질리고 울었겠지요.",
+        "怒凄⁄ 코 해 해ことに認꾹 해 해凄 해 정도 해"
+      ],
+      [
+        "これを知ること無しに何を予想していたでしょうか?",
+        "이 사실을 모른다면 어떤 예측을 했을까요?",
+        "喋喋館汲륜 주免漠夏멜杖 멋륜汲汲"
+      ]
+    ]
+  },
+  "activation": {
+    "encoder_cached_activation_bytes": 4947968,
+    "encoder_cachefree_peak_bytes": 2973696,
+    "decoder_cached_activation_bytes": 10829824,
+    "decoder_cachefree_peak_bytes": 3760128,
+    "parameter_bytes": 17448960,
+    "encoder_memory_bytes": 786432,
+    "token_buffer_bytes": 12288
+  },
+  "params": 2181120,
+  "total_wall_seconds": 18.9
+}

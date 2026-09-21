@@ -1,0 +1,16 @@
+[
+  {
+    "arch": "conv",
+    "K": 8,
+    "seed": 0,
+    "epochs": 2,
+    "batch": 128,
+    "accuracy": 0.5004000067710876,
+    "inverse_exact": true,
+    "parameter_count": 36864,
+    "max_activation": 582,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "wall_seconds": 124.6
+  }
+]

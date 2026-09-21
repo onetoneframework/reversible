@@ -1,0 +1,17 @@
+{"train": 66853, "valid": 3518, "params": 4878336, "dim": 192, "cfg": {"softmax": true, "pow2": true, "exp2": true, "quantw": false, "sgd": false, "name": "hinge_exp2_pow21_adam"}, "loss": "hinge", "opt": "adam", "momentum_bits": 0, "lr": 0.0003}
+  ep0   train_hinge 1.547 | valid tok 15.15% | greedy chrF 4.63 BLEU 4.33 exact 1/400 | 12.7m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 이 변화칩이죠.
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 우리는 전 반응입니다.
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 그게 어떻게 どう 하지하게 배웠던 하는 줄지 못했었습니다.
+  ep1   train_hinge 1.122 | valid tok 16.10% | greedy chrF 5.07 BLEU 5.00 exact 0/400 | 24.6m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 은 지쳐은 음 시계를促도록四분 힘쁨지요.
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 그래서 저는 저흰의 가봅시다.
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 금 왜 이런 곳에서 측할까요?
+  ep2   train_hinge 1.051 | valid tok 16.78% | greedy chrF 5.15 BLEU 4.73 exact 0/400 | 35.8m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 보시죠.
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 혹을 아세요?
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 그게 우리가 하는까요?
+  ep3   train_hinge 1.032 | valid tok 17.08% | greedy chrF 5.19 BLEU 4.72 exact 0/400 | 47.1m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 이러한 저의에.
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 어떻게 지키는 어떨까요?
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 어떻게 하냐나요?

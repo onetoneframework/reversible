@@ -1,0 +1,3 @@
+arch,seeds,acc_mean_pct,acc_std_pct,chance_pct,parameter_count,inverse_exact,state_wrap_frac,accum_saturations,sec_per_run,act_cachefree_bytes,act_cachefree_ratio_K2_to_K16,act_cached_ratio_K2_to_K16
+conv,3,49.46,0.58,10.0,36864,True,0.0,0,122.6,5845504,1.0,6.505
+attn,3,8.63,1.07,10.0,32768,True,0.0,0,37.0,1335296,1.0,3.268

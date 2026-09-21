@@ -1,0 +1,48 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 20,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 3,
+  "loss": "hinge",
+  "attn": "softmax",
+  "pow2": 1,
+  "opt": "adam",
+  "momentum_bits": 0,
+  "eval_rows": 400,
+  "seed": 0,
+  "out": "<local>/F1_hinge_softmax_adam.json"
+ },
+ "cfg": {
+  "softmax": true,
+  "pow2": true,
+  "exp2": false,
+  "quantw": false,
+  "sgd": false,
+  "name": "hinge_softmax_pow21_adam"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_loss": 1.5491558997194974,
+   "minutes": 12.6,
+   "valid_token_acc": 15.455671657869223,
+   "chrf": 5.525240779791998,
+   "bleu": 5.385894206350048,
+   "exact": 0,
+   "rows": 400
+  },
+  {
+   "epoch": 1,
+   "train_loss": 1.123674649828257,
+   "minutes": 24.4,
+   "valid_token_acc": 16.56791985349564,
+   "chrf": 5.324000399714636,
+   "bleu": 5.328074995410976,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 5.525240779791998
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" font-family="Segoe UI, Noto Sans KR, sans-serif" font-size="12">
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#525c68"/></marker></defs>
+  <rect x="20" y="70" width="170" height="110" rx="4" fill="#eef3f6" stroke="#8a94a0"/>
+  <text x="105" y="95" text-anchor="middle" font-weight="600">cache-free backward</text>
+  <text x="105" y="115" text-anchor="middle" font-size="11">25 parameter gradients</text>
+  <text x="105" y="132" text-anchor="middle" font-size="11">(mantissa, shared exponent)</text>
+  <text x="105" y="160" text-anchor="middle" font-size="11" fill="#525c68">one list, unchanged</text>
+  <line x1="190" y1="100" x2="300" y2="60" stroke="#525c68" marker-end="url(#ar2)"/>
+  <line x1="190" y1="150" x2="300" y2="190" stroke="#525c68" marker-end="url(#ar2)"/>
+  <!-- source group -->
+  <rect x="300" y="20" width="270" height="88" rx="4" fill="#fff" stroke="#b23a3a"/>
+  <text x="435" y="40" text-anchor="middle" font-weight="600" fill="#b23a3a">source pathway · 16 tensors</text>
+  <text x="435" y="58" text-anchor="middle" font-size="11">source embedding, source positional table,</text>
+  <text x="435" y="74" text-anchor="middle" font-size="11">encoder attention + FFN, decoder cross-attention Wq Wk Wv Wo</text>
+  <text x="435" y="96" text-anchor="middle" font-size="11" fill="#525c68">per-example gradients conflict across the set</text>
+  <!-- target group -->
+  <rect x="300" y="150" width="270" height="88" rx="4" fill="#fff" stroke="#2e7d4f"/>
+  <text x="435" y="170" text-anchor="middle" font-weight="600" fill="#2e7d4f">target side · 9 tensors</text>
+  <text x="435" y="188" text-anchor="middle" font-size="11">target embedding, target positional table,</text>
+  <text x="435" y="204" text-anchor="middle" font-size="11">decoder self-attention, decoder FFN, output head</text>
+  <text x="435" y="226" text-anchor="middle" font-size="11" fill="#525c68">shared language-model structure, consistent across the set</text>
+  <line x1="570" y1="64" x2="640" y2="64" stroke="#525c68" marker-end="url(#ar2)"/>
+  <line x1="570" y1="194" x2="640" y2="194" stroke="#525c68" marker-end="url(#ar2)"/>
+  <rect x="640" y="34" width="240" height="60" rx="4" fill="#fbf1f1" stroke="#b23a3a"/>
+  <text x="760" y="56" text-anchor="middle" font-weight="600">BlockSGD, momentum_bits = 0</text>
+  <text x="760" y="76" text-anchor="middle" font-size="11">acc −= renorm(g, 12); ±1 step at 2¹²</text>
+  <rect x="640" y="164" width="240" height="60" rx="4" fill="#eef6f0" stroke="#2e7d4f"/>
+  <text x="760" y="186" text-anchor="middle" font-weight="600">BlockSGD, momentum_bits = 7</text>
+  <text x="760" y="206" text-anchor="middle" font-size="11">m −= m≫7; m += g; acc −= renorm(m, 12)</text>
+  <text x="760" y="130" text-anchor="middle" font-size="11" fill="#525c68">two canonical instances, one _step_one call per index</text>
+</svg>

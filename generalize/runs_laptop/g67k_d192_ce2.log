@@ -1,0 +1,99 @@
+output head: integer base-2 cross-entropy (shift 0, cap 20), shift-only
+split momentum: 16 source-pathway tensors at 0 bits, 9 target-side tensors at 7 bits
+{"corpus": "both", "train_pairs": 66853, "train_by_corpus": {"ted2020": 66393, "tatoeba": 460}, "valid_by_corpus": {"ted2020": 3496, "tatoeba": 22}, "valid_pairs": 3518, "vocab": 5000, "params": 4878336, "dim": 192, "k_enc": 2, "k_dec": 4, "state_bits": 16, "weight_bits": 8, "accum_bits": 32, "hidden_bits": 16, "lr_bits": 1, "optimizer_stable": true, "train_prefix_corruption": 0.0, "train_scheduled_sampling": 0.0, "eval_prefix_corruption": 0.0, "query_anchor": false, "positional_encoding": 16, "attn_row_mass_bits": 0, "score_exp2": 3, "exp2_coupled": true, "momentum_bits": 7, "threads": 6}
+  ep0   all 10.532% content  0.4867% bal  0.4888% | cont r/s/z  0.223/ 0.670/ 0.781 gap -0.4464 | pos0 r/s/z  0.00/ 2.34/ 1.56 | eosFP  8.50% eos_sh  85.1% | anchors 0/8 blank 0 len 19.4 kor 76% rep 55.0%
+{"epoch": 0, "train_hinge_per_token": 24.653, "train_token_acc": 10.765, "train_margin_active_frac": 0.8963, "param_grad_nonzero_pct": 32.204, "weights_moved_since_init_pct": 50.04, "grad_exponent_min": -29, "grad_exponent_max": -22, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 128, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 604.1, "wall_seconds": 1169.8, "process_rss_mb": 1034.4, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 10.532, "hinge_per_token": 20.1573, "eos_recall": 97.07, "eos_false_positive": 8.504, "content_acc": 0.4867, "content_hinge": 21.716, "high_freq_acc": 4.847, "punct_acc": 1.46, "eos_share_of_correct": 85.1, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 1.367, "pos1": 1.953, "pos2": 2.157, "pos3": 3.953, "pos4-7": 6.596, "pos8+": 25.528}, "by_corpus": {"ted2020": {"content_acc": 0.4888, "content_hinge": 21.7274, "content_tokens": 3478}}, "balanced_content_acc": 0.4888, "balanced_content_hinge": 21.7274}, "source_conditioning": {"real": {"content_acc": 0.2232, "pos0_acc": 0.0}, "shuffled": {"content_acc": 0.6696, "pos0_acc": 2.344}, "zeroed": {"content_acc": 0.7812, "pos0_acc": 1.562}, "content_acc_gap_real_minus_shuffled": -0.4464, "pos0_acc_gap_real_minus_shuffled": -2.344, "sequences": 128}, "free_running": {"greedy": {"outputs": ["그래서에 레에에에에에 대해에요.", "그래서, 에 대해에 대해에에에요.", "그래서, 별에 대해에 대해에 대해", "이런에 대해에 대해에 대해에 대해에 대해", "이런에 대해에 대해에 대해에 대해에 대해", "이런에 레에 대해에 대해에 대해", "그래서, 에 대해에 대해에 대해에 대해", "이런에 대해에 대해에에 에 대해에요."], "blank_outputs": 0, "korean_pct": 75.5, "replacement_pct": 0.0, "repeat_unigram_pct": 55.0, "repeat_bigram_pct": 43.4, "distinct_outputs": 7, "mean_len": 19.38, "median_len": 20, "len_ratio_vs_reference": 2.313, "eos_positions": [12, 12, 10, 11, 11, 10, 11, 12], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["그래서에 레,요.", "그래서, 에 대해요.", "그래서, 별에 대해요.", "이런에 대해,하요.", "이런에 대해, 레요.", "이런에 레,요.", "그래서, 에 대해요.", "이런에 대해, 년요."], "blank_outputs": 0, "korean_pct": 65.0, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 7, "mean_len": 10.38, "median_len": 11, "len_ratio_vs_reference": 1.239, "eos_positions": [6, 7, 7, 6, 7, 6, 6, 7], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 20.1573, "valid_token_acc": 10.532, "valid_margin_active_frac": 0.8968, "valid_logit_std": 35.543, "valid_margin_true_minus_best_wrong": -15.464, "valid_tatoeba": {"token_acc": 12.06, "hinge_per_token": 21.0704, "tokens": 199}, "valid_ted2020": {"token_acc": 10.51, "hinge_per_token": 20.1969, "tokens": 5547}, "select_gap": -0.4464, "select_real_minus_zeroed": -0.558, "select_score": 0.0, "select_tiebreak": 21.7274, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 05:36:50] g67k-d192-ce2epoch 0 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  그래서에 레에에에에에 대해에요.
+REPEAT  그래서에 레,요.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  그래서, 에 대해에 대해에에에요.
+REPEAT  그래서, 에 대해요.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  그래서, 별에 대해에 대해에 대해
+REPEAT  그래서, 별에 대해요.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  이런에 대해에 대해에 대해에 대해에 대해
+REPEAT  이런에 대해,하요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  이런에 대해에 대해에 대해에 대해에 대해
+REPEAT  이런에 대해, 레요.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  이런에 레에 대해에 대해에 대해
+REPEAT  이런에 레,요.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  그래서, 에 대해에 대해에 대해에 대해
+REPEAT  그래서, 에 대해요.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  이런에 대해에 대해에에 에 대해에요.
+REPEAT  이런에 대해, 년요.
+
+  greedy  korean% 75.5   repl% 0.0   rep_uni% 55.0   rep_bi% 43.4   distinct 7
+  repeat  korean% 65.0   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 7
+
+  ep1   all 12.516% content  0.0000% bal  0.0000% | cont r/s/z  0.000/ 0.000/ 0.000 gap +0.0000 | pos0 r/s/z  4.69/ 4.69/ 4.69 | eosFP 10.53% eos_sh  71.3% | anchors 0/8 blank 0 len 5.5 kor 52% rep 68.0%
+{"epoch": 1, "train_hinge_per_token": 18.3062, "train_token_acc": 11.204, "train_margin_active_frac": 0.8917, "param_grad_nonzero_pct": 24.19, "weights_moved_since_init_pct": 54.379, "grad_exponent_min": -44, "grad_exponent_max": -29, "state_wrap_frac": 0.0, "accum_saturations": 1116, "max_weight": 128, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 99.981, "enc0_Wv": 97.909, "enc0_Wo": 97.917, "dec0_Wq": 100.0, "dec0_Wk": 98.698, "dec0_Wv": 98.698, "dec0_Wo": 97.917, "dec1_Wq": 98.438, "dec1_Wk": 95.614, "dec1_Wv": 98.698, "dec1_Wo": 99.479, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 594.8, "wall_seconds": 2376.0, "process_rss_mb": 1051.1, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 12.516, "hinge_per_token": 14.9399, "eos_recall": 96.68, "eos_false_positive": 10.53, "content_acc": 0.0, "content_hinge": 17.3945, "high_freq_acc": 14.184, "punct_acc": 0.0, "eos_share_of_correct": 71.33, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 4.688, "pos1": 3.516, "pos2": 3.529, "pos3": 5.731, "pos4-7": 8.179, "pos8+": 27.95}, "by_corpus": {"ted2020": {"content_acc": 0.0, "content_hinge": 17.4192, "content_tokens": 3478}}, "balanced_content_acc": 0.0, "balanced_content_hinge": 17.4192}, "source_conditioning": {"real": {"content_acc": 0.0, "pos0_acc": 4.688}, "shuffled": {"content_acc": 0.0, "pos0_acc": 4.688}, "zeroed": {"content_acc": 0.0, "pos0_acc": 4.688}, "content_acc_gap_real_minus_shuffled": 0.0, "pos0_acc_gap_real_minus_shuffled": 0.0, "sequences": 128}, "free_running": {"greedy": {"outputs": ["와 와 와 ", "와 와 와 ", "와 와 ", "와 와 와 와", "와 와 와 ", "와 와 와 와", "와 와 ", "와 와 "], "blank_outputs": 0, "korean_pct": 51.8, "replacement_pct": 0.0, "repeat_unigram_pct": 68.0, "repeat_bigram_pct": 61.6, "distinct_outputs": 3, "mean_len": 5.5, "median_len": 6, "len_ratio_vs_reference": 0.657, "eos_positions": [7, 7, 5, 8, 7, 8, 5, 5], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["와아죠.", "와아에서정죠.", "와아에서 아죠.", "와아죠.", "와 아아죠.", "와아죠.", "와아에서 아죠.", "와아에서정죠."], "blank_outputs": 0, "korean_pct": 76.6, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 4, "mean_len": 6.0, "median_len": 7, "len_ratio_vs_reference": 0.716, "eos_positions": [4, 6, 6, 4, 5, 4, 6, 6], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 14.9399, "valid_token_acc": 12.516, "valid_margin_active_frac": 0.8774, "valid_logit_std": 31.27, "valid_margin_true_minus_best_wrong": -11.647, "valid_tatoeba": {"token_acc": 15.075, "hinge_per_token": 16.201, "tokens": 199}, "valid_ted2020": {"token_acc": 12.511, "hinge_per_token": 14.9513, "tokens": 5547}, "select_gap": 0.0, "select_real_minus_zeroed": 0.0, "select_score": 0.0, "select_tiebreak": 17.4192, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 05:56:56] g67k-d192-ce2epoch 1 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  와 와 와 
+REPEAT  와아죠.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  와 와 와 
+REPEAT  와아에서정죠.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  와 와 
+REPEAT  와아에서 아죠.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  와 와 와 와
+REPEAT  와아죠.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  와 와 와 
+REPEAT  와 아아죠.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  와 와 와 와
+REPEAT  와아죠.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  와 와 
+REPEAT  와아에서 아죠.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  와 와 
+REPEAT  와아에서정죠.
+
+  greedy  korean% 51.8   repl% 0.0   rep_uni% 68.0   rep_bi% 61.6   distinct 3
+  repeat  korean% 76.6   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 4
+

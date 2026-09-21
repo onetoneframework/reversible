@@ -1,0 +1,68 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 20,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 3,
+  "loss": "hinge",
+  "attn": "exp2",
+  "pow2": 1,
+  "opt": "adam",
+  "momentum_bits": 0,
+  "eval_rows": 400,
+  "seed": 0,
+  "out": "<local>/F2_hinge_exp2_adam.json"
+ },
+ "cfg": {
+  "softmax": true,
+  "pow2": true,
+  "exp2": true,
+  "quantw": false,
+  "sgd": false,
+  "name": "hinge_exp2_pow21_adam"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_loss": 1.54668628534197,
+   "minutes": 12.7,
+   "valid_token_acc": 15.145965743832813,
+   "chrf": 4.630188334760742,
+   "bleu": 4.327660284319555,
+   "exact": 1,
+   "rows": 400
+  },
+  {
+   "epoch": 1,
+   "train_loss": 1.121807516932983,
+   "minutes": 24.6,
+   "valid_token_acc": 16.10201443498869,
+   "chrf": 5.07281253524677,
+   "bleu": 5.002277505721607,
+   "exact": 0,
+   "rows": 400
+  },
+  {
+   "epoch": 2,
+   "train_loss": 1.050893543293726,
+   "minutes": 35.8,
+   "valid_token_acc": 16.780674350964127,
+   "chrf": 5.151510013000593,
+   "bleu": 4.7271337980337,
+   "exact": 0,
+   "rows": 400
+  },
+  {
+   "epoch": 3,
+   "train_loss": 1.0319992905117612,
+   "minutes": 47.1,
+   "valid_token_acc": 17.07960788538188,
+   "chrf": 5.192907286086438,
+   "bleu": 4.716822303328917,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 5.192907286086438
+}

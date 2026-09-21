@@ -1,0 +1,38 @@
+[
+  {
+    "arch": "attn",
+    "K": 2,
+    "seed": 0,
+    "inverse_exact": true,
+    "cachefree_equals_cached_grads": true,
+    "cachefree_equals_cached_input_grad": true,
+    "per_layer_step_equals_batched": true,
+    "fd_sign_agreement": 1.0,
+    "fd_probes_used": 1,
+    "parameter_count": 8192
+  },
+  {
+    "arch": "attn",
+    "K": 4,
+    "seed": 0,
+    "inverse_exact": true,
+    "cachefree_equals_cached_grads": true,
+    "cachefree_equals_cached_input_grad": true,
+    "per_layer_step_equals_batched": true,
+    "fd_sign_agreement": null,
+    "fd_probes_used": 0,
+    "parameter_count": 16384
+  },
+  {
+    "arch": "attn",
+    "K": 8,
+    "seed": 0,
+    "inverse_exact": true,
+    "cachefree_equals_cached_grads": true,
+    "cachefree_equals_cached_input_grad": true,
+    "per_layer_step_equals_batched": true,
+    "fd_sign_agreement": 1.0,
+    "fd_probes_used": 1,
+    "parameter_count": 32768
+  }
+]

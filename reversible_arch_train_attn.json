@@ -1,0 +1,44 @@
+[
+  {
+    "arch": "attn",
+    "K": 8,
+    "seed": 0,
+    "epochs": 2,
+    "batch": 128,
+    "accuracy": 0.0908999964594841,
+    "inverse_exact": true,
+    "parameter_count": 32768,
+    "max_activation": 559,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "wall_seconds": 41.9
+  },
+  {
+    "arch": "attn",
+    "K": 8,
+    "seed": 1,
+    "epochs": 2,
+    "batch": 128,
+    "accuracy": 0.07400000095367432,
+    "inverse_exact": true,
+    "parameter_count": 32768,
+    "max_activation": 484,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "wall_seconds": 42.4
+  },
+  {
+    "arch": "attn",
+    "K": 8,
+    "seed": 2,
+    "epochs": 2,
+    "batch": 128,
+    "accuracy": 0.09390000253915787,
+    "inverse_exact": true,
+    "parameter_count": 32768,
+    "max_activation": 455,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "wall_seconds": 26.8
+  }
+]

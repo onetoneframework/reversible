@@ -1,0 +1,122 @@
+[
+  {
+    "hidden_bits": 8,
+    "score_leak": null,
+    "overall_param_grad_nonzero_pct": 2.637,
+    "stages": {
+      "gb (into block)": 0.33,
+      "gO (after norm)": 4.515,
+      "gW_o": 28.125,
+      "gA (after norm)": 2.686,
+      "gV (after norm)": 0.047,
+      "gS (post mask)": 0.003,
+      "gQ (after norm)": 0.0,
+      "gK (after norm)": 0.0,
+      "gW_q": 0.0,
+      "gW_k": 0.0,
+      "gW_v": 56.25
+    },
+    "mask_survival_pct": 8.53,
+    "traced_ok": true
+  },
+  {
+    "hidden_bits": 8,
+    "score_leak": 3,
+    "overall_param_grad_nonzero_pct": 0.977,
+    "stages": {
+      "gb (into block)": 0.357,
+      "gO (after norm)": 4.416,
+      "gW_o": 31.25,
+      "gA (after norm)": 0.977,
+      "gV (after norm)": 0.0,
+      "gS (post mask)": 0.854,
+      "gQ (after norm)": 1.898,
+      "gK (after norm)": 0.0,
+      "gW_q": 0.0,
+      "gW_k": 0.0,
+      "gW_v": 0.0
+    },
+    "mask_survival_pct": 12.177,
+    "traced_ok": true
+  },
+  {
+    "hidden_bits": 12,
+    "score_leak": null,
+    "overall_param_grad_nonzero_pct": 64.474,
+    "stages": {
+      "gb (into block)": 0.33,
+      "gO (after norm)": 5.099,
+      "gW_o": 28.125,
+      "gA (after norm)": 3.204,
+      "gV (after norm)": 0.676,
+      "gS (post mask)": 0.034,
+      "gQ (after norm)": 0.087,
+      "gK (after norm)": 0.0,
+      "gW_q": 93.75,
+      "gW_k": 0.0,
+      "gW_v": 99.902
+    },
+    "mask_survival_pct": 8.53,
+    "traced_ok": true
+  },
+  {
+    "hidden_bits": 12,
+    "score_leak": 3,
+    "overall_param_grad_nonzero_pct": 4.102,
+    "stages": {
+      "gb (into block)": 0.357,
+      "gO (after norm)": 5.455,
+      "gW_o": 31.25,
+      "gA (after norm)": 1.035,
+      "gV (after norm)": 8.531,
+      "gS (post mask)": 0.98,
+      "gQ (after norm)": 1.953,
+      "gK (after norm)": 0.0,
+      "gW_q": 0.0,
+      "gW_k": 0.0,
+      "gW_v": 100.0
+    },
+    "mask_survival_pct": 12.177,
+    "traced_ok": true
+  },
+  {
+    "hidden_bits": 16,
+    "score_leak": null,
+    "overall_param_grad_nonzero_pct": 70.175,
+    "stages": {
+      "gb (into block)": 0.33,
+      "gO (after norm)": 5.099,
+      "gW_o": 28.125,
+      "gA (after norm)": 3.598,
+      "gV (after norm)": 1.527,
+      "gS (post mask)": 0.095,
+      "gQ (after norm)": 0.71,
+      "gK (after norm)": 0.049,
+      "gW_q": 100.0,
+      "gW_k": 100.0,
+      "gW_v": 100.0
+    },
+    "mask_survival_pct": 8.53,
+    "traced_ok": true
+  },
+  {
+    "hidden_bits": 16,
+    "score_leak": 3,
+    "overall_param_grad_nonzero_pct": 4.102,
+    "stages": {
+      "gb (into block)": 0.357,
+      "gO (after norm)": 5.455,
+      "gW_o": 31.25,
+      "gA (after norm)": 3.568,
+      "gV (after norm)": 43.797,
+      "gS (post mask)": 1.691,
+      "gQ (after norm)": 1.953,
+      "gK (after norm)": 0.0,
+      "gW_q": 0.0,
+      "gW_k": 0.0,
+      "gW_v": 100.0
+    },
+    "mask_survival_pct": 12.177,
+    "traced_ok": true
+  }
+]

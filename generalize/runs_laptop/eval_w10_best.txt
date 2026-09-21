@@ -1,0 +1,32 @@
+checkpoint g67k_d192_w10_ce2_best.pt  epoch 7  train pairs 66853  valid pairs 3518
+HELD-OUT (400 rows): chrF 5.850  BLEU 5.483  exact 0.00%  token_acc 18.992%  hinge/token 7.325
+  JA  怖くて泣いていたら
+  REF 그러면 겁에 질리고 울었겠지요.
+  GEN 기초, 이 것이지요.
+  JA  これを知ること無しに何を予想していたでしょうか?
+  REF 이 사실을 모른다면 어떤 예측을 했을까요?
+  GEN 그냥용할게 많은 분들께 있게 되어합니다.
+  JA  どうやってやるのか?
+  REF 어떻게 이런 일을 할 수 있을까요?
+  GEN 여러분,, 여러분께끼게 되나요?
+  JA  倫理的英雄を賞賛してください
+  REF 인정해 주세요.
+  GEN 하지만 한 번 해냈어가 있던지 않습니다.
+  JA  これこそがタイムマシンなのです
+  REF 이것이 우리의 타임머신입니다.
+  GEN 그론이 드리)입니다.
+  JA  私は単純で明快な説明を信じません
+  REF 저는 뻔한 이야기는 믿지 않습니다.
+  GEN 리곤약할까요?
+
+{
+ "tokens": 4502,
+ "hinge_per_token": 7.3254,
+ "token_acc": 18.992,
+ "margin_active_frac": 0.8261,
+ "logit_std": 53.597,
+ "margin_true_minus_best_wrong": -5.229,
+ "chrf": 5.85,
+ "bleu": 5.483,
+ "seq_exact_match": 0.0
+}

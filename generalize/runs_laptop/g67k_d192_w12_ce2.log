@@ -1,0 +1,387 @@
+output head: integer base-2 cross-entropy (shift 0, cap 20, norm exact)
+split momentum: 16 source-pathway tensors at 0 bits, 9 target-side tensors at 7 bits
+{"corpus": "both", "train_pairs": 66853, "train_by_corpus": {"ted2020": 66393, "tatoeba": 460}, "valid_by_corpus": {"ted2020": 3496, "tatoeba": 22}, "valid_pairs": 3518, "vocab": 5000, "params": 4878336, "dim": 192, "k_enc": 2, "k_dec": 4, "state_bits": 16, "weight_bits": 12, "accum_bits": 32, "hidden_bits": 16, "lr_bits": 1, "optimizer_stable": true, "train_prefix_corruption": 0.0, "train_scheduled_sampling": 0.0, "eval_prefix_corruption": 0.0, "query_anchor": false, "positional_encoding": 16, "attn_row_mass_bits": 0, "score_exp2": 3, "exp2_coupled": true, "momentum_bits": 7, "threads": 8}
+  ep0   all 14.319% content  4.2943% bal  4.3128% | cont r/s/z  4.911/ 5.022/ 4.688 gap -0.1116 | pos0 r/s/z  8.59/ 0.78/ 0.00 | eosFP  1.83% eos_sh  59.8% | anchors 0/8 blank 0 len 12.1 kor 71% rep 5.1%
+{"epoch": 0, "train_hinge_per_token": 42.2556, "train_token_acc": 9.748, "train_margin_active_frac": 0.9082, "param_grad_nonzero_pct": 34.384, "weights_moved_since_init_pct": 64.683, "grad_exponent_min": -34, "grad_exponent_max": -29, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 734, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 99.999, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 394.1, "wall_seconds": 1793.0, "process_rss_mb": 554.8, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 14.319, "hinge_per_token": 20.5749, "eos_recall": 92.773, "eos_false_positive": 1.828, "content_acc": 4.2943, "content_hinge": 27.728, "high_freq_acc": 10.905, "punct_acc": 11.679, "eos_share_of_correct": 59.82, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 6.836, "pos1": 6.445, "pos2": 5.686, "pos3": 6.324, "pos4-7": 9.499, "pos8+": 30.124}, "by_corpus": {"ted2020": {"content_acc": 4.3128, "content_hinge": 27.7415, "content_tokens": 3478}}, "balanced_content_acc": 4.3128, "balanced_content_hinge": 27.7415}, "source_conditioning": {"real": {"content_acc": 4.9107, "pos0_acc": 8.594}, "shuffled": {"content_acc": 5.0223, "pos0_acc": 0.781}, "zeroed": {"content_acc": 4.6875, "pos0_acc": 0.0}, "content_acc_gap_real_minus_shuffled": -0.1116, "pos0_acc_gap_real_minus_shuffled": 7.813, "sequences": 128}, "free_running": {"greedy": {"outputs": ["그림, S 조용 하루을까요?", "평생님합니다", "아주 좋 치로 부 좀더군요.", "이곳은 그 것입니다.", "이것이 제가 집가 어떻게가 부.", "그리고 천장치에 관계고", "미안해y 방식으로 !", "약 눈와, 약 눈?"], "blank_outputs": 0, "korean_pct": 70.9, "replacement_pct": 0.0, "repeat_unigram_pct": 5.1, "repeat_bigram_pct": 2.1, "distinct_outputs": 8, "mean_len": 12.12, "median_len": 12, "len_ratio_vs_reference": 1.448, "eos_positions": [11, 5, 8, 5, 8, 8, 8, 7], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["그림, S 조용 하루을까요?", "평생님합니다", "아주 좋 치로 부 좀더군요.", "이곳은 그 것입니다.", "이것이 제가 집가 어떻게 생각하다.", "그리고 천장치에 관계고", "미안해y 방식으로 !", "약 눈와, 제가뜨인가 있습니다."], "blank_outputs": 0, "korean_pct": 73.8, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 13.25, "median_len": 15, "len_ratio_vs_reference": 1.582, "eos_positions": [11, 5, 8, 5, 8, 8, 8, 9], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 20.5749, "valid_token_acc": 14.319, "valid_margin_active_frac": 0.8658, "valid_logit_std": 23.398, "valid_margin_true_minus_best_wrong": -18.65, "valid_tatoeba": {"token_acc": 16.08, "hinge_per_token": 23.7286, "tokens": 199}, "valid_ted2020": {"token_acc": 14.332, "hinge_per_token": 20.6292, "tokens": 5547}, "select_gap": -0.1116, "select_real_minus_zeroed": 0.2232, "select_score": 0.0, "select_tiebreak": 27.7415, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 09:44:40] g67k-d192-w12-ce2epoch 0 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  그림, S 조용 하루을까요?
+REPEAT  그림, S 조용 하루을까요?
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  평생님합니다
+REPEAT  평생님합니다
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  아주 좋 치로 부 좀더군요.
+REPEAT  아주 좋 치로 부 좀더군요.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  이곳은 그 것입니다.
+REPEAT  이곳은 그 것입니다.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  이것이 제가 집가 어떻게가 부.
+REPEAT  이것이 제가 집가 어떻게 생각하다.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  그리고 천장치에 관계고
+REPEAT  그리고 천장치에 관계고
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  미안해y 방식으로 !
+REPEAT  미안해y 방식으로 !
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  약 눈와, 약 눈?
+REPEAT  약 눈와, 제가뜨인가 있습니다.
+
+  greedy  korean% 70.9   repl% 0.0   rep_uni% 5.1    rep_bi% 2.1    distinct 8
+  repeat  korean% 73.8   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+  ep1   all 15.672% content  5.6685% bal  5.6929% | cont r/s/z  6.250/ 5.245/ 4.353 gap +1.0045 | pos0 r/s/z  1.56/ 0.00/ 0.00 | eosFP  1.43% eos_sh  55.4% | anchors 0/8 blank 0 len 9.1 kor 71% rep 0.0%
+{"epoch": 1, "train_hinge_per_token": 15.9873, "train_token_acc": 15.477, "train_margin_active_frac": 0.8578, "param_grad_nonzero_pct": 38.03, "weights_moved_since_init_pct": 67.184, "grad_exponent_min": -36, "grad_exponent_max": -18, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 621, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 421.8, "wall_seconds": 3350.7, "process_rss_mb": 546.1, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 15.672, "hinge_per_token": 14.6159, "eos_recall": 93.945, "eos_false_positive": 1.431, "content_acc": 5.6685, "content_hinge": 19.7392, "high_freq_acc": 12.758, "punct_acc": 8.029, "eos_share_of_correct": 55.35, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 2.539, "pos1": 7.031, "pos2": 6.863, "pos3": 7.51, "pos4-7": 11.979, "pos8+": 32.298}, "by_corpus": {"ted2020": {"content_acc": 5.6929, "content_hinge": 19.7547, "content_tokens": 3478}}, "balanced_content_acc": 5.6929, "balanced_content_hinge": 19.7547}, "source_conditioning": {"real": {"content_acc": 6.25, "pos0_acc": 1.562}, "shuffled": {"content_acc": 5.2455, "pos0_acc": 0.0}, "zeroed": {"content_acc": 4.3527, "pos0_acc": 0.0}, "content_acc_gap_real_minus_shuffled": 1.0045, "pos0_acc_gap_real_minus_shuffled": 1.562, "sequences": 128}, "free_running": {"greedy": {"outputs": ["\"네요!", "함께 해볼럭워요.", "육체이 필요하죠.", "이게 해주는 인구요?", "그녀는 말할 수 있습니다.", "수 있습니다.", " 역사항이 좋산입니다.", "수 있습니다."], "blank_outputs": 0, "korean_pct": 70.9, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 7, "mean_len": 9.12, "median_len": 9, "len_ratio_vs_reference": 1.09, "eos_positions": [4, 6, 5, 8, 6, 2, 8, 2], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["\"네요!", "함께 해볼럭워요.", "육체이 필요하죠.", "이게 해주는 인구요?", "그녀는 말할 수 있습니다.", "수 있습니다.", " 역사항이 좋산입니다.", "수 있습니다."], "blank_outputs": 0, "korean_pct": 70.9, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 7, "mean_len": 9.12, "median_len": 9, "len_ratio_vs_reference": 1.09, "eos_positions": [4, 6, 5, 8, 6, 2, 8, 2], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 14.6159, "valid_token_acc": 15.672, "valid_margin_active_frac": 0.8561, "valid_logit_std": 24.899, "valid_margin_true_minus_best_wrong": -12.773, "valid_tatoeba": {"token_acc": 15.578, "hinge_per_token": 17.1508, "tokens": 199}, "valid_ted2020": {"token_acc": 15.72, "hinge_per_token": 14.6449, "tokens": 5547}, "select_gap": 1.0045, "select_real_minus_zeroed": 1.8973, "select_score": 5.6929, "select_tiebreak": 19.7547, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 10:10:37] g67k-d192-w12-ce2epoch 1 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  "네요!
+REPEAT  "네요!
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  함께 해볼럭워요.
+REPEAT  함께 해볼럭워요.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  육체이 필요하죠.
+REPEAT  육체이 필요하죠.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  이게 해주는 인구요?
+REPEAT  이게 해주는 인구요?
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  그녀는 말할 수 있습니다.
+REPEAT  그녀는 말할 수 있습니다.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  수 있습니다.
+REPEAT  수 있습니다.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY   역사항이 좋산입니다.
+REPEAT   역사항이 좋산입니다.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  수 있습니다.
+REPEAT  수 있습니다.
+
+  greedy  korean% 70.9   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 7
+  repeat  korean% 70.9   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 7
+
+  ep2   all 15.798% content  6.0407% bal  6.0667% | cont r/s/z  5.692/ 6.027/ 3.348 gap -0.3348 | pos0 r/s/z  1.56/ 1.56/ 0.00 | eosFP  1.29% eos_sh  54.2% | anchors 0/8 blank 0 len 13.4 kor 74% rep 4.8%
+{"epoch": 2, "train_hinge_per_token": 13.6675, "train_token_acc": 15.952, "train_margin_active_frac": 0.8541, "param_grad_nonzero_pct": 36.269, "weights_moved_since_init_pct": 67.949, "grad_exponent_min": -36, "grad_exponent_max": -19, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 687, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 435.4, "wall_seconds": 4868.4, "process_rss_mb": 556.2, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 15.798, "hinge_per_token": 13.2866, "eos_recall": 92.773, "eos_false_positive": 1.291, "content_acc": 6.0407, "content_hinge": 17.7996, "high_freq_acc": 12.616, "punct_acc": 9.489, "eos_share_of_correct": 54.22, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 2.734, "pos1": 6.445, "pos2": 8.039, "pos3": 6.917, "pos4-7": 12.718, "pos8+": 31.801}, "by_corpus": {"ted2020": {"content_acc": 6.0667, "content_hinge": 17.814, "content_tokens": 3478}}, "balanced_content_acc": 6.0667, "balanced_content_hinge": 17.814}, "source_conditioning": {"real": {"content_acc": 5.692, "pos0_acc": 1.562}, "shuffled": {"content_acc": 6.0268, "pos0_acc": 1.562}, "zeroed": {"content_acc": 3.3482, "pos0_acc": 0.0}, "content_acc_gap_real_minus_shuffled": -0.3348, "pos0_acc_gap_real_minus_shuffled": 0.0, "sequences": 128}, "free_running": {"greedy": {"outputs": ["그럼 그치가 없죠.", "저는 이는 계속 얼굴이별로", "먹을 시위갤을 보냈습니다.", "여기 없이 없이 범인들이 많습니다.", "정말 좋은 생각하지만 림은 정말로..", "그럼 그만 하는 것은 혈액시죠?", "것으로 죽지.", "훌륭합니다."], "blank_outputs": 0, "korean_pct": 74.5, "replacement_pct": 0.0, "repeat_unigram_pct": 4.8, "repeat_bigram_pct": 1.2, "distinct_outputs": 8, "mean_len": 13.38, "median_len": 14, "len_ratio_vs_reference": 1.597, "eos_positions": [6, 9, 9, 11, 11, 10, 5, 4], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["그럼 그치가 없죠.", "저는 이는 계속 얼굴이별로", "먹을 시위갤에 대한 생각하지만", "여기 없이 생물을 좀 보게 했죠.", "정말 좋은 생각하지만 림은 평범예지 않았어요.", "그럼 그만 하는 것은 혈액시죠?", "것으로 죽지.", "훌륭합니다."], "blank_outputs": 0, "korean_pct": 74.7, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 14.12, "median_len": 16, "len_ratio_vs_reference": 1.687, "eos_positions": [6, 9, 10, 11, 14, 10, 5, 4], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 13.2866, "valid_token_acc": 15.798, "valid_margin_active_frac": 0.8559, "valid_logit_std": 26.959, "valid_margin_true_minus_best_wrong": -11.467, "valid_tatoeba": {"token_acc": 16.583, "hinge_per_token": 15.8744, "tokens": 199}, "valid_ted2020": {"token_acc": 15.81, "hinge_per_token": 13.3176, "tokens": 5547}, "select_gap": -0.3348, "select_real_minus_zeroed": 2.3438, "select_score": 0.0, "select_tiebreak": 17.814, "validations_since_best": 1}
+============================================================================
+[2026-09-08 10:35:56] g67k-d192-w12-ce2epoch 2 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  그럼 그치가 없죠.
+REPEAT  그럼 그치가 없죠.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  저는 이는 계속 얼굴이별로
+REPEAT  저는 이는 계속 얼굴이별로
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  먹을 시위갤을 보냈습니다.
+REPEAT  먹을 시위갤에 대한 생각하지만
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  여기 없이 없이 범인들이 많습니다.
+REPEAT  여기 없이 생물을 좀 보게 했죠.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  정말 좋은 생각하지만 림은 정말로..
+REPEAT  정말 좋은 생각하지만 림은 평범예지 않았어요.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  그럼 그만 하는 것은 혈액시죠?
+REPEAT  그럼 그만 하는 것은 혈액시죠?
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  것으로 죽지.
+REPEAT  것으로 죽지.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  훌륭합니다.
+REPEAT  훌륭합니다.
+
+  greedy  korean% 74.5   repl% 0.0   rep_uni% 4.8    rep_bi% 1.2    distinct 8
+  repeat  korean% 74.7   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+  ep3   all 15.311% content  5.3249% bal  5.3479% | cont r/s/z  6.027/ 6.808/ 4.911 gap -0.7812 | pos0 r/s/z  1.56/ 0.00/ 0.00 | eosFP  1.57% eos_sh  57.1% | anchors 0/8 blank 0 len 14.5 kor 79% rep 6.2%
+{"epoch": 3, "train_hinge_per_token": 12.9926, "train_token_acc": 16.104, "train_margin_active_frac": 0.8527, "param_grad_nonzero_pct": 33.968, "weights_moved_since_init_pct": 68.318, "grad_exponent_min": -36, "grad_exponent_max": -19, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 689, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 441.7, "wall_seconds": 6399.1, "process_rss_mb": 541.5, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 15.311, "hinge_per_token": 13.0586, "eos_recall": 94.727, "eos_false_positive": 1.57, "content_acc": 5.3249, "content_hinge": 17.4466, "high_freq_acc": 11.547, "punct_acc": 11.679, "eos_share_of_correct": 57.13, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 2.539, "pos1": 6.836, "pos2": 5.686, "pos3": 7.708, "pos4-7": 11.24, "pos8+": 32.298}, "by_corpus": {"ted2020": {"content_acc": 5.3479, "content_hinge": 17.4718, "content_tokens": 3478}}, "balanced_content_acc": 5.3479, "balanced_content_hinge": 17.4718}, "source_conditioning": {"real": {"content_acc": 6.0268, "pos0_acc": 1.562}, "shuffled": {"content_acc": 6.808, "pos0_acc": 0.0}, "zeroed": {"content_acc": 4.9107, "pos0_acc": 0.0}, "content_acc_gap_real_minus_shuffled": -0.7812, "pos0_acc_gap_real_minus_shuffled": 1.562, "sequences": 128}, "free_running": {"greedy": {"outputs": ["좋아질적으로 좋아요.", "달라이 우리 모두 같은데 선화입니다.", "반대체를 선택지를 보면서", "사진들을 정착했는데 없었받을 하죠.", "잠시에 잠시에 생명이 있습니다.", "해결책을 위한 남자.\"", "빙하냐구하죠.", "여정을 지휘파트를 그것에 없었죠"], "blank_outputs": 0, "korean_pct": 78.9, "replacement_pct": 0.0, "repeat_unigram_pct": 6.2, "repeat_bigram_pct": 2.8, "distinct_outputs": 8, "mean_len": 14.5, "median_len": 17, "len_ratio_vs_reference": 1.731, "eos_positions": [5, 10, 8, 12, 10, 7, 6, 12], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["좋아질적으로 하겠어날 방향을 지켜 있었어요.", "달라이 우리 모두 같은데 선화입니다.", "반대체를 선택지를 보면서", "사진들을 정착했는데 없었받을 하죠.", "잠시에 하게도 없었습니다.", "해결책을 위한 남자.\"", "빙하냐구하죠.", "여정을 지휘파트를 그것에 없었죠"], "blank_outputs": 0, "korean_pct": 78.9, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 15.75, "median_len": 17, "len_ratio_vs_reference": 1.881, "eos_positions": [14, 10, 8, 12, 8, 7, 6, 12], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 13.0586, "valid_token_acc": 15.311, "valid_margin_active_frac": 0.8577, "valid_logit_std": 28.146, "valid_margin_true_minus_best_wrong": -11.107, "valid_tatoeba": {"token_acc": 16.583, "hinge_per_token": 14.7588, "tokens": 199}, "valid_ted2020": {"token_acc": 15.36, "hinge_per_token": 13.0934, "tokens": 5547}, "select_gap": -0.7812, "select_real_minus_zeroed": 1.1161, "select_score": 0.0, "select_tiebreak": 17.4718, "validations_since_best": 2}
+============================================================================
+[2026-09-08 11:01:27] g67k-d192-w12-ce2epoch 3 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  좋아질적으로 좋아요.
+REPEAT  좋아질적으로 하겠어날 방향을 지켜 있었어요.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  달라이 우리 모두 같은데 선화입니다.
+REPEAT  달라이 우리 모두 같은데 선화입니다.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  반대체를 선택지를 보면서
+REPEAT  반대체를 선택지를 보면서
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  사진들을 정착했는데 없었받을 하죠.
+REPEAT  사진들을 정착했는데 없었받을 하죠.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  잠시에 잠시에 생명이 있습니다.
+REPEAT  잠시에 하게도 없었습니다.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  해결책을 위한 남자."
+REPEAT  해결책을 위한 남자."
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  빙하냐구하죠.
+REPEAT  빙하냐구하죠.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  여정을 지휘파트를 그것에 없었죠
+REPEAT  여정을 지휘파트를 그것에 없었죠
+
+  greedy  korean% 78.9   repl% 0.0   rep_uni% 6.2    rep_bi% 2.8    distinct 8
+  repeat  korean% 78.9   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+  ep4   all 15.960% content  5.6971% bal  5.6929% | cont r/s/z  6.473/ 6.585/ 4.576 gap -0.1116 | pos0 r/s/z  4.69/ 0.00/ 0.00 | eosFP  2.17% eos_sh  54.9% | anchors 0/8 blank 0 len 15.2 kor 73% rep 4.7%
+{"epoch": 4, "train_hinge_per_token": 11.9542, "train_token_acc": 16.39, "train_margin_active_frac": 0.8505, "param_grad_nonzero_pct": 32.013, "weights_moved_since_init_pct": 68.524, "grad_exponent_min": -38, "grad_exponent_max": -19, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 771, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 99.999, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 99.997, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 448.2, "wall_seconds": 7882.2, "process_rss_mb": 531.6, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 15.96, "hinge_per_token": 11.5776, "eos_recall": 94.922, "eos_false_positive": 2.166, "content_acc": 5.6971, "content_hinge": 15.5814, "high_freq_acc": 13.257, "punct_acc": 10.219, "eos_share_of_correct": 54.92, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 4.688, "pos1": 6.836, "pos2": 7.451, "pos3": 6.522, "pos4-7": 11.873, "pos8+": 32.919}, "by_corpus": {"ted2020": {"content_acc": 5.6929, "content_hinge": 15.5845, "content_tokens": 3478}}, "balanced_content_acc": 5.6929, "balanced_content_hinge": 15.5845}, "source_conditioning": {"real": {"content_acc": 6.4732, "pos0_acc": 4.688}, "shuffled": {"content_acc": 6.5848, "pos0_acc": 0.0}, "zeroed": {"content_acc": 4.5759, "pos0_acc": 0.0}, "content_acc_gap_real_minus_shuffled": -0.1116, "pos0_acc_gap_real_minus_shuffled": 4.688, "sequences": 128}, "free_running": {"greedy": {"outputs": ["여러분의 격도 沸뮬레맙습니다.", "왜 그런 상태의 정신가 없는 상황이 있을까요?", "그 책에 그 빨 쓰레.", "그리고 그 속도 확실 수 있는 모습입니다.", "제게도 제게 된 것들만명이에요.", "감사합니다.", "여전히 빠졌습니다.", "그럼 이제, 제가 입니다"], "blank_outputs": 0, "korean_pct": 73.0, "replacement_pct": 0.0, "repeat_unigram_pct": 4.7, "repeat_bigram_pct": 1.1, "distinct_outputs": 8, "mean_len": 15.25, "median_len": 16, "len_ratio_vs_reference": 1.821, "eos_positions": [10, 12, 9, 10, 12, 2, 5, 6], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["여러분의 격도 그 변화가 아니죠.", "왜 그런 상태의 정신가 없는 상황이 있을까요?", "그 책에 제발 환상입니다.", "그리고 그 속도 확실 수 있는 모습입니다.", "제게도 저를 논리버려가 있습니다.", "감사합니다.", "여전히 빠졌습니다.", "그럼 이제, 제가 입니다"], "blank_outputs": 0, "korean_pct": 74.4, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 15.88, "median_len": 18, "len_ratio_vs_reference": 1.896, "eos_positions": [9, 12, 8, 10, 11, 2, 5, 6], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 11.5776, "valid_token_acc": 15.96, "valid_margin_active_frac": 0.8546, "valid_logit_std": 28.791, "valid_margin_true_minus_best_wrong": -9.599, "valid_tatoeba": {"token_acc": 18.09, "hinge_per_token": 14.3065, "tokens": 199}, "valid_ted2020": {"token_acc": 15.973, "hinge_per_token": 11.6023, "tokens": 5547}, "select_gap": -0.1116, "select_real_minus_zeroed": 1.8973, "select_score": 0.0, "select_tiebreak": 15.5845, "validations_since_best": 3}
+============================================================================
+[2026-09-08 11:26:11] g67k-d192-w12-ce2epoch 4 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  여러분의 격도 沸뮬레맙습니다.
+REPEAT  여러분의 격도 그 변화가 아니죠.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  왜 그런 상태의 정신가 없는 상황이 있을까요?
+REPEAT  왜 그런 상태의 정신가 없는 상황이 있을까요?
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  그 책에 그 빨 쓰레.
+REPEAT  그 책에 제발 환상입니다.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  그리고 그 속도 확실 수 있는 모습입니다.
+REPEAT  그리고 그 속도 확실 수 있는 모습입니다.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  제게도 제게 된 것들만명이에요.
+REPEAT  제게도 저를 논리버려가 있습니다.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  감사합니다.
+REPEAT  감사합니다.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  여전히 빠졌습니다.
+REPEAT  여전히 빠졌습니다.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  그럼 이제, 제가 입니다
+REPEAT  그럼 이제, 제가 입니다
+
+  greedy  korean% 73.0   repl% 0.0   rep_uni% 4.7    rep_bi% 1.1    distinct 8
+  repeat  korean% 74.4   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+  ep5   all 16.934% content  6.2697% bal  6.2967% | cont r/s/z  7.924/ 5.469/ 4.911 gap +2.4553 | pos0 r/s/z  6.25/ 1.56/ 4.69 | eosFP  1.77% eos_sh  51.6% | anchors 0/8 blank 0 len 11.4 kor 73% rep 1.8%
+{"epoch": 5, "train_hinge_per_token": 10.2914, "train_token_acc": 16.91, "train_margin_active_frac": 0.8467, "param_grad_nonzero_pct": 32.148, "weights_moved_since_init_pct": 68.668, "grad_exponent_min": -40, "grad_exponent_max": -19, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 814, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 450.2, "wall_seconds": 9418.4, "process_rss_mb": 522.3, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 16.934, "hinge_per_token": 10.3666, "eos_recall": 94.727, "eos_false_positive": 1.768, "content_acc": 6.2697, "content_hinge": 13.8291, "high_freq_acc": 15.609, "punct_acc": 11.679, "eos_share_of_correct": 51.65, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 4.688, "pos1": 8.398, "pos2": 8.627, "pos3": 10.079, "pos4-7": 12.876, "pos8+": 33.106}, "by_corpus": {"ted2020": {"content_acc": 6.2967, "content_hinge": 13.8335, "content_tokens": 3478}}, "balanced_content_acc": 6.2967, "balanced_content_hinge": 13.8335}, "source_conditioning": {"real": {"content_acc": 7.9241, "pos0_acc": 6.25}, "shuffled": {"content_acc": 5.4688, "pos0_acc": 1.562}, "zeroed": {"content_acc": 4.9107, "pos0_acc": 4.688}, "content_acc_gap_real_minus_shuffled": 2.4553, "pos0_acc_gap_real_minus_shuffled": 4.688, "sequences": 128}, "free_running": {"greedy": {"outputs": ["하지만 저는 이제가 없습니다.", "JFB: 그렇다면", "저는 생각하도록 봅시다.", "자, 돋보드릴 때는 것이라고요.", "이유가 접어요", "“でも의 쓰는졌습니다.", "그녀가군요", "그렇지 않아: 그렇지만"], "blank_outputs": 0, "korean_pct": 73.3, "replacement_pct": 0.0, "repeat_unigram_pct": 1.8, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 11.38, "median_len": 12, "len_ratio_vs_reference": 1.358, "eos_positions": [6, 7, 7, 11, 5, 7, 4, 7], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["하지만 저는 이제가 없습니다.", "JFB: 그렇다면", "저는 생각하도록 봅시다.", "자, 돋보드릴 때는 것이라고요.", "이유가 접어요", "“でも의 쓰는졌습니다.", "그녀가군요", "그렇지 않아: 놀랐습니다."], "blank_outputs": 0, "korean_pct": 72.8, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 11.62, "median_len": 13, "len_ratio_vs_reference": 1.388, "eos_positions": [6, 7, 7, 11, 5, 7, 4, 8], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 10.3666, "valid_token_acc": 16.934, "valid_margin_active_frac": 0.8485, "valid_logit_std": 29.842, "valid_margin_true_minus_best_wrong": -8.463, "valid_tatoeba": {"token_acc": 17.588, "hinge_per_token": 12.4774, "tokens": 199}, "valid_ted2020": {"token_acc": 16.892, "hinge_per_token": 10.388, "tokens": 5547}, "select_gap": 2.4553, "select_real_minus_zeroed": 3.0134, "select_score": 6.2967, "select_tiebreak": 13.8335, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 11:51:46] g67k-d192-w12-ce2epoch 5 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  하지만 저는 이제가 없습니다.
+REPEAT  하지만 저는 이제가 없습니다.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  JFB: 그렇다면
+REPEAT  JFB: 그렇다면
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  저는 생각하도록 봅시다.
+REPEAT  저는 생각하도록 봅시다.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  자, 돋보드릴 때는 것이라고요.
+REPEAT  자, 돋보드릴 때는 것이라고요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  이유가 접어요
+REPEAT  이유가 접어요
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  “でも의 쓰는졌습니다.
+REPEAT  “でも의 쓰는졌습니다.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  그녀가군요
+REPEAT  그녀가군요
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  그렇지 않아: 그렇지만
+REPEAT  그렇지 않아: 놀랐습니다.
+
+  greedy  korean% 73.3   repl% 0.0   rep_uni% 1.8    rep_bi% 0.0    distinct 8
+  repeat  korean% 72.8   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+  ep6   all 17.619% content  5.9261% bal  5.9229% | cont r/s/z  6.585/ 5.804/ 4.241 gap +0.7812 | pos0 r/s/z  3.12/ 1.56/ 4.69 | eosFP  1.37% eos_sh  49.6% | anchors 0/8 blank 0 len 16.9 kor 69% rep 13.7%
+{"epoch": 6, "train_hinge_per_token": 9.2186, "train_token_acc": 17.367, "train_margin_active_frac": 0.8432, "param_grad_nonzero_pct": 33.439, "weights_moved_since_init_pct": 68.76, "grad_exponent_min": -39, "grad_exponent_max": -27, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 1023, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 99.999, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 455.6, "wall_seconds": 10858.0, "process_rss_mb": 535.0, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 17.619, "hinge_per_token": 9.4238, "eos_recall": 94.727, "eos_false_positive": 1.371, "content_acc": 5.9261, "content_hinge": 12.418, "high_freq_acc": 19.316, "punct_acc": 10.219, "eos_share_of_correct": 49.64, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 4.297, "pos1": 8.398, "pos2": 9.608, "pos3": 10.079, "pos4-7": 13.351, "pos8+": 34.72}, "by_corpus": {"ted2020": {"content_acc": 5.9229, "content_hinge": 12.4255, "content_tokens": 3478}}, "balanced_content_acc": 5.9229, "balanced_content_hinge": 12.4255}, "source_conditioning": {"real": {"content_acc": 6.5848, "pos0_acc": 3.125}, "shuffled": {"content_acc": 5.8036, "pos0_acc": 1.562}, "zeroed": {"content_acc": 4.2411, "pos0_acc": 4.688}, "content_acc_gap_real_minus_shuffled": 0.7812, "pos0_acc_gap_real_minus_shuffled": 1.563, "sequences": 128}, "free_running": {"greedy": {"outputs": ["이것이 현재의 문화를 나누가 될 수 있을까요?", "RH: : : 괜찮아요.", "상상해 주도 뚜껑은 어떻게 될 수도 있죠?", "미국은 어쩔피, 어렸고요?", "그리고 당신이 혁명이 없애가요?", "준비를 준비를 위해 농담합니다.", "급장목해 찍이오네요.", "이: 준비가 없어그램이에요."], "blank_outputs": 0, "korean_pct": 69.0, "replacement_pct": 0.0, "repeat_unigram_pct": 13.7, "repeat_bigram_pct": 6.5, "distinct_outputs": 8, "mean_len": 16.88, "median_len": 17, "len_ratio_vs_reference": 2.015, "eos_positions": [11, 12, 13, 10, 11, 13, 10, 12], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["이것이 현재의 문화를 나누가 될 수 있을까요?", "RH: 네.", "상상해 주도 뚜껑은 어떻게 될 수도 있죠?", "미국은 어쩔피, 감사합니다.", "그리고 당신이 혁명성애를 합니다.", "준비를 위해 만든,", "급장목해자가 아닙니다.", "이: 준비가 없어그램이에요."], "blank_outputs": 0, "korean_pct": 67.0, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 15.5, "median_len": 15, "len_ratio_vs_reference": 1.851, "eos_positions": [11, 6, 13, 8, 10, 8, 7, 12], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 9.4238, "valid_token_acc": 17.619, "valid_margin_active_frac": 0.844, "valid_logit_std": 30.498, "valid_margin_true_minus_best_wrong": -7.526, "valid_tatoeba": {"token_acc": 15.075, "hinge_per_token": 11.0905, "tokens": 199}, "valid_ted2020": {"token_acc": 17.631, "hinge_per_token": 9.4399, "tokens": 5547}, "select_gap": 0.7812, "select_real_minus_zeroed": 2.3437, "select_score": 5.9229, "select_tiebreak": 12.4255, "validations_since_best": 1}
+============================================================================
+[2026-09-08 12:15:45] g67k-d192-w12-ce2epoch 6 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  이것이 현재의 문화를 나누가 될 수 있을까요?
+REPEAT  이것이 현재의 문화를 나누가 될 수 있을까요?
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  RH: : : 괜찮아요.
+REPEAT  RH: 네.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  상상해 주도 뚜껑은 어떻게 될 수도 있죠?
+REPEAT  상상해 주도 뚜껑은 어떻게 될 수도 있죠?
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  미국은 어쩔피, 어렸고요?
+REPEAT  미국은 어쩔피, 감사합니다.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  그리고 당신이 혁명이 없애가요?
+REPEAT  그리고 당신이 혁명성애를 합니다.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  준비를 준비를 위해 농담합니다.
+REPEAT  준비를 위해 만든,
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  급장목해 찍이오네요.
+REPEAT  급장목해자가 아닙니다.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  이: 준비가 없어그램이에요.
+REPEAT  이: 준비가 없어그램이에요.
+
+  greedy  korean% 69.0   repl% 0.0   rep_uni% 13.7   rep_bi% 6.5    distinct 8
+  repeat  korean% 67.0   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+
+  ep7   all 17.800% content  6.2697% bal  6.2392% | cont r/s/z  6.473/ 6.473/ 4.353 gap +0.0000 | pos0 r/s/z  6.25/ 3.12/ 4.69 | eosFP  1.55% eos_sh  49.5% | anchors 0/8 blank 0 len 12.8 kor 69% rep 4.3%
+{"epoch": 7, "train_hinge_per_token": 8.1388, "train_token_acc": 17.921, "train_margin_active_frac": 0.8394, "param_grad_nonzero_pct": 31.124, "weights_moved_since_init_pct": 68.84, "grad_exponent_min": -40, "grad_exponent_max": -19, "state_wrap_frac": 0.0, "accum_saturations": 0, "max_weight": 1195, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 462.8, "wall_seconds": 12213.9, "process_rss_mb": 574.6, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 17.8, "hinge_per_token": 8.519, "eos_recall": 95.508, "eos_false_positive": 1.55, "content_acc": 6.2697, "content_hinge": 11.2743, "high_freq_acc": 17.962, "punct_acc": 19.708, "eos_share_of_correct": 49.54, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 5.273, "pos1": 8.203, "pos2": 10.196, "pos3": 9.881, "pos4-7": 14.248, "pos8+": 33.913}, "by_corpus": {"ted2020": {"content_acc": 6.2392, "content_hinge": 11.2895, "content_tokens": 3478}}, "balanced_content_acc": 6.2392, "balanced_content_hinge": 11.2895}, "source_conditioning": {"real": {"content_acc": 6.4732, "pos0_acc": 6.25}, "shuffled": {"content_acc": 6.4732, "pos0_acc": 3.125}, "zeroed": {"content_acc": 4.3527, "pos0_acc": 4.688}, "content_acc_gap_real_minus_shuffled": 0.0, "pos0_acc_gap_real_minus_shuffled": 3.125, "sequences": 128}, "free_running": {"greedy": {"outputs": ["이걸 좀 더 갔습니다.", "그럼, 모두에게서요.", "이 준을 임이죠", "이것이 바로 우리가 그것을 믿기 시작했고 있겠어요.", "제가 겪은 겪게 있는데요.", "와.", "저는 : 감사합니다.", "술과 우리 모두에게 이걸까요?"], "blank_outputs": 0, "korean_pct": 68.7, "replacement_pct": 0.0, "repeat_unigram_pct": 4.3, "repeat_bigram_pct": 1.6, "distinct_outputs": 8, "mean_len": 12.75, "median_len": 12, "len_ratio_vs_reference": 1.522, "eos_positions": [7, 6, 8, 12, 9, 3, 5, 9], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["이걸 좀 더 갔습니다.", "그럼, 모두에게서요.", "이 준을 드리!", "이것이 바로 우리가 그것을 믿기 시작했고 있겠어요.", "제가 겪은, 이걸 잡고 있는데요.", "와.", "저는 : 감사합니다.", "술과 우리 모두에게 이걸까요?"], "blank_outputs": 0, "korean_pct": 66.5, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 13.25, "median_len": 12, "len_ratio_vs_reference": 1.582, "eos_positions": [7, 6, 7, 12, 11, 3, 5, 9], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 8.519, "valid_token_acc": 17.8, "valid_margin_active_frac": 0.8393, "valid_logit_std": 32.247, "valid_margin_true_minus_best_wrong": -6.73, "valid_tatoeba": {"token_acc": 22.613, "hinge_per_token": 9.1658, "tokens": 199}, "valid_ted2020": {"token_acc": 17.811, "hinge_per_token": 8.5279, "tokens": 5547}, "select_gap": 0.0, "select_real_minus_zeroed": 2.1205, "select_score": 0.0, "select_tiebreak": 11.2895, "validations_since_best": 2}
+============================================================================
+[2026-09-08 12:38:20] g67k-d192-w12-ce2epoch 7 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  이걸 좀 더 갔습니다.
+REPEAT  이걸 좀 더 갔습니다.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  그럼, 모두에게서요.
+REPEAT  그럼, 모두에게서요.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  이 준을 임이죠
+REPEAT  이 준을 드리!
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  이것이 바로 우리가 그것을 믿기 시작했고 있겠어요.
+REPEAT  이것이 바로 우리가 그것을 믿기 시작했고 있겠어요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  제가 겪은 겪게 있는데요.
+REPEAT  제가 겪은, 이걸 잡고 있는데요.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  와.
+REPEAT  와.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  저는 : 감사합니다.
+REPEAT  저는 : 감사합니다.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  술과 우리 모두에게 이걸까요?
+REPEAT  술과 우리 모두에게 이걸까요?
+
+  greedy  korean% 68.7   repl% 0.0   rep_uni% 4.3    rep_bi% 1.6    distinct 8
+  repeat  korean% 66.5   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+

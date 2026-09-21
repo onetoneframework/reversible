@@ -1,0 +1,5187 @@
+[
+  {
+    "epoch": 1,
+    "global_updates": 475,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 4330238,
+      "margin_active": 78810,
+      "all_accuracy": 1.4967997294487518,
+      "content_accuracy": 0.20764981934465718,
+      "hinge_per_token": 54.23848591505192,
+      "eos_recall": 13.75,
+      "eos_false_positive_rate": 2.429502886332489,
+      "pos0_accuracy": 0.07894736842105263,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.07894736842105263
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.105318588730911
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.1855041738439115
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.22874058127018299
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.25449217243772654
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.2418154761904762
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 237364,
+      "margin_active": 4285,
+      "all_accuracy": 1.1324243124566675,
+      "content_accuracy": 0.10185892538833716,
+      "hinge_per_token": 54.85648255142131,
+      "eos_recall": 11.25,
+      "eos_false_positive_rate": 2.6992615227909345,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.07168458781362007
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.1050420168067227
+        }
+      }
+    },
+    "seconds": 100.53385440004058,
+    "gemm": {
+      "float64": 61904,
+      "int64": 0
+    },
+    "max_weight": 25,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 2,
+    "global_updates": 950,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3926409,
+      "margin_active": 77082,
+      "all_accuracy": 3.7714342973809134,
+      "content_accuracy": 0.30178440411423507,
+      "hinge_per_token": 49.18031739669577,
+      "eos_recall": 36.75,
+      "eos_false_positive_rate": 11.082963024488835,
+      "pos0_accuracy": 0.5131578947368421,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.5131578947368421
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.34228541337546076
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.4770107327414867
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.22874058127018299
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.24292434641782987
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.22941468253968253
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 217205,
+      "margin_active": 4185,
+      "all_accuracy": 3.6052692396579618,
+      "content_accuracy": 0.4838298955946015,
+      "hinge_per_token": 50.19759648717356,
+      "eos_recall": 34.25,
+      "eos_false_positive_rate": 11.739241151005857,
+      "pos0_accuracy": 0.75,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.75
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.0309278350515463
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.5734767025089605
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 89.32168749999255,
+    "gemm": {
+      "float64": 123808,
+      "int64": 0
+    },
+    "max_weight": 27,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 3,
+    "global_updates": 1425,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3566596,
+      "margin_active": 78078,
+      "all_accuracy": 2.5389230557260416,
+      "content_accuracy": 0.3945346567548486,
+      "hinge_per_token": 44.6734721996067,
+      "eos_recall": 22.92105263157895,
+      "eos_false_positive_rate": 2.6288467129033597,
+      "pos0_accuracy": 0.6052631578947368,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.6052631578947368
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.3817798841495524
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.34450775142440704
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.511302475780409
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.3894501426698542
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.27901785714285715
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 196437,
+      "margin_active": 4242,
+      "all_accuracy": 2.357291425930206,
+      "content_accuracy": 0.35650623885918004,
+      "hinge_per_token": 45.39796625837763,
+      "eos_recall": 22.0,
+      "eos_false_positive_rate": 2.8011204481792715,
+      "pos0_accuracy": 0.5,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.5
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.7614213197969543
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.25773195876288657
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.2867383512544803
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 100.65462700003991,
+    "gemm": {
+      "float64": 185712,
+      "int64": 0
+    },
+    "max_weight": 29,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 4,
+    "global_updates": 1900,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3436573,
+      "margin_active": 77669,
+      "all_accuracy": 3.0023673234214714,
+      "content_accuracy": 0.26025444024530364,
+      "hinge_per_token": 43.044866415321216,
+      "eos_recall": 29.06578947368421,
+      "eos_false_positive_rate": 4.23744064675997,
+      "pos0_accuracy": 0.3815789473684211,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.3815789473684211
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.19747235387045814
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.2517556645024513
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.2691065662002153
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.23906840441119764
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.2666170634920635
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 188745,
+      "margin_active": 4211,
+      "all_accuracy": 2.9812803327940838,
+      "content_accuracy": 0.17825311942959002,
+      "hinge_per_token": 43.6202911948232,
+      "eos_recall": 30.5,
+      "eos_false_positive_rate": 4.125286478227655,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.2867383512544803
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.21008403361344538
+        }
+      }
+    },
+    "seconds": 100.23565400001826,
+    "gemm": {
+      "float64": 247616,
+      "int64": 0
+    },
+    "max_weight": 28,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 5,
+    "global_updates": 2375,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3534975,
+      "margin_active": 76779,
+      "all_accuracy": 4.152210128136077,
+      "content_accuracy": 0.23395212979498042,
+      "hinge_per_token": 44.27740270801758,
+      "eos_recall": 41.39473684210526,
+      "eos_false_positive_rate": 10.476625552002437,
+      "pos0_accuracy": 0.2894736842105263,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.2894736842105263
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.19747235387045814
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.27825626076586724
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.20182992465016147
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.23521246240456545
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.2170138888888889
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 195904,
+      "margin_active": 4160,
+      "all_accuracy": 4.183036746013404,
+      "content_accuracy": 0.35650623885918004,
+      "hinge_per_token": 45.27478622602265,
+      "eos_recall": 41.75,
+      "eos_false_positive_rate": 10.084033613445378,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.288659793814433
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.35842293906810035
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.21008403361344538
+        }
+      }
+    },
+    "seconds": 100.45975229999749,
+    "gemm": {
+      "float64": 309520,
+      "int64": 0
+    },
+    "max_weight": 33,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 6,
+    "global_updates": 2850,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3430538,
+      "margin_active": 77223,
+      "all_accuracy": 3.601087215200972,
+      "content_accuracy": 0.16750418760469013,
+      "hinge_per_token": 42.96927489760387,
+      "eos_recall": 36.23684210526316,
+      "eos_false_positive_rate": 6.4025360964602624,
+      "pos0_accuracy": 0.32894736842105265,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.32894736842105265
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.11848341232227488
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.13250298131707963
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.24219590958019377
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.1311020282254955
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.15500992063492064
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 188003,
+      "margin_active": 4172,
+      "all_accuracy": 3.9057083429627917,
+      "content_accuracy": 0.3819709702062643,
+      "hinge_per_token": 43.44880979893691,
+      "eos_recall": 38.5,
+      "eos_false_positive_rate": 5.984211866564808,
+      "pos0_accuracy": 1.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.43010752688172044
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 87.20070240000496,
+    "gemm": {
+      "float64": 371424,
+      "int64": 0
+    },
+    "max_weight": 34,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 7,
+    "global_updates": 3325,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 4077649,
+      "margin_active": 78966,
+      "all_accuracy": 1.2563097310770694,
+      "content_accuracy": 0.18965350166812023,
+      "hinge_per_token": 51.074677154702705,
+      "eos_recall": 11.394736842105264,
+      "eos_false_positive_rate": 1.304040865484447,
+      "pos0_accuracy": 0.6710526315789473,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.6710526315789473
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.06582411795681938
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.1457532794487876
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.1480086114101184
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.11953420220559882
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.1736111111111111
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 222841,
+      "margin_active": 4272,
+      "all_accuracy": 1.4559741160157154,
+      "content_accuracy": 0.12732365673542145,
+      "hinge_per_token": 51.500115553501274,
+      "eos_recall": 14.5,
+      "eos_false_positive_rate": 1.3750954927425516,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.0
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.10504201680672269
+        }
+      }
+    },
+    "seconds": 95.03442630002974,
+    "gemm": {
+      "float64": 433328,
+      "int64": 0
+    },
+    "max_weight": 32,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 8,
+    "global_updates": 3800,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 4078552,
+      "margin_active": 78984,
+      "all_accuracy": 1.2287535854303142,
+      "content_accuracy": 0.1245898916067943,
+      "hinge_per_token": 51.08598769993863,
+      "eos_recall": 11.723684210526315,
+      "eos_false_positive_rate": 1.496463031410496,
+      "pos0_accuracy": 0.3815789473684211,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.3815789473684211
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.11848341232227488
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.06625149065853982
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.08073196986006459
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.08097478213927663
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.12400793650793651
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 225991,
+      "margin_active": 4285,
+      "all_accuracy": 1.1324243124566675,
+      "content_accuracy": 0.07639419404125286,
+      "hinge_per_token": 52.22810261150913,
+      "eos_recall": 11.5,
+      "eos_false_positive_rate": 1.858925388337153,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.0
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.21008403361344538
+        }
+      }
+    },
+    "seconds": 98.36505650001345,
+    "gemm": {
+      "float64": 495232,
+      "int64": 0
+    },
+    "max_weight": 35,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 9,
+    "global_updates": 4275,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3230738,
+      "margin_active": 77310,
+      "all_accuracy": 3.534701955233789,
+      "content_accuracy": 0.3308553788224871,
+      "hinge_per_token": 40.466675852048546,
+      "eos_recall": 33.98684210526316,
+      "eos_false_positive_rate": 6.172736963052175,
+      "pos0_accuracy": 0.6973684210526315,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.6973684210526315
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.18430753027909427
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.3975089439512389
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.2960172228202368
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.2930515925040487
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.2728174603174603
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 175398,
+      "margin_active": 4193,
+      "all_accuracy": 3.4666050381326556,
+      "content_accuracy": 0.4329004329004329,
+      "hinge_per_token": 40.535706031892765,
+      "eos_recall": 33.25,
+      "eos_false_positive_rate": 7.613954672778203,
+      "pos0_accuracy": 0.5,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.5
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.7537688442211056
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.2867383512544803
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.5252100840336135
+        }
+      }
+    },
+    "seconds": 99.25478640000802,
+    "gemm": {
+      "float64": 557136,
+      "int64": 0
+    },
+    "max_weight": 35,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 10,
+    "global_updates": 4750,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3230125,
+      "margin_active": 77752,
+      "all_accuracy": 3.1088342497839347,
+      "content_accuracy": 0.5343522017802511,
+      "hinge_per_token": 40.4589977078297,
+      "eos_recall": 27.57894736842105,
+      "eos_false_positive_rate": 2.350595954981519,
+      "pos0_accuracy": 1.0,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.0
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.35545023696682465
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.5035113290049026
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.44402583423035524
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.49741651885555643
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.5146329365079365
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 177058,
+      "margin_active": 4208,
+      "all_accuracy": 3.096833834065172,
+      "content_accuracy": 0.4838298955946015,
+      "hinge_per_token": 40.91934365611278,
+      "eos_recall": 28.75,
+      "eos_false_positive_rate": 3.004838298955946,
+      "pos0_accuracy": 1.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.5017921146953405
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.42016806722689076
+        }
+      }
+    },
+    "train_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 171660,
+        "margin_active": 4143,
+        "all_accuracy": 3.0978643510912933,
+        "content_accuracy": 0.5698005698005698,
+        "hinge_per_token": 40.28631776578268,
+        "eos_recall": 27.5,
+        "eos_false_positive_rate": 2.5641025641025643,
+        "pos0_accuracy": 1.25,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.25
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.5
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.2506265664160401
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.7633587786259542
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.21567217828900073
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 0.9111617312072893
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 173895,
+        "margin_active": 4148,
+        "all_accuracy": 3.0978643510912933,
+        "content_accuracy": 0.5957005957005957,
+        "hinge_per_token": 40.81084252522882,
+        "eos_recall": 27.25,
+        "eos_false_positive_rate": 2.2792022792022792,
+        "pos0_accuracy": 1.25,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.25
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.5
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.7633587786259542
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.503235082674335
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 0.683371298405467
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 193057,
+        "margin_active": 4039,
+        "all_accuracy": 5.515137291715559,
+        "content_accuracy": 0.3626003626003626,
+        "hinge_per_token": 45.307908941563014,
+        "eos_recall": 55.25,
+        "eos_false_positive_rate": 4.0145040145040145,
+        "pos0_accuracy": 0.75,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.75
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.0
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.14378145219266714
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 1.0250569476082005
+          }
+        }
+      },
+      "real_minus_shuffled": -0.025900025900025936,
+      "real_minus_zeroed": 0.2072002072002072
+    },
+    "valid_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 177058,
+        "margin_active": 4208,
+        "all_accuracy": 3.096833834065172,
+        "content_accuracy": 0.4838298955946015,
+        "hinge_per_token": 40.91934365611278,
+        "eos_recall": 28.75,
+        "eos_false_positive_rate": 3.004838298955946,
+        "pos0_accuracy": 1.0,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.0
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.25125628140703515
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.25380710659898476
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.5154639175257731
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.5017921146953405
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.42016806722689076
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 178303,
+        "margin_active": 4209,
+        "all_accuracy": 3.0737231338109545,
+        "content_accuracy": 0.35650623885918004,
+        "hinge_per_token": 41.207071874277794,
+        "eos_recall": 29.75,
+        "eos_false_positive_rate": 2.6992615227909345,
+        "pos0_accuracy": 0.25,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.25
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.25380710659898476
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.7731958762886598
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.43010752688172044
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.31512605042016806
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 197872,
+        "margin_active": 4112,
+        "all_accuracy": 5.361682458978507,
+        "content_accuracy": 0.2801120448179272,
+        "hinge_per_token": 45.72960480702565,
+        "eos_recall": 55.25,
+        "eos_false_positive_rate": 4.660045836516424,
+        "pos0_accuracy": 0.5,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.5
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.0
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.14336917562724014
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.7352941176470589
+          }
+        }
+      },
+      "real_minus_shuffled": 0.12732365673542145,
+      "real_minus_zeroed": 0.20371785077667431
+    },
+    "train_greedy_256": {
+      "metrics": {
+        "chrf": 2.154095201523994,
+        "character_bleu_add_one": 1.086474666135254,
+        "mean_generated_characters": 24.328125,
+        "mean_reference_characters": 18.28515625,
+        "reference_generated_character_ratio": 0.7516056518946692,
+        "mean_generated_content_tokens": 12.9921875,
+        "korean_character_percent": 70.98587026332692,
+        "replacement_character_percent": 0.0,
+        "distinct_outputs": 256,
+        "most_common_output_fraction": 0.00390625,
+        "repetition_token_1gram": 0.49428743235117256,
+        "repetition_token_2gram": 0.2775244299674267,
+        "examples": 256,
+        "exact_token_sequences": 0,
+        "exact_token_percent": 0.0,
+        "exact_decoded_strings": 0,
+        "decoded_string_reference": "Tokenizer-decoded target tokens, excluding EOS",
+        "exact_original_strings": 0,
+        "generated_reference_character_ratio": 1.3304849391155735
+      },
+      "outputs": [
+        "우리는 코 돌아軸었습니다.었습니다. 돌아軸軸 벌 돌아 코치聖묶",
+        "くなくな방방 정치 상절졌방방다면, 돌아 치 치",
+        "다음에한은절들절 다음 다음 다음니다.렸",
+        "토빛喧입悩빛절입입가悩빛露요,還",
+        "주까요?가 주가에 주까요?가가가에가 주",
+        "이하는 주을 주에 주가가에 주가가가 주",
+        "상처 상처가 잘처 상다면,赤을처",
+        "그 이에에을 겁니다. 훨",
+        "우점陣서깐했습니다.다면, 그렇게에",
+        "방식 아주겠습니다.을 매맷까요?입니다.",
+        "旺칫칫에하는칫칫워입니다.히 이것하는칫칫칫",
+        "우리는오한 이러한幻오한오한니까일ろう입니다.니까심",
+        "그래서 말이 이제 그것은譜譜譜譜譜譜譜단が必要 그것은줄",
+        "대한 이것이 상 상賂 상賂 상殺婆 상殺 당신 상져",
+        "저는 저는 저는 저는 저는댔 아닙니다.장인 상 상장",
+        "矯한에서 장한 상労했습니다.한했습니다.한 상 장 부분에는",
+        "저는상소소소소장상 이야기은 주 아프",
+        "가 가니다.에는색색색색 그들은 겁니다.에는심습니다.",
+        "한べて지는 이것べて지는하는지는를하는지는하는한룰칸",
+        "める한 그렇게방 그렇게방 그렇게 그렇게가방가 그렇게 그렇게 그렇게 그렇게",
+        "상 상가::에챕 상에가::가::",
+        "저는한潮장潮한 둘가한적으로 바로입니다.",
+        "많은悩 많은 많은",
+        "에는야기 그렇 우리는 말하 이건基았깐 이건基았 주서 라고",
+        "하는ろう하는ろう하는ろう하는ろう하는ろう하는ろうろう적인하는",
+        "웃음)가가가가가웃음)가가",
+        "그 위에가 당신른요,이른가 당신에가주의들이",
+        "한럽 그렇게 정보미 정보",
+        "상리집하는 상발 상굶입니다.",
+        "절胆요?을숙요?을숙",
+        "색 왜,幕 노,,幕 이건 말하색 이러한,, (박수)",
+        "저는 하는깐가 상가가가가가가가가 상",
+        "상 상 상 상 상 상 상 상 상 상 상 상 상줄져",
+        "렸렸 기 설명렸가요? 많은제요? 많은悩렸 기에",
+        "始 여기,旺한 상발발에들은들은들은 겁니다.발짐",
+        "컴퓨터 코율 만 유I 코 코 상滝べて 코 유 유べて",
+        "여기譜 무슨 코譜譜譜出す환득가가가가 무슨",
+        "렸렸렸 우리는렸렸렸렸렸렸렸렸가렸悩",
+        "가 가 많은까요? 그렇게섭 아직 그가捗 만들어曽 그렇게 믿捗 믿",
+        "이들은들은들은들은들은 일어 에 어디숙의 바",
+        "에는하는 매깐거 매하는 우리는 매하는 매하는에는잠 매",
+        "주 주에서 번째 주들 (박수) 주에서 번째 주 주",
+        "겠습니다.겠습니다.겠습니다.겠습니다.낸낸낸낸낸낸낸낸낸요?還",
+        "이 이 이 이 이 이하는 이하는 이還 이이죠.",
+        "매があります한줄한譜줄한 그렇게가한에한주의줄",
+        "은은  그렇게 선택한고 의",
+        "가가가가가가에가가가가가가가가",
+        "완 아주하는에는주의影響가 완 완가 완습니다.",
+        "한가 다른맡 (박수) 상서가한가요?한譜한절",
+        "우리는 겁니다.에는를가에는져적으로를가에는 돌아를가입",
+        "항상토 상돛외 아주 아주 아주 아주사을습니다.",
+        "흥왔습니다.について 흥왔습니다. 한출 バ 흥왔습니다.울税 버울年",
+        "에서에서에서에서겠습니다.겠습니다.겠습니다.겠습니다.겠습니다.겠습니다.겠습니다.겠습니다.",
+        "わり램보다보다보다 누구 같색피싯コンピュー보다보다来 그들은",
+        "갈八하는陥陥陥陥陥陥陥陥陥陥陥陥",
+        "방방방 뭐仙제버방이仙仙仙한",
+        "다면, 잡 시 제선에들들다면, 잡다면, 알이죠.뎅숙",
+        "상 상 상 그렇 위 위 상 그렇 위 위 모 모르 모 모르 모르",
+        "좋아赤를를에를겠습니다.겠습니다.겠습니다.겠습니다.겠습니다.겠습니다.",
+        "상 상 상 상 상줄시다. 코 그렇게中가주의 선택다면,다면,",
+        "하는하는還하는가하는還하는가가가還",
+        "정장풋풋풋풋풋풋풋풋풋풋풋풋풋",
+        "그譜득 상浴 위 상譜기 위적으로 있浴",
+        "이러한 이러한렸렸렸렸렸렸 이러한 이러한렸렸렸렸 무슨"
+      ]
+    },
+    "seconds": 107.71692770003574,
+    "gemm": {
+      "float64": 623886,
+      "int64": 0
+    },
+    "max_weight": 36,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 11,
+    "global_updates": 5225,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3081361,
+      "margin_active": 74970,
+      "all_accuracy": 6.52203865375703,
+      "content_accuracy": 0.37238534269141854,
+      "hinge_per_token": 38.595651139196114,
+      "eos_recall": 64.97368421052632,
+      "eos_false_positive_rate": 24.66464554175838,
+      "pos0_accuracy": 0.5789473684210527,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.5789473684210527
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.2632964718272775
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.34450775142440704
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.5247578040904198
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.31233130253720987
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.3658234126984127
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 169376,
+      "margin_active": 4073,
+      "all_accuracy": 6.193667668130344,
+      "content_accuracy": 0.35650623885918004,
+      "hinge_per_token": 39.143979662583774,
+      "eos_recall": 63.5,
+      "eos_false_positive_rate": 24.70078940667176,
+      "pos0_accuracy": 0.75,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.75
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.2867383512544803
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 95.90711939998437,
+    "gemm": {
+      "float64": 685790,
+      "int64": 0
+    },
+    "max_weight": 42,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 12,
+    "global_updates": 5700,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3820902,
+      "margin_active": 76299,
+      "all_accuracy": 4.8085474153587935,
+      "content_accuracy": 0.33500837520938026,
+      "hinge_per_token": 47.85878727908113,
+      "eos_recall": 47.328947368421055,
+      "eos_false_positive_rate": 18.92658886720102,
+      "pos0_accuracy": 1.0263157894736843,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.0263157894736843
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.35545023696682465
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.4372598383463628
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.32292787944025836
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.22364463638466878
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.13640873015873015
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 211396,
+      "margin_active": 4147,
+      "all_accuracy": 4.506586549572452,
+      "content_accuracy": 0.2546473134708429,
+      "hinge_per_token": 48.85509590940605,
+      "eos_recall": 46.25,
+      "eos_false_positive_rate": 16.80672268907563,
+      "pos0_accuracy": 0.75,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.75
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.25773195876288657
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.07168458781362007
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.21008403361344538
+        }
+      }
+    },
+    "seconds": 101.62704649998341,
+    "gemm": {
+      "float64": 747694,
+      "int64": 0
+    },
+    "max_weight": 46,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 13,
+    "global_updates": 6175,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3244764,
+      "margin_active": 77634,
+      "all_accuracy": 3.1464108120295102,
+      "content_accuracy": 0.3073217326300926,
+      "hinge_per_token": 40.642358806067364,
+      "eos_recall": 30.13157894736842,
+      "eos_false_positive_rate": 3.0261500339161373,
+      "pos0_accuracy": 0.40789473684210525,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.40789473684210525
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.25013164823591366
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.3180071551609911
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.20182992465016147
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.2467802884244621
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.42782738095238093
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 178458,
+      "margin_active": 4203,
+      "all_accuracy": 3.189276635082043,
+      "content_accuracy": 0.33104150751209577,
+      "hinge_per_token": 41.242893459671826,
+      "eos_recall": 31.25,
+      "eos_false_positive_rate": 3.004838298955946,
+      "pos0_accuracy": 0.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.21505376344086022
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.6302521008403361
+        }
+      }
+    },
+    "seconds": 88.239163500024,
+    "gemm": {
+      "float64": 809598,
+      "int64": 0
+    },
+    "max_weight": 44,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 14,
+    "global_updates": 6650,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3287708,
+      "margin_active": 77448,
+      "all_accuracy": 3.4194671643473575,
+      "content_accuracy": 0.41391530656034997,
+      "hinge_per_token": 41.18025476909202,
+      "eos_recall": 31.986842105263158,
+      "eos_false_positive_rate": 4.1156194194111055,
+      "pos0_accuracy": 0.7105263157894737,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.7105263157894737
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.25013164823591366
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.49026103087319467
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.5247578040904198
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.2814837664841521
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.4774305555555556
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 178690,
+      "margin_active": 4203,
+      "all_accuracy": 3.327940836607349,
+      "content_accuracy": 0.2546473134708429,
+      "hinge_per_token": 41.296510284261615,
+      "eos_recall": 33.5,
+      "eos_false_positive_rate": 3.972498090145149,
+      "pos0_accuracy": 0.5,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.5
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.43010752688172044
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.10504201680672269
+        }
+      }
+    },
+    "seconds": 101.16863279999234,
+    "gemm": {
+      "float64": 871502,
+      "int64": 0
+    },
+    "max_weight": 39,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 15,
+    "global_updates": 7125,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 4289243,
+      "margin_active": 75904,
+      "all_accuracy": 5.145483923494119,
+      "content_accuracy": 0.08029126347993411,
+      "hinge_per_token": 53.725002191966134,
+      "eos_recall": 53.28947368421053,
+      "eos_false_positive_rate": 22.387419189611972,
+      "pos0_accuracy": 0.18421052631578946,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.18421052631578946
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.06582411795681938
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.1457532794487876
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.08073196986006459
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.04627130407958664
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.062003968253968256
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 236901,
+      "margin_active": 4131,
+      "all_accuracy": 4.760804252368847,
+      "content_accuracy": 0.02546473134708429,
+      "hinge_per_token": 54.74948000924428,
+      "eos_recall": 51.25,
+      "eos_false_positive_rate": 23.376623376623378,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.0
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.0
+        }
+      }
+    },
+    "seconds": 80.24047129997052,
+    "gemm": {
+      "float64": 933406,
+      "int64": 0
+    },
+    "max_weight": 38,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 16,
+    "global_updates": 7600,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2714388,
+      "margin_active": 75689,
+      "all_accuracy": 5.632726680611746,
+      "content_accuracy": 0.36407934991763224,
+      "hinge_per_token": 33.999123213547605,
+      "eos_recall": 55.71052631578947,
+      "eos_false_positive_rate": 9.399615155668148,
+      "pos0_accuracy": 0.5131578947368421,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.5131578947368421
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.35545023696682465
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.26500596263415926
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.2691065662002153
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.3971620266831187
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.33482142857142855
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 151188,
+      "margin_active": 4091,
+      "all_accuracy": 5.870117864571297,
+      "content_accuracy": 0.33104150751209577,
+      "hinge_per_token": 34.94060550034666,
+      "eos_recall": 60.25,
+      "eos_false_positive_rate": 8.530685001273236,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.25773195876288657
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.43010752688172044
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 94.49821129994234,
+    "gemm": {
+      "float64": 995310,
+      "int64": 0
+    },
+    "max_weight": 38,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 17,
+    "global_updates": 8075,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2778240,
+      "margin_active": 75724,
+      "all_accuracy": 5.7341833986748,
+      "content_accuracy": 0.5052812270719991,
+      "hinge_per_token": 34.798902764382426,
+      "eos_recall": 55.43421052631579,
+      "eos_false_positive_rate": 12.114290460567299,
+      "pos0_accuracy": 0.5789473684210527,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.5789473684210527
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.19747235387045814
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.38425864581953095
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.4171151776103337
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.5128402868820853
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.7006448412698413
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 151577,
+      "margin_active": 4101,
+      "all_accuracy": 5.754564363300208,
+      "content_accuracy": 0.4329004329004329,
+      "hinge_per_token": 35.03050612433557,
+      "eos_recall": 58.0,
+      "eos_false_positive_rate": 12.808759867583397,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.0309278350515463
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.2867383512544803
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.6302521008403361
+        }
+      }
+    },
+    "seconds": 93.66437079996103,
+    "gemm": {
+      "float64": 1057214,
+      "int64": 0
+    },
+    "max_weight": 42,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 18,
+    "global_updates": 8550,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3012924,
+      "margin_active": 77819,
+      "all_accuracy": 2.8783646680110726,
+      "content_accuracy": 0.4208369672051719,
+      "hinge_per_token": 37.738442075729296,
+      "eos_recall": 26.236842105263158,
+      "eos_false_positive_rate": 2.15817378905547,
+      "pos0_accuracy": 0.6710526315789473,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.6710526315789473
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.3817798841495524
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.2120047701073274
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.48439181916038754
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.41644173671627976
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.3968253968253968
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 165311,
+      "margin_active": 4209,
+      "all_accuracy": 3.1430552345736076,
+      "content_accuracy": 0.5856888209829386,
+      "hinge_per_token": 38.204529697249825,
+      "eos_recall": 28.25,
+      "eos_false_positive_rate": 2.1899668958492486,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 1.0050251256281406
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.0309278350515463
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.7168458781362007
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.42016806722689076
+        }
+      }
+    },
+    "seconds": 101.92208489996847,
+    "gemm": {
+      "float64": 1119118,
+      "int64": 0
+    },
+    "max_weight": 48,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 19,
+    "global_updates": 9025,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3159680,
+      "margin_active": 78423,
+      "all_accuracy": 2.1443691521475006,
+      "content_accuracy": 0.3613106856597035,
+      "hinge_per_token": 39.57663739869985,
+      "eos_recall": 19.092105263157894,
+      "eos_false_positive_rate": 0.7143153785456207,
+      "pos0_accuracy": 0.5657894736842105,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.5657894736842105
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.25013164823591366
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.4240095402146548
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.45748116254036597
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.26991594046425543
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.390625
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 172996,
+      "margin_active": 4244,
+      "all_accuracy": 2.3110700254217704,
+      "content_accuracy": 0.30557677616501144,
+      "hinge_per_token": 39.980587011786454,
+      "eos_recall": 22.0,
+      "eos_false_positive_rate": 0.5602240896358543,
+      "pos0_accuracy": 0.75,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.75
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.21505376344086022
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 103.72020199999679,
+    "gemm": {
+      "float64": 1181022,
+      "int64": 0
+    },
+    "max_weight": 65,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 20,
+    "global_updates": 9500,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2461055,
+      "margin_active": 76214,
+      "all_accuracy": 5.1868181419642525,
+      "content_accuracy": 0.7129310464166563,
+      "hinge_per_token": 30.82599546576149,
+      "eos_recall": 47.71052631578947,
+      "eos_false_positive_rate": 6.983955590625303,
+      "pos0_accuracy": 1.0657894736842106,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.0657894736842106
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.6977356503422855
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.8745196766927256
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.740043057050592
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.6516541991208452
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.5642361111111112
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 134795,
+      "margin_active": 4126,
+      "all_accuracy": 5.176796856944765,
+      "content_accuracy": 0.5856888209829386,
+      "hinge_per_token": 31.152068407672754,
+      "eos_recall": 50.25,
+      "eos_false_positive_rate": 7.308377896613191,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.7731958762886598
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.43010752688172044
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.9453781512605042
+        }
+      }
+    },
+    "train_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 133775,
+        "margin_active": 4074,
+        "all_accuracy": 4.998826566533678,
+        "content_accuracy": 0.7252007252007252,
+        "hinge_per_token": 31.395212391457406,
+        "eos_recall": 46.25,
+        "eos_false_positive_rate": 6.552706552706553,
+        "pos0_accuracy": 0.75,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.75
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.75
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 1.0025062656641603
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 1.0178117048346056
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.5751258087706685
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 0.683371298405467
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 132868,
+        "margin_active": 4053,
+        "all_accuracy": 5.421262614409763,
+        "content_accuracy": 0.7252007252007252,
+        "hinge_per_token": 31.18235156066651,
+        "eos_recall": 50.75,
+        "eos_false_positive_rate": 8.158508158508159,
+        "pos0_accuracy": 1.25,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.25
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.5
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 1.2531328320802004
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.7633587786259542
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.5751258087706685
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 0.5694760820045558
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 132739,
+        "margin_active": 3854,
+        "all_accuracy": 10.021121802393804,
+        "content_accuracy": 0.8029008029008029,
+        "hinge_per_token": 31.152076977235392,
+        "eos_recall": 99.0,
+        "eos_false_positive_rate": 59.38875938875939,
+        "pos0_accuracy": 3.75,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 3.75
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 1.25
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.7518796992481203
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.5089058524173028
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.35945363048166784
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 0.11389521640091116
+          }
+        }
+      },
+      "real_minus_shuffled": 0.0,
+      "real_minus_zeroed": -0.0777000777000777
+    },
+    "valid_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 134795,
+        "margin_active": 4126,
+        "all_accuracy": 5.176796856944765,
+        "content_accuracy": 0.5856888209829386,
+        "hinge_per_token": 31.152068407672754,
+        "eos_recall": 50.25,
+        "eos_false_positive_rate": 7.308377896613191,
+        "pos0_accuracy": 0.25,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.25
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.5025125628140703
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.5076142131979695
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.7731958762886598
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.43010752688172044
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.9453781512605042
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 134717,
+        "margin_active": 4129,
+        "all_accuracy": 5.384793159232725,
+        "content_accuracy": 0.8912655971479501,
+        "hinge_per_token": 31.134042061474464,
+        "eos_recall": 49.5,
+        "eos_false_positive_rate": 7.359307359307359,
+        "pos0_accuracy": 1.0,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.0
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.5025125628140703
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 1.2690355329949239
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 1.0309278350515463
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.931899641577061
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.7352941176470589
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 136631,
+        "margin_active": 3923,
+        "all_accuracy": 9.567829905246128,
+        "content_accuracy": 0.5347593582887701,
+        "hinge_per_token": 31.57638086434019,
+        "eos_recall": 98.25,
+        "eos_false_positive_rate": 59.46014769544181,
+        "pos0_accuracy": 1.25,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.25
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.7537688442211056
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 1.015228426395939
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.25773195876288657
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.5017921146953405
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.1050420168067227
+          }
+        }
+      },
+      "real_minus_shuffled": -0.30557677616501144,
+      "real_minus_zeroed": 0.05092946269416854
+    },
+    "train_greedy_256": {
+      "metrics": {
+        "chrf": 1.9448532207695386,
+        "character_bleu_add_one": 1.0970039976759887,
+        "mean_generated_characters": 22.4296875,
+        "mean_reference_characters": 18.28515625,
+        "reference_generated_character_ratio": 0.8152211772901428,
+        "mean_generated_content_tokens": 11.1796875,
+        "korean_character_percent": 65.97004528039011,
+        "replacement_character_percent": 0.0,
+        "distinct_outputs": 256,
+        "most_common_output_fraction": 0.00390625,
+        "repetition_token_1gram": 0.4758909853249476,
+        "repetition_token_2gram": 0.24635456638526476,
+        "examples": 256,
+        "exact_token_sequences": 0,
+        "exact_token_percent": 0.0,
+        "exact_decoded_strings": 0,
+        "decoded_string_reference": "Tokenizer-decoded target tokens, excluding EOS",
+        "exact_original_strings": 0,
+        "generated_reference_character_ratio": 1.2266609698782311
+      },
+      "outputs": [
+        "기은는는에운에 할 수에에에 할게요.",
+        "(에게에게에게에게 ( ( 줄에게에게에게 ( ( 해까요?",
+        "상상각서각서 중 중 할 중 할 중 중 할 중서",
+        "이제 이 사 모두?타?",
+        "(웃음) (웃음) (웃음) (웃음) (웃음) (웃음) (웃음) (웃음) (웃음) (웃음)에 시간에 시간",
+        "그런데족",
+        "그건 \", 사 그건 전 그건, \", 저는 그건 시간 저는",
+        "이제 할까요?",
+        "기,,,,,,,,,,,,,",
+        "기 할은 할은 할 할 수 있습니다.",
+        "이런에 이런 이런견립프견프견립견견견 위해서",
+        "어떤 어떤를 시간를 시간 어떤 시간 어떤은",
+        "저는를 보를 보 저는합니다.",
+        "이제죠.",
+        "그리고 어하기습니다 하는 다른하기하기는",
+        "그리고 증 대 증 대溜던 되 그리고 엄청 이溜 되",
+        "그건 사실를은에 할 매우에 시간를은이은,",
+        "의 이 상황 걸 그는퍽 그는 시간 대 (웃음)시郵 대습니다 되",
+        "어떤해",
+        "우리가 필요 보했어요.",
+        "하지만 이 (웃음) (웃음) (웃음)에 기 더 저는 (웃음) (웃음) (웃음) (웃음) 저는은",
+        "저는은은은은에에한",
+        "그리고 증 더하기 하지만 생각해 쓰걸 쓰하기溜溜 하지만 이런 이런",
+        "이제,,,, 번째은, 중, 번째은 수 수 중",
+        "그건에 사에는에 사 보 시간는 보 한",
+        "우리는서",
+        "우리는 우리는는 저는에에, 우리는는 할 수 생각하,",
+        "기군요.서군요.군요.군요.군요.군요.",
+        "저는 저는 저는 저는 저는 저는를 보 보 보 보 보",
+        "저는能한能한能한한한한한",
+        "저는 필요?",
+        "上能가는能는가能能할는能",
+        "그건 (웃음)은서서은은서는 수에 어떤 수",
+        "하지만",
+        "여기프 무엇賜죠. 시간 これは한門 それを-죠.젖 무엇 これは",
+        "\" 사 사 사 \" 사 \" \" \"는에에를",
+        "그건 (웃음)은 매우 한은 매우에하지에 하는하지은 똑",
+        "차 사 원차하하엔 원엔 기하하하하하",
+        "그건蚕듣뇨했죠.했죠.듣듣 한 한뇨준 하지만",
+        "그는리아 많은은, 저는 그건 그건었 그건 저는 그건었 시간",
+        "여기는 엄청에를이이이이는 엄청이이",
+        "그건 \" 비 의 한 비 한 비에 시간 한 비 한 비 시간",
+        "그래서 (웃음) 大 그렇 되溜 그리고 전 더 우리는 그리고 그리고 전 더 나",
+        "여러분 이용합니다.",
+        "(웃음)견서서이이했어요.서이는이 これらの이죠.",
+        "이해텅只 이해괜只 이해괜 이해괜只괜そう괜",
+        "로운 그건 시간 비 시간 시간 시간 비 시간 시간 시간 시간 시간 시간 시간",
+        "우리는 시간시들 시간 보시 기",
+        "우리는 하지만이는 그리고는이하고 그리고하고",
+        "우리를은에를를은, 기하지를 우리를하지",
+        "그건 20 한 20 20비 20 20 한 한 한 한 한 20 한",
+        "저는를를를은은이를은를를를를는",
+        "이에에,,",
+        "발 어떤합니다.",
+        "慣 우리가에 우리가시 어떤",
+        "기했어요.이이했어요.",
+        "(웃음), 어떤에 어떤쌉?",
+        "(웃음)에에벤는은는,에 걸에에했어요.",
+        "나죠.",
+        "(웃음) 이런적으로를에速도록퀸를  (를 (",
+        "이제 이제시에 보시 이제시 이제 이제시했어요.에에 보",
+        "\" 상황야 기 기 전 더는 전9을",
+        "기기기? 할시시기 단 기? 단시기?",
+        "그건은은은은요?"
+      ]
+    },
+    "seconds": 117.18830109998817,
+    "gemm": {
+      "float64": 1247772,
+      "int64": 0
+    },
+    "max_weight": 84,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 21,
+    "global_updates": 9975,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2388066,
+      "margin_active": 77366,
+      "all_accuracy": 3.825294036599572,
+      "content_accuracy": 0.7932223098965904,
+      "hinge_per_token": 29.911770231847388,
+      "eos_recall": 32.64473684210526,
+      "eos_false_positive_rate": 1.0659357393025735,
+      "pos0_accuracy": 1.236842105263158,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.236842105263158
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.3949447077409163
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.5962634159268584
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.6593110871905274
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.682501735173903
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 1.1036706349206349
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 133263,
+      "margin_active": 4176,
+      "all_accuracy": 4.275479547030275,
+      "content_accuracy": 0.8148714031066973,
+      "hinge_per_token": 30.798012479778137,
+      "eos_recall": 38.25,
+      "eos_false_positive_rate": 1.0949834479246243,
+      "pos0_accuracy": 0.75,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.75
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.0309278350515463
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.7168458781362007
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 1.365546218487395
+        }
+      }
+    },
+    "seconds": 102.1228165999637,
+    "gemm": {
+      "float64": 1309676,
+      "int64": 0
+    },
+    "max_weight": 95,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 22,
+    "global_updates": 10450,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3287503,
+      "margin_active": 78098,
+      "all_accuracy": 2.6604206069867353,
+      "content_accuracy": 0.47205725597685394,
+      "hinge_per_token": 41.17768703733858,
+      "eos_recall": 23.460526315789473,
+      "eos_false_positive_rate": 3.1327436078463946,
+      "pos0_accuracy": 0.6710526315789473,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.6710526315789473
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.421274354923644
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.41075924208294684
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.6054897739504844
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.4010179686897509
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.4836309523809524
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 183842,
+      "margin_active": 4230,
+      "all_accuracy": 2.4728449272012942,
+      "content_accuracy": 0.33104150751209577,
+      "hinge_per_token": 42.48717356135891,
+      "eos_recall": 23.5,
+      "eos_false_positive_rate": 4.176215940921823,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.43010752688172044
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.21008403361344538
+        }
+      }
+    },
+    "seconds": 109.43983440002194,
+    "gemm": {
+      "float64": 1371580,
+      "int64": 0
+    },
+    "max_weight": 109,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 23,
+    "global_updates": 10925,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2554359,
+      "margin_active": 76488,
+      "all_accuracy": 4.854891842128336,
+      "content_accuracy": 0.5841881584229688,
+      "hinge_per_token": 31.99467665368188,
+      "eos_recall": 45.44736842105263,
+      "eos_false_positive_rate": 6.091061367443277,
+      "pos0_accuracy": 1.0921052631578947,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.0921052631578947
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.4081095313322802
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.26500596263415926
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.47093649085037675
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.5436878229351431
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.6944444444444444
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 140182,
+      "margin_active": 4141,
+      "all_accuracy": 4.760804252368847,
+      "content_accuracy": 0.3819709702062643,
+      "hinge_per_token": 32.39704183036746,
+      "eos_recall": 47.75,
+      "eos_false_positive_rate": 5.958747135217723,
+      "pos0_accuracy": 0.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.7731958762886598
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.14336917562724014
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.7352941176470589
+        }
+      }
+    },
+    "seconds": 107.95717919996241,
+    "gemm": {
+      "float64": 1433484,
+      "int64": 0
+    },
+    "max_weight": 123,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 24,
+    "global_updates": 11400,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2663360,
+      "margin_active": 78636,
+      "all_accuracy": 1.9026266017009656,
+      "content_accuracy": 0.5357365339092155,
+      "hinge_per_token": 33.35997094079186,
+      "eos_recall": 14.894736842105264,
+      "eos_false_positive_rate": 0.5731135013912538,
+      "pos0_accuracy": 0.4342105263157895,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.4342105263157895
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.48709847288046343
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.34450775142440704
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.511302475780409
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.4704249248091309
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.8122519841269841
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 145887,
+      "margin_active": 4248,
+      "all_accuracy": 2.172405823896464,
+      "content_accuracy": 0.40743570155334863,
+      "hinge_per_token": 33.71550727987058,
+      "eos_recall": 19.5,
+      "eos_false_positive_rate": 0.9167303284950343,
+      "pos0_accuracy": 0.75,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.75
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 1.256281407035176
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.25773195876288657
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.35842293906810035
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.21008403361344538
+        }
+      }
+    },
+    "seconds": 127.25177640002221,
+    "gemm": {
+      "float64": 1495388,
+      "int64": 0
+    },
+    "max_weight": 127,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 25,
+    "global_updates": 11875,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2417726,
+      "margin_active": 75962,
+      "all_accuracy": 5.350902463769931,
+      "content_accuracy": 0.28240375430873377,
+      "hinge_per_token": 30.283277177248642,
+      "eos_recall": 53.526315789473685,
+      "eos_false_positive_rate": 10.48077854838933,
+      "pos0_accuracy": 0.39473684210526316,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.39473684210526316
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.210637177461822
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.23850536637074335
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.2556512378902045
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.29690753451068097
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.2728174603174603
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 135495,
+      "margin_active": 4129,
+      "all_accuracy": 5.015021955165241,
+      "content_accuracy": 0.2546473134708429,
+      "hinge_per_token": 31.313843309452277,
+      "eos_recall": 51.75,
+      "eos_false_positive_rate": 11.764705882352942,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.35842293906810035
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 125.7288595000282,
+    "gemm": {
+      "float64": 1557292,
+      "int64": 0
+    },
+    "max_weight": 127,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 26,
+    "global_updates": 12350,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2428855,
+      "margin_active": 74602,
+      "all_accuracy": 7.104475368563448,
+      "content_accuracy": 0.6506361006132592,
+      "hinge_per_token": 30.42267369765898,
+      "eos_recall": 68.44736842105263,
+      "eos_false_positive_rate": 31.593227847225105,
+      "pos0_accuracy": 1.5394736842105263,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.5394736842105263
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.7372301211163771
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.5035113290049026
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.8476856835306782
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.5051284028688209
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.40302579365079366
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 136961,
+      "margin_active": 4069,
+      "all_accuracy": 6.470996071180957,
+      "content_accuracy": 0.7130124777183601,
+      "hinge_per_token": 31.652646175179108,
+      "eos_recall": 63.0,
+      "eos_false_positive_rate": 29.666412019353196,
+      "pos0_accuracy": 1.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.0309278350515463
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.7885304659498208
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.42016806722689076
+        }
+      }
+    },
+    "seconds": 102.26341329998104,
+    "gemm": {
+      "float64": 1619196,
+      "int64": 0
+    },
+    "max_weight": 127,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 27,
+    "global_updates": 12825,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2117827,
+      "margin_active": 74504,
+      "all_accuracy": 7.423876147650838,
+      "content_accuracy": 0.7572296745435165,
+      "hinge_per_token": 26.526886030286708,
+      "eos_recall": 70.78947368421052,
+      "eos_false_positive_rate": 17.794205185708154,
+      "pos0_accuracy": 1.0526315789473684,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.0526315789473684
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.5529225908372828
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.7950178879024778
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.8342303552206674
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.6593660831341097
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.8184523809523809
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 118174,
+      "margin_active": 4040,
+      "all_accuracy": 7.742084585162931,
+      "content_accuracy": 0.7639419404125286,
+      "hinge_per_token": 27.31083891841923,
+      "eos_recall": 76.25,
+      "eos_false_positive_rate": 18.538324420677363,
+      "pos0_accuracy": 1.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 1.256281407035176
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.8041237113402062
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.2867383512544803
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.8403361344537815
+        }
+      }
+    },
+    "seconds": 117.39390269998694,
+    "gemm": {
+      "float64": 1681100,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 28,
+    "global_updates": 13300,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2009087,
+      "margin_active": 76422,
+      "all_accuracy": 5.482420431629445,
+      "content_accuracy": 0.8499799271841301,
+      "hinge_per_token": 25.164860904092087,
+      "eos_recall": 49.51315789473684,
+      "eos_false_positive_rate": 7.761950247103285,
+      "pos0_accuracy": 0.8289473684210527,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.8289473684210527
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.35545023696682465
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.49026103087319467
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.49784714747039827
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.7480527492866508
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 1.5873015873015872
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 111241,
+      "margin_active": 4130,
+      "all_accuracy": 5.685232262537555,
+      "content_accuracy": 1.2223071046600458,
+      "hinge_per_token": 25.708574069794313,
+      "eos_recall": 49.5,
+      "eos_false_positive_rate": 8.123249299719888,
+      "pos0_accuracy": 0.5,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.5
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 1.015228426395939
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.0309278350515463
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.931899641577061
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 2.6260504201680672
+        }
+      }
+    },
+    "seconds": 127.9915504999808,
+    "gemm": {
+      "float64": 1743004,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 29,
+    "global_updates": 13775,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2633539,
+      "margin_active": 79023,
+      "all_accuracy": 1.3740496261132056,
+      "content_accuracy": 0.32947104669352273,
+      "hinge_per_token": 32.9864473865501,
+      "eos_recall": 11.302631578947368,
+      "eos_false_positive_rate": 0.11489956670404364,
+      "pos0_accuracy": 0.34210526315789475,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.34210526315789475
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.11848341232227488
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.1855041738439115
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.40365984930032295
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.2660599984576232
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.5580357142857143
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 144573,
+      "margin_active": 4279,
+      "all_accuracy": 1.479084816269933,
+      "content_accuracy": 0.40743570155334863,
+      "hinge_per_token": 33.41183267853016,
+      "eos_recall": 12.0,
+      "eos_false_positive_rate": 0.15278838808250572,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.25773195876288657
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.2867383512544803
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.7352941176470589
+        }
+      }
+    },
+    "seconds": 101.78167949995259,
+    "gemm": {
+      "float64": 1804908,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 30,
+    "global_updates": 14250,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 4047498,
+      "margin_active": 79064,
+      "all_accuracy": 1.0809524405977178,
+      "content_accuracy": 0.059526281545468386,
+      "hinge_per_token": 50.697020178613926,
+      "eos_recall": 10.789473684210526,
+      "eos_false_positive_rate": 0.7655356673173027,
+      "pos0_accuracy": 0.15789473684210525,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.15789473684210525
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.09215376513954714
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.03975089439512389
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.02691065662002153
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.0385594200663222
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.05580357142857143
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 223168,
+      "margin_active": 4297,
+      "all_accuracy": 0.8319852091518373,
+      "content_accuracy": 0.02546473134708429,
+      "hinge_per_token": 51.57568754333256,
+      "eos_recall": 8.75,
+      "eos_false_positive_rate": 0.5602240896358543,
+      "pos0_accuracy": 0.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.07168458781362007
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.0
+        }
+      }
+    },
+    "train_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 215440,
+        "margin_active": 4210,
+        "all_accuracy": 1.2673081436282563,
+        "content_accuracy": 0.0259000259000259,
+        "hinge_per_token": 50.56090119690214,
+        "eos_recall": 13.25,
+        "eos_false_positive_rate": 0.777000777000777,
+        "pos0_accuracy": 0.0,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.0
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.0
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 0.11389521640091116
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 212596,
+        "margin_active": 4207,
+        "all_accuracy": 1.4315888289134007,
+        "content_accuracy": 0.0777000777000777,
+        "hinge_per_token": 49.89345224125792,
+        "eos_recall": 14.5,
+        "eos_false_positive_rate": 0.6993006993006993,
+        "pos0_accuracy": 0.0,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.0
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.14378145219266714
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 0.11389521640091116
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 117867,
+        "margin_active": 3883,
+        "all_accuracy": 9.622154423844169,
+        "content_accuracy": 1.295001295001295,
+        "hinge_per_token": 27.661816475005867,
+        "eos_recall": 90.0,
+        "eos_false_positive_rate": 9.505309505309505,
+        "pos0_accuracy": 0.75,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.75
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.5
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.5012531328320802
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 2.7989821882951653
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 1.2940330697340043
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 1.5945330296127562
+          }
+        }
+      },
+      "real_minus_shuffled": -0.051800051800051795,
+      "real_minus_zeroed": -1.269101269101269
+    },
+    "valid_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 223168,
+        "margin_active": 4297,
+        "all_accuracy": 0.8319852091518373,
+        "content_accuracy": 0.02546473134708429,
+        "hinge_per_token": 51.57568754333256,
+        "eos_recall": 8.75,
+        "eos_false_positive_rate": 0.5602240896358543,
+        "pos0_accuracy": 0.0,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.0
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.07168458781362007
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.0
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 220333,
+        "margin_active": 4281,
+        "all_accuracy": 1.2017564132193206,
+        "content_accuracy": 0.0,
+        "hinge_per_token": 50.920499191125494,
+        "eos_recall": 13.0,
+        "eos_false_positive_rate": 0.9167303284950343,
+        "pos0_accuracy": 0.0,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.0
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.0
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.0
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 121849,
+        "margin_active": 3955,
+        "all_accuracy": 9.082505199907557,
+        "content_accuracy": 1.145912910618793,
+        "hinge_per_token": 28.16015715276173,
+        "eos_recall": 87.0,
+        "eos_false_positive_rate": 11.204481792717086,
+        "pos0_accuracy": 0.75,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.75
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 1.256281407035176
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.5076142131979695
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 1.0309278350515463
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 1.2903225806451613
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 1.365546218487395
+          }
+        }
+      },
+      "real_minus_shuffled": 0.02546473134708429,
+      "real_minus_zeroed": -1.1204481792717087
+    },
+    "train_greedy_256": {
+      "metrics": {
+        "chrf": 1.574408875233569,
+        "character_bleu_add_one": 1.2073048739018033,
+        "mean_generated_characters": 22.4765625,
+        "mean_reference_characters": 18.28515625,
+        "reference_generated_character_ratio": 0.813521028849496,
+        "mean_generated_content_tokens": 14.0859375,
+        "korean_character_percent": 52.39833159541189,
+        "replacement_character_percent": 0.0,
+        "distinct_outputs": 256,
+        "most_common_output_fraction": 0.00390625,
+        "repetition_token_1gram": 0.44980587909040487,
+        "repetition_token_2gram": 0.21402985074626865,
+        "examples": 256,
+        "exact_token_sequences": 0,
+        "exact_token_percent": 0.0,
+        "exact_decoded_strings": 0,
+        "decoded_string_reference": "Tokenizer-decoded target tokens, excluding EOS",
+        "exact_original_strings": 0,
+        "generated_reference_character_ratio": 1.2292245246742148
+      },
+      "outputs": [
+        "언웹島盾휩座盾税方座座盾座座座",
+        "에示した죠공리를這 가족享享 분享享 가족参",
+        "물론得這這충꽤꽤꽤꽤꽤꽤꽤꽤꽤꽤",
+        "현재稲휩께 현재 最 현재께型력을膵膵型膵 현재",
+        "낼낼낼리를일까요?낼導 거의일까요?낼력을 거의일까요?",
+        "에蛇なた 에偏 에偏羨口패没 시간와口 에",
+        "팀示맙偏なた方tt拠方t拠示ネル듭",
+        "그리고움찔취움토움토 한다.엄 다年찔해서",
+        "그러나리를리를 재리를以력을력을력을력을력을력을液력을드는",
+        "した객움危 보이뢰뢰 잠뢰 잠뢰偏 보이 가족",
+        "結바 성偏時間時間結時間時間時間結時間時間時間時間",
+        "出来 가족 둘 가족께啓啓 대해서잉啓啓出来움島 현재",
+        "結浮劣偏偏偏偏B柵偏偏B 정偏沙",
+        "어떤곁곁偏偏雄테테란란란란란란 병",
+        "蜜 대해서稲 가족께での이었습니다.での盾でのでの께엌稲盾",
+        "낼께 다음方働몫方캇좁ネル느찔좁倍叫",
+        "그러나괜 성납 역받납 그녀는납 에 역 뇌 그녀는 잠出",
+        "結なた약偏바偏折 에략偏략웹でした偏えます",
+        "なた부터なた委なた委なたなた부터바なた바 완なた沙",
+        "結 에B 에객当빕B富럽握 그들은준",
+        "での 가족偏神공 가족簡単공簡単羨공공簡単공簡単",
+        "(汚 どろろ換ろ換ろろ분方島앰",
+        "뭘움",
+        "啓센센での盾센認꼽 심沙富」認丘沙",
+        "結 효 대해서参なた약稲署센략센稲稲っと」",
+        "結움 가족엌움 가족엌長弦看엌 最엌看엌",
+        "した램팽꼽꼽꼽꼽남娯 実",
+        "부터잇이었습니다.잇꽤집이었습니다.부터이었습니다.잇이었습니다.이었습니다.밧창리를",
+        "R꽤렬적으로호討좁 올R 올 그렇게 올 올키 성",
+        "에られ縫方害 에き害害方害方害られ 에",
+        "에 효偏偏偏偏偏偏바偏貼偏 에沙 에",
+        "에움럽蜜뭘움럽짜倍럽창示 거의럽럽",
+        "結雄雄雄雄這這부터 있을까요? 파",
+        "그리고겠なたき 심u階蛇牙き 심u牙괜께",
+        "結でのでの参 에でのでのでのでのでの찔でのでのでの 병",
+        "움かを這ぽ牙かを괜かを움偏牙움かを貼쫒",
+        "에焼빽偏認偏富偏認 에바認認偏認",
+        "속왈ぜ 심ぜぜぜぜぜ램ぜぜぜぜぜ",
+        "珊費 다음こで梱 끝梱 때문입니다.かをこで梱かを梱벼かを",
+        "납なた没偏 친구 에害朗害朗害朗害朗」",
+        "언했어요. 각 가족偏혹 환冷カ부터出 심 에읽冷",
+        "규규규캇参参参 에가는参 에参参규出",
+        "結머니時間這し富結結結結結当結結곁",
+        "結的結빕 효 효署偏時間공での잇での税 에",
+        "偏 最偏偏ヴ偏 最偏 最偏엌偏偏偏沙",
+        "結잣 다빕잣 에잣잣잣잣잣잣잣잣잣",
+        "움객蛇褐雄왈왈認",
+        "심하죠.낼라탄낼라탄낼라",
+        "巡六丘丘予 것은",
+        "다음 건 다음 ア 국冷 다음 다음라는当바부터부터꽤します",
+        "언 성꽤 에벼벼벼 중요한금膵꽤벼膵꽤型",
+        "에곰 에 에곰 에가는 에 에 에 에가는 에 에 에",
+        "낼험험리를겼명겼 있을까요?",
+        "에빽엘 효빽参빽대這 에악 정",
+        "꽤꽤라라꽤 파꽤꽤라꽤라 파꽤태음",
+        "偏 에악이었습니다. 첫 첫這 재偏센센규센撮撮",
+        "부터럽 대해서럽괜부터부터부터부터럽 대해서이었습니다.부터이었습니다.럽",
+        "움꽤꽤 감사움 안娯盾羨羨簡単 감사 감사",
+        "結結말結結たのです말結낮낮졌結말たのです낮",
+        "그리고에지막드리했어요.드리께습니다퀴습니다드리했어요.",
+        "움蜜償 다음?찔嘩嘩 다음찔嘩嘩嘩嘩嘩",
+        "에 에 에訣偏 今偏修偏偏修偏偏偏飯",
+        "부터 여러부터바부터부터부터부터부터부터밧괜부터밧棚",
+        "結쉐なた四이었습니다.辺 심곱밍이었습니다.이었습니다.이었습니다.かを남이었습니다."
+      ]
+    },
+    "seconds": 116.02244500000961,
+    "gemm": {
+      "float64": 1871658,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 31,
+    "global_updates": 14725,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2654852,
+      "margin_active": 78215,
+      "all_accuracy": 2.3385147237496398,
+      "content_accuracy": 0.23118346553705166,
+      "hinge_per_token": 33.253403810263414,
+      "eos_recall": 22.36842105263158,
+      "eos_false_positive_rate": 0.41668397081827874,
+      "pos0_accuracy": 0.09210526315789473,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.09210526315789473
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.09215376513954714
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.06625149065853982
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.1480086114101184
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.18122927431171434
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.5580357142857143
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 143483,
+      "margin_active": 4207,
+      "all_accuracy": 3.050612433556737,
+      "content_accuracy": 0.2546473134708429,
+      "hinge_per_token": 33.159926045759185,
+      "eos_recall": 30.5,
+      "eos_false_positive_rate": 0.5092946269416858,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.14336917562724014
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.6302521008403361
+        }
+      }
+    },
+    "seconds": 123.3022409999976,
+    "gemm": {
+      "float64": 1933562,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 32,
+    "global_updates": 15200,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2036591,
+      "margin_active": 74118,
+      "all_accuracy": 8.290642183448776,
+      "content_accuracy": 1.5989036089538602,
+      "hinge_per_token": 25.509362826759524,
+      "eos_recall": 71.89473684210526,
+      "eos_false_positive_rate": 8.33506374849454,
+      "pos0_accuracy": 2.1578947368421053,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 2.1578947368421053
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 1.5666140073723012
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 1.484033390751292
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 1.9510226049515609
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 1.6156397007789003
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 1.2152777777777777
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 114272,
+      "margin_active": 4033,
+      "all_accuracy": 7.857638086434019,
+      "content_accuracy": 1.2732365673542143,
+      "hinge_per_token": 26.409059394499653,
+      "eos_recall": 72.5,
+      "eos_false_positive_rate": 10.03310415075121,
+      "pos0_accuracy": 1.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 1.5075376884422111
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.0309278350515463
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 1.5770609318996416
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 1.1554621848739495
+        }
+      }
+    },
+    "seconds": 99.01334139995743,
+    "gemm": {
+      "float64": 1995466,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 33,
+    "global_updates": 15675,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 1938746,
+      "margin_active": 74147,
+      "all_accuracy": 7.996292445858437,
+      "content_accuracy": 1.1600703240721515,
+      "hinge_per_token": 24.283803249120083,
+      "eos_recall": 72.97368421052632,
+      "eos_false_positive_rate": 12.716474936666804,
+      "pos0_accuracy": 1.986842105263158,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.986842105263158
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.8293838862559242
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 1.126275341195177
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 1.036060279870829
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 1.191486080049356
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.9486607142857143
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 108229,
+      "margin_active": 4020,
+      "all_accuracy": 7.811416685925583,
+      "content_accuracy": 0.967659791189203,
+      "hinge_per_token": 25.012479778137276,
+      "eos_recall": 75.0,
+      "eos_false_positive_rate": 14.005602240896359,
+      "pos0_accuracy": 2.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 2.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.7537688442211056
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.7731958762886598
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.931899641577061
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.8403361344537815
+        }
+      }
+    },
+    "seconds": 142.78506269998616,
+    "gemm": {
+      "float64": 2057370,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 34,
+    "global_updates": 16150,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3352943,
+      "margin_active": 76474,
+      "all_accuracy": 4.469105803073763,
+      "content_accuracy": 0.19242216592604897,
+      "hinge_per_token": 41.997357115122064,
+      "eos_recall": 45.11842105263158,
+      "eos_false_positive_rate": 12.39530988274707,
+      "pos0_accuracy": 0.32894736842105265,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.32894736842105265
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.1579778830963665
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.09275208692195575
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.20182992465016147
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.1696614482918177
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.22321428571428573
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 186272,
+      "margin_active": 4156,
+      "all_accuracy": 4.183036746013404,
+      "content_accuracy": 0.20371785077667431,
+      "hinge_per_token": 43.0487635775364,
+      "eos_recall": 43.25,
+      "eos_false_positive_rate": 13.521772345301757,
+      "pos0_accuracy": 0.75,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.75
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.25773195876288657
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.21505376344086022
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.0
+        }
+      }
+    },
+    "seconds": 104.02830189996166,
+    "gemm": {
+      "float64": 2119274,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 35,
+    "global_updates": 16625,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2278878,
+      "margin_active": 78746,
+      "all_accuracy": 1.7823816025151247,
+      "content_accuracy": 0.5357365339092155,
+      "hinge_per_token": 28.54413367235743,
+      "eos_recall": 13.631578947368421,
+      "eos_false_positive_rate": 0.06506361006132591,
+      "pos0_accuracy": 1.3157894736842106,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.3157894736842106
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.3817798841495524
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.38425864581953095
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.43057050592034446
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.3778823166499576
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.6138392857142857
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 123610,
+      "margin_active": 4268,
+      "all_accuracy": 1.8950774208458516,
+      "content_accuracy": 0.45836516424751717,
+      "hinge_per_token": 28.5671365842385,
+      "eos_recall": 16.0,
+      "eos_false_positive_rate": 0.025464731347084293,
+      "pos0_accuracy": 1.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.14336917562724014
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.9453781512605042
+        }
+      }
+    },
+    "seconds": 101.33707860001596,
+    "gemm": {
+      "float64": 2181178,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 36,
+    "global_updates": 17100,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2207634,
+      "margin_active": 75340,
+      "all_accuracy": 6.157545999974949,
+      "content_accuracy": 0.4457549455265307,
+      "hinge_per_token": 27.651765472149506,
+      "eos_recall": 60.44736842105263,
+      "eos_false_positive_rate": 9.969959992801472,
+      "pos0_accuracy": 0.8157894736842105,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.8157894736842105
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.36861506055818855
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.357758049556115
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.49784714747039827
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.37017043263669314
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.44642857142857145
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 123902,
+      "margin_active": 4098,
+      "all_accuracy": 6.147446267621909,
+      "content_accuracy": 0.5602240896358543,
+      "hinge_per_token": 28.634619828980817,
+      "eos_recall": 61.0,
+      "eos_false_positive_rate": 9.421950598421187,
+      "pos0_accuracy": 1.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.25125628140703515
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.7731958762886598
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.43010752688172044
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.7352941176470589
+        }
+      }
+    },
+    "seconds": 111.07984790002229,
+    "gemm": {
+      "float64": 2243082,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 37,
+    "global_updates": 17575,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 1955479,
+      "margin_active": 75052,
+      "all_accuracy": 7.202174430401944,
+      "content_accuracy": 1.3704888076747372,
+      "hinge_per_token": 24.493392787805153,
+      "eos_recall": 62.63157894736842,
+      "eos_false_positive_rate": 1.932527652034276,
+      "pos0_accuracy": 1.6973684210526316,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.6973684210526316
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.7503949447077409
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.6625149065853981
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.7669537136706136
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 1.2300455001156783
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 2.34375
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 108237,
+      "margin_active": 4066,
+      "all_accuracy": 6.7021030737231335,
+      "content_accuracy": 1.0185892538833716,
+      "hinge_per_token": 25.014328634157614,
+      "eos_recall": 62.5,
+      "eos_false_positive_rate": 2.1135727018079957,
+      "pos0_accuracy": 1.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 1.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.25380710659898476
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 1.003584229390681
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 1.8907563025210083
+        }
+      }
+    },
+    "seconds": 101.42341350001516,
+    "gemm": {
+      "float64": 2304986,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 38,
+    "global_updates": 18050,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3828652,
+      "margin_active": 79599,
+      "all_accuracy": 0.34820947680899833,
+      "content_accuracy": 0.04152996386893144,
+      "hinge_per_token": 47.955860064882195,
+      "eos_recall": 3.263157894736842,
+      "eos_false_positive_rate": 0.03737696748203829,
+      "pos0_accuracy": 0.10526315789473684,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.10526315789473684
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.06582411795681938
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.013250298131707963
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.02691065662002153
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.034703478059689985
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.031001984126984128
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 206991,
+      "margin_active": 4310,
+      "all_accuracy": 0.5315461058470071,
+      "content_accuracy": 0.02546473134708429,
+      "hinge_per_token": 47.83706956320776,
+      "eos_recall": 5.5,
+      "eos_false_positive_rate": 0.0,
+      "pos0_accuracy": 0.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.0
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.0
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.0
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.10504201680672269
+        }
+      }
+    },
+    "seconds": 88.5844448999851,
+    "gemm": {
+      "float64": 2366890,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 39,
+    "global_updates": 18525,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 2028379,
+      "margin_active": 78095,
+      "all_accuracy": 2.9735586256998636,
+      "content_accuracy": 1.2971192048396252,
+      "hinge_per_token": 25.406503250372634,
+      "eos_recall": 18.907894736842106,
+      "eos_false_positive_rate": 0.16750418760469013,
+      "pos0_accuracy": 1.4210526315789473,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.4210526315789473
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 1.369141653501843
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.9805220617463893
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 1.6415500538213132
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 1.314876224261587
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 1.1656746031746033
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 112106,
+      "margin_active": 4211,
+      "all_accuracy": 3.3741622371157844,
+      "content_accuracy": 1.6042780748663101,
+      "hinge_per_token": 25.908481626993296,
+      "eos_recall": 20.75,
+      "eos_false_positive_rate": 0.15278838808250572,
+      "pos0_accuracy": 2.5,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 2.5
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 1.256281407035176
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 1.5463917525773196
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 1.5770609318996416
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 1.8907563025210083
+        }
+      }
+    },
+    "seconds": 102.59353610000107,
+    "gemm": {
+      "float64": 2428794,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 40,
+    "global_updates": 19000,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 1874984,
+      "margin_active": 75450,
+      "all_accuracy": 6.491977403960569,
+      "content_accuracy": 1.3524924899982003,
+      "hinge_per_token": 23.485150995152622,
+      "eos_recall": 55.3421052631579,
+      "eos_false_positive_rate": 2.6053130667109654,
+      "pos0_accuracy": 1.868421052631579,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 1.868421052631579
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 1.6061084781463928
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.7685172916390619
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.9418729817007535
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 1.3727153543610704
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 1.419890873015873
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 103703,
+      "margin_active": 4080,
+      "all_accuracy": 6.632770972960481,
+      "content_accuracy": 1.324166030048383,
+      "hinge_per_token": 23.966489484631385,
+      "eos_recall": 58.75,
+      "eos_false_positive_rate": 3.1321619556913673,
+      "pos0_accuracy": 2.0,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 2.0
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 1.5075376884422111
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.7614213197969543
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.5154639175257731
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 1.2903225806451613
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 1.5756302521008403
+        }
+      }
+    },
+    "train_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 101204,
+        "margin_active": 4020,
+        "all_accuracy": 6.547758742079324,
+        "content_accuracy": 1.4763014763014763,
+        "hinge_per_token": 23.75123210513964,
+        "eos_recall": 55.5,
+        "eos_false_positive_rate": 2.356902356902357,
+        "pos0_accuracy": 1.5,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.5
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 3.0
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 1.0025062656641603
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.5089058524173028
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.7907979870596693
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 2.5056947608200457
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 100291,
+        "margin_active": 4013,
+        "all_accuracy": 6.782445435343816,
+        "content_accuracy": 1.269101269101269,
+        "hinge_per_token": 23.536963154189156,
+        "eos_recall": 60.0,
+        "eos_false_positive_rate": 2.356902356902357,
+        "pos0_accuracy": 1.5,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.5
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 1.5
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 1.0025062656641603
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 1.272264631043257
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 1.2940330697340043
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 1.1389521640091116
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4261,
+        "content_tokens": 3861,
+        "eos_tokens": 400,
+        "hinge_sum": 143761,
+        "margin_active": 3938,
+        "all_accuracy": 7.721192208401783,
+        "content_accuracy": 0.2849002849002849,
+        "hinge_per_token": 33.73879371039662,
+        "eos_recall": 79.5,
+        "eos_false_positive_rate": 4.895104895104895,
+        "pos0_accuracy": 0.0,
+        "reference_mean_tokens": 9.6525,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "1": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "2": {
+            "content_tokens": 399,
+            "content_accuracy": 0.2506265664160401
+          },
+          "3": {
+            "content_tokens": 393,
+            "content_accuracy": 0.0
+          },
+          "4-7": {
+            "content_tokens": 1391,
+            "content_accuracy": 0.07189072609633357
+          },
+          "8+": {
+            "content_tokens": 878,
+            "content_accuracy": 1.0250569476082005
+          }
+        }
+      },
+      "real_minus_shuffled": 0.20720020720020726,
+      "real_minus_zeroed": 1.1914011914011915
+    },
+    "valid_source": {
+      "real": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 103703,
+        "margin_active": 4080,
+        "all_accuracy": 6.632770972960481,
+        "content_accuracy": 1.324166030048383,
+        "hinge_per_token": 23.966489484631385,
+        "eos_recall": 58.75,
+        "eos_false_positive_rate": 3.1321619556913673,
+        "pos0_accuracy": 2.0,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 2.0
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 1.5075376884422111
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.7614213197969543
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.5154639175257731
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 1.2903225806451613
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 1.5756302521008403
+          }
+        }
+      },
+      "shuffled": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 105849,
+        "margin_active": 4079,
+        "all_accuracy": 6.470996071180957,
+        "content_accuracy": 1.3496307613954672,
+        "hinge_per_token": 24.462445112086897,
+        "eos_recall": 56.75,
+        "eos_false_positive_rate": 2.8775146422205244,
+        "pos0_accuracy": 1.5,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 1.5
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 1.7587939698492463
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 1.015228426395939
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.7731958762886598
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 1.2186379928315412
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 1.680672268907563
+          }
+        }
+      },
+      "zeroed": {
+        "examples": 400,
+        "tokens": 4327,
+        "content_tokens": 3927,
+        "eos_tokens": 400,
+        "hinge_sum": 147641,
+        "margin_active": 4022,
+        "all_accuracy": 7.34920268084123,
+        "content_accuracy": 0.2801120448179272,
+        "hinge_per_token": 34.12086896232956,
+        "eos_recall": 76.75,
+        "eos_false_positive_rate": 5.296664120193532,
+        "pos0_accuracy": 0.0,
+        "reference_mean_tokens": 9.8175,
+        "position_buckets": {
+          "0": {
+            "content_tokens": 400,
+            "content_accuracy": 0.0
+          },
+          "1": {
+            "content_tokens": 398,
+            "content_accuracy": 0.25125628140703515
+          },
+          "2": {
+            "content_tokens": 394,
+            "content_accuracy": 0.0
+          },
+          "3": {
+            "content_tokens": 388,
+            "content_accuracy": 0.25773195876288657
+          },
+          "4-7": {
+            "content_tokens": 1395,
+            "content_accuracy": 0.21505376344086022
+          },
+          "8+": {
+            "content_tokens": 952,
+            "content_accuracy": 0.6302521008403361
+          }
+        }
+      },
+      "real_minus_shuffled": -0.025464731347084157,
+      "real_minus_zeroed": 1.0440539852304558
+    },
+    "train_greedy_256": {
+      "metrics": {
+        "chrf": 3.6539465000909157,
+        "character_bleu_add_one": 2.9529991531431734,
+        "mean_generated_characters": 22.19140625,
+        "mean_reference_characters": 18.28515625,
+        "reference_generated_character_ratio": 0.8239746523499384,
+        "mean_generated_content_tokens": 10.90625,
+        "korean_character_percent": 69.00193627882415,
+        "replacement_character_percent": 0.0,
+        "distinct_outputs": 255,
+        "most_common_output_fraction": 0.0078125,
+        "repetition_token_1gram": 0.42335243553008595,
+        "repetition_token_2gram": 0.1999211356466877,
+        "examples": 256,
+        "exact_token_sequences": 0,
+        "exact_token_percent": 0.0,
+        "exact_decoded_strings": 0,
+        "decoded_string_reference": "Tokenizer-decoded target tokens, excluding EOS",
+        "exact_original_strings": 0,
+        "generated_reference_character_ratio": 1.2136295663319803
+      },
+      "outputs": [
+        "했 랜옥했했했했했했했했했했했",
+        "습  없습니다.의 해  하나고  하나고고고",
+        "희명명 희들이 험 험 부?",
+        "그것은 명 프로 感 생각고고 생각고",
+        "세요. 감사 없습니다. 없습니다.하게하게했 감사 감사 감사합니다.",
+        " 들은 옥         겁니다.",
+        "C능신능 하나신 보생죠.",
+        "侮 척 물댄에서댄어요.",
+        "부부했 옥 프로들은까 부분야으로를부",
+        "  때문입니다.  때문입니다.  때문입니다.  큰  때문입니다.고  때문입니다.",
+        "트트 없습니다.를 습니다.",
+        "떨명명명명들은들 밖",
+        "뻔뻔뻔것하게하게하게하게하게하게하게 강하게",
+        "\"명명명고 큰고고하게까요?",
+        " 됩니다.  하나만 해 해  하나  하나만만",
+        "그것은벼 감사 감사지  큰하게 감사지죠.",
+        " 강 없습니다. 프로으로  않았습니다. 고고고고고합니다.",
+        "전 하나 없습니다. 없습니다. 겁니다.할까요?원죠.人々원 겁니다.",
+        "예에서捜에서에서 하나에서에서에서에서에서에서에서 때문입니다. 겁니다.",
+        "하나 하나신 없습니다..",
+        "치  부분  감사고고고고고고고 감사",
+        "偉옥 옥 옥 옥 옥 옥",
+        " 않았습니다..",
+        "뭐 없습니다. 부 부 부 부 부 부 없습니다. 없습니다. 없습니다. 부합니다.",
+        "감사 감사설설 감사설 감사  큰 감사했 감사 감사",
+        "이는에게에게 士ります 士",
+        " 때문입니다. 일이까요? 일이고 :으로드리겠습니다. 없습니다. 겁니다.",
+        "험  알고 안 숭  알고  알고  질문고",
+        "그들의 시작죠.",
+        "んで침) 프로 감사침)면서)婆婆婆습 겁니다.",
+        "신 알 부 부 부신 부신신시 부신",
+        "처럼 처럼 처럼죠.",
+        "어 강 없습니다. 믿를 부????",
+        "00 상 큰 상 상죠.",
+        " 해 해 해 해 해 해 해요.",
+        "감사전명명명명 )",
+        ".죠.습니다.명.근.",
+        "가지에서 해 가지고 신 해 해 가지고 해까요?까요?",
+        "신 신 신 큰 신 신 신 신고 신려 딸옥",
+        "생치원식죠.",
+        "그 않았습니다. 겁니다.들이에서에서에서에서에서에서로들이.",
+        "뻔뻔딸이는하게희하게딸이는 짚하게하게하게O",
+        " 라고 해에서  감사 해  라고 해에서 감사합니다.",
+        "생들은 하나적인 해들은적인 해에서 하나 하나죠.",
+        "C겠습니다.한 때문입니다.겠습니다.한 때문입니다.들은들은 보겠습니다.겠습니다. 겁니다.",
+        "그것은라고라고라고라고 분라고 분  큰라고 물 물",
+        "감사 하나 프로 프로 감사 감사했했 감사했으로 있로 감사리아",
+        "또신 겁니다.고야 해신음에서야죠.",
+        "습니다.전전성을 根습니다. 보이정 감사성을 큰습니다.명",
+        ") 하나고 깁  큰  때문입니다.고  때문입니다.",
+        " 감사할할  감사들은  감사 감사  감사고",
+        "능생생생생생생생생",
+        "신신에게 안신: 때문입니다.",
+        "  알고 어떻게 : 해 했 ",
+        "옥 더 다어요.어요.어요.어요.어요. 때문입니다. 때문입니다. 때문입니다. 때문입니다. 때문입니다. 때문입니다.식",
+        "하나 하나  명  명 볼 하나 부분에서 부분고 하나",
+        ": 부  알고  알고 고  보고들이고",
+        "치아요. 겁니다.만아요. 없습니다.아요. 해아요. 겁니다. 겁니다.고 겁니다.습니다.",
+        "희 감사 감사으로  감사으로지 겁니다.지까요?",
+        " 않았습니다.로 해 타드리  큰 밌 攻하게",
+        " 않았습니다. 겁니다.깁: 겁니다.고:고  않았습니다.랜 겁니다. 겁니다.",
+        "생 겁니다. 겁니다. 겁니다.어요.고 척하게 하나 감사에서어요.",
+        "하나 하나 하나옥에서 놀라옥에서 하나고",
+        "옥옥에서 척고어요.어요.과옥에서에서에서어요."
+      ]
+    },
+    "seconds": 90.21434529998805,
+    "gemm": {
+      "float64": 2495544,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  },
+  {
+    "epoch": 41,
+    "global_updates": 19475,
+    "train": {
+      "examples": 7600,
+      "tokens": 79837,
+      "content_tokens": 72237,
+      "eos_tokens": 7600,
+      "hinge_sum": 3916846,
+      "margin_active": 78796,
+      "all_accuracy": 1.5481543645177047,
+      "content_accuracy": 0.2865567506956269,
+      "hinge_per_token": 49.06053584177762,
+      "eos_recall": 13.539473684210526,
+      "eos_false_positive_rate": 0.628486786549829,
+      "pos0_accuracy": 0.8157894736842105,
+      "reference_mean_tokens": 9.504868421052631,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 7600,
+          "content_accuracy": 0.8157894736842105
+        },
+        "1": {
+          "content_tokens": 7596,
+          "content_accuracy": 0.4081095313322802
+        },
+        "2": {
+          "content_tokens": 7547,
+          "content_accuracy": 0.371008347687823
+        },
+        "3": {
+          "content_tokens": 7432,
+          "content_accuracy": 0.09418729817007535
+        },
+        "4-7": {
+          "content_tokens": 25934,
+          "content_accuracy": 0.18508521631834657
+        },
+        "8+": {
+          "content_tokens": 16128,
+          "content_accuracy": 0.1922123015873016
+        }
+      }
+    },
+    "valid": {
+      "examples": 400,
+      "tokens": 4327,
+      "content_tokens": 3927,
+      "eos_tokens": 400,
+      "hinge_sum": 217826,
+      "margin_active": 4282,
+      "all_accuracy": 1.2248671134735383,
+      "content_accuracy": 0.2546473134708429,
+      "hinge_per_token": 50.341113935752254,
+      "eos_recall": 10.75,
+      "eos_false_positive_rate": 0.9421950598421187,
+      "pos0_accuracy": 0.25,
+      "reference_mean_tokens": 9.8175,
+      "position_buckets": {
+        "0": {
+          "content_tokens": 400,
+          "content_accuracy": 0.25
+        },
+        "1": {
+          "content_tokens": 398,
+          "content_accuracy": 0.5025125628140703
+        },
+        "2": {
+          "content_tokens": 394,
+          "content_accuracy": 0.5076142131979695
+        },
+        "3": {
+          "content_tokens": 388,
+          "content_accuracy": 0.0
+        },
+        "4-7": {
+          "content_tokens": 1395,
+          "content_accuracy": 0.14336917562724014
+        },
+        "8+": {
+          "content_tokens": 952,
+          "content_accuracy": 0.31512605042016806
+        }
+      }
+    },
+    "seconds": 94.83846259996062,
+    "gemm": {
+      "float64": 2557448,
+      "int64": 0
+    },
+    "max_weight": 128,
+    "max_accumulator": 4095
+  }
+]

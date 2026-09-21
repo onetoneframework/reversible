@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "exact_previous_split_reuse": true,
+    "tokenizer_hash_identical": true,
+    "deterministic_initialization_seed_zero": true,
+    "first_batch_loss_finite": true,
+    "gradients_finite": true,
+    "greedy_decoder_works": true,
+    "full_state_checkpoint_contains_adam": true,
+    "next_update_bit_identical_after_restore": true,
+    "model_only_restore_rejected": true,
+    "protected_hashes_unchanged": true
+  },
+  "first_batch_loss": 8.652863502502441,
+  "runner_sha256": "08e2d037acf23cb337670f79a74298ccf43b752a80b68fed26c7d8b2c1650a2e",
+  "passed": true
+}

@@ -1,0 +1,1 @@
+{"train": 66853, "valid": 3518, "params": 4878336, "dim": 192, "cfg": {"softmax": true, "pow2": true, "exp2": true, "quantw": false, "sgd": false, "name": "hinge_exp2_pow21_adam"}, "loss": "hinge", "opt": "adam", "momentum_bits": 0, "lr": 0.0003}

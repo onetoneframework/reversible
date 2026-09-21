@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" font-family="Segoe UI, Noto Sans KR, sans-serif" font-size="12">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b2129"/></marker>
+    <marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f6f8b"/></marker>
+  </defs>
+  <!-- forward -->
+  <text x="20" y="26" font-weight="600" fill="#1b2129">Forward (layer k)</text>
+  <rect x="20" y="42" width="60" height="34" rx="3" fill="#eef3f6" stroke="#8a94a0"/><text x="50" y="63" text-anchor="middle">a</text>
+  <rect x="20" y="96" width="60" height="34" rx="3" fill="#eef3f6" stroke="#8a94a0"/><text x="50" y="117" text-anchor="middle">b</text>
+  <rect x="140" y="42" width="150" height="34" rx="3" fill="#fff" stroke="#1b2129"/><text x="215" y="63" text-anchor="middle">f(a) = Q<tspan baseline-shift="sub" font-size="9">t</tspan>(ReLU(Q<tspan baseline-shift="sub" font-size="9">t</tspan>(aUᵀ))Vᵀ)</text>
+  <line x1="80" y1="59" x2="140" y2="59" stroke="#1b2129" marker-end="url(#ar)"/>
+  <circle cx="330" cy="113" r="12" fill="#fff" stroke="#1b2129"/><text x="330" y="118" text-anchor="middle" font-size="15">+</text>
+  <line x1="215" y1="76" x2="215" y2="113" stroke="#1b2129"/><line x1="215" y1="113" x2="318" y2="113" stroke="#1b2129" marker-end="url(#ar)"/>
+  <line x1="80" y1="113" x2="215" y2="113" stroke="#1b2129"/>
+  <line x1="342" y1="113" x2="380" y2="113" stroke="#1b2129" marker-end="url(#ar)"/>
+  <line x1="80" y1="59" x2="380" y2="59" stroke="#1b2129" stroke-dasharray="3 3"/><line x1="290" y1="59" x2="380" y2="59" stroke="#1b2129" marker-end="url(#ar)"/>
+  <rect x="380" y="42" width="60" height="34" rx="3" fill="#eef3f6" stroke="#8a94a0"/><text x="410" y="63" text-anchor="middle">a</text>
+  <rect x="380" y="96" width="60" height="34" rx="3" fill="#eef3f6" stroke="#8a94a0"/><text x="410" y="117" text-anchor="middle" font-size="11">b + f(a) mod 2<tspan baseline-shift="super" font-size="8">bs</tspan></text>
+  <path d="M440,59 C480,59 480,113 520,113" fill="none" stroke="#8a94a0"/><path d="M440,113 C480,113 480,59 520,59" fill="none" stroke="#8a94a0"/>
+  <text x="480" y="150" text-anchor="middle" fill="#525c68" font-size="11">swap + fixed permutation</text>
+  <rect x="520" y="42" width="60" height="34" rx="3" fill="#eef3f6" stroke="#8a94a0"/><text x="550" y="63" text-anchor="middle">a′</text>
+  <rect x="520" y="96" width="60" height="34" rx="3" fill="#eef3f6" stroke="#8a94a0"/><text x="550" y="117" text-anchor="middle">b′</text>
+  <text x="600" y="63" fill="#525c68" font-size="11">→ layer k+1 … nothing is stored</text>
+  <!-- backward -->
+  <text x="20" y="196" font-weight="600" fill="#1f6f8b">Backward (layer k), given only [a′, b′] and the adjoint (m, e)</text>
+  <g font-size="11.5">
+    <rect x="20" y="210" width="150" height="66" rx="3" fill="#e3eff4" stroke="#1f6f8b"/>
+    <text x="95" y="230" text-anchor="middle" font-weight="600">1 undo permutation</text><text x="95" y="248" text-anchor="middle">a ← a′, (b + f(a)) ← b′</text><text x="95" y="264" text-anchor="middle" fill="#525c68">exact, modular</text>
+    <line x1="170" y1="243" x2="200" y2="243" stroke="#1f6f8b" marker-end="url(#arb)"/>
+    <rect x="200" y="210" width="170" height="66" rx="3" fill="#e3eff4" stroke="#1f6f8b"/>
+    <text x="285" y="230" text-anchor="middle" font-weight="600">2 recompute f(a)</text><text x="285" y="248" text-anchor="middle">forward parameters U, V;</text><text x="285" y="264" text-anchor="middle">b ← b′ − f(a) mod 2<tspan baseline-shift="super" font-size="8">bs</tspan> (bit-exact)</text>
+    <line x1="370" y1="243" x2="400" y2="243" stroke="#1f6f8b" marker-end="url(#arb)"/>
+    <rect x="400" y="210" width="200" height="66" rx="3" fill="#e3eff4" stroke="#1f6f8b"/>
+    <text x="500" y="230" text-anchor="middle" font-weight="600">3 gradients from the recompute</text><text x="500" y="248" text-anchor="middle">gU, gV and the input adjoint,</text><text x="500" y="264" text-anchor="middle">mantissa + one shared exponent</text>
+    <line x1="600" y1="243" x2="630" y2="243" stroke="#1f6f8b" marker-end="url(#arb)"/>
+    <rect x="630" y="210" width="150" height="66" rx="3" fill="#e3eff4" stroke="#1f6f8b"/>
+    <text x="705" y="230" text-anchor="middle" font-weight="600">4 update layer k</text><text x="705" y="248" text-anchor="middle">BlockSGD on gU, gV;</text><text x="705" y="264" text-anchor="middle">only after step 3</text>
+    <line x1="780" y1="243" x2="810" y2="243" stroke="#1f6f8b" marker-end="url(#arb)"/>
+    <text x="815" y="247" fill="#1f6f8b" font-size="11">layer k−1</text>
+  </g>
+</svg>

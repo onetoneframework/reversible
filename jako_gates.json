@@ -1,0 +1,94 @@
+{
+  "gates": [
+    {
+      "gate": 2,
+      "encoder_inverse_exact": true,
+      "decoder_inverse_exact": true,
+      "encoder_max_abs_state": 131,
+      "decoder_max_abs_state": 216,
+      "passed": true
+    },
+    {
+      "gate": 3,
+      "tensors_compared": 19,
+      "all_mantissas_equal": true,
+      "all_exponents_equal": true,
+      "first_mismatch_index": null,
+      "stats_match": true,
+      "passed": true
+    },
+    {
+      "gate": 4,
+      "steps": 8,
+      "first_divergent_step": null,
+      "passed": true
+    },
+    {
+      "gate": 5,
+      "production_hidden_bits": 16,
+      "rows": [
+        {
+          "adjoint_bits": 6,
+          "gW_q": 1.0,
+          "gW_k": 1.0,
+          "gW_v": 1.0,
+          "gW_o": 0.9998
+        },
+        {
+          "adjoint_bits": 12,
+          "gW_q": 1.0,
+          "gW_k": 1.0,
+          "gW_v": 1.0,
+          "gW_o": 1.0
+        },
+        {
+          "adjoint_bits": 20,
+          "gW_q": 1.0,
+          "gW_k": 1.0,
+          "gW_v": 1.0,
+          "gW_o": 1.0
+        }
+      ],
+      "adjoint_width_sweep": [
+        {
+          "hidden_bits": 10,
+          "max_abs_grad_mantissa": 983171072,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 12,
+          "max_abs_grad_mantissa": 992804864,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 16,
+          "max_abs_grad_mantissa": 995373056,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 20,
+          "max_abs_grad_mantissa": 995633920,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 24,
+          "max_abs_grad_mantissa": 995639760,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 30,
+          "max_abs_grad_mantissa": 801523876,
+          "near_int64_limit": false
+        },
+        {
+          "hidden_bits": 40,
+          "max_abs_grad_mantissa": 801523876,
+          "near_int64_limit": false
+        }
+      ],
+      "note": "adjoint magnitudes above ~2**24 overflow int64 inside the adjoint GEMMs; the hinge adjoint is bounded by 2**hidden_bits so production never enters that regime",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

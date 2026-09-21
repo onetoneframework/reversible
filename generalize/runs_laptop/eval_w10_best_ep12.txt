@@ -1,0 +1,3 @@
+﻿checkpoint g67k_d192_w10_ce2_best.pt  epoch 12  train pairs 66853  valid pairs 3518
+HELD-OUT (400 rows): chrF 6.599  BLEU 6.382  exact 0.00%  token_acc 21.613%  hinge/token 5.639
+  JA  怖くて泣いていたら

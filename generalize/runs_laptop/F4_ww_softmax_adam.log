@@ -1,0 +1,9 @@
+{"train": 66853, "valid": 3518, "params": 4878336, "dim": 192, "cfg": {"softmax": true, "pow2": true, "exp2": false, "quantw": false, "sgd": false, "name": "ww_softmax_pow21_adam"}, "loss": "ww", "opt": "adam", "momentum_bits": 0, "lr": 0.0003}
+  ep0   train_ww 426.956 | valid tok 11.93% | greedy chrF 3.49 BLEU 3.03 exact 0/400 | 8.0m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 저는 이 굉지
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 어떻게 어떻게 어떻게 어떻게 하을 어떻게
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 굉지 않나요? 뭘
+  ep1   train_ww 203.033 | valid tok 16.78% | greedy chrF 5.19 BLEU 4.86 exact 0/400 | 16.3m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 꽤 멈추고
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 어떻게 어떻게 어떻게 해야 할까요?
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 어떻게 어떻게 어떻게 어떻게 어떻게 어떻게 어떻게 되는지

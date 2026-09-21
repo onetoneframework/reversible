@@ -1,0 +1,38 @@
+[
+  {
+    "score_map": "linear",
+    "hidden_bits": 8,
+    "acc_mean_pct": 9.92,
+    "acc_std_pct": 2.51,
+    "per_seed_pct": [
+      10.13,
+      7.31,
+      12.32
+    ],
+    "inverse_exact": true
+  },
+  {
+    "score_map": "linear",
+    "hidden_bits": 12,
+    "acc_mean_pct": 9.91,
+    "acc_std_pct": 2.51,
+    "per_seed_pct": [
+      10.11,
+      7.31,
+      12.32
+    ],
+    "inverse_exact": true
+  },
+  {
+    "score_map": "linear",
+    "hidden_bits": 16,
+    "acc_mean_pct": 11.14,
+    "acc_std_pct": 2.82,
+    "per_seed_pct": [
+      11.15,
+      8.31,
+      13.95
+    ],
+    "inverse_exact": true
+  }
+]

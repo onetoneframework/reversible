@@ -1,0 +1,35 @@
+[
+  {
+    "K_enc": 2,
+    "K_dec": 2,
+    "encoder_cached_activation_bytes": 3571712,
+    "encoder_cachefree_peak_bytes": 2252800,
+    "decoder_cached_activation_bytes": 4505600,
+    "decoder_cachefree_peak_bytes": 2777088,
+    "parameter_bytes": 4685824,
+    "encoder_memory_bytes": 524288,
+    "token_buffer_bytes": 12288
+  },
+  {
+    "K_enc": 4,
+    "K_dec": 4,
+    "encoder_cached_activation_bytes": 7012352,
+    "encoder_cachefree_peak_bytes": 2252800,
+    "decoder_cached_activation_bytes": 7946240,
+    "decoder_cachefree_peak_bytes": 2777088,
+    "parameter_bytes": 5210112,
+    "encoder_memory_bytes": 524288,
+    "token_buffer_bytes": 12288
+  },
+  {
+    "K_enc": 8,
+    "K_dec": 8,
+    "encoder_cached_activation_bytes": 13893632,
+    "encoder_cachefree_peak_bytes": 2252800,
+    "decoder_cached_activation_bytes": 15106048,
+    "decoder_cachefree_peak_bytes": 2777088,
+    "parameter_bytes": 6389760,
+    "encoder_memory_bytes": 524288,
+    "token_buffer_bytes": 12288
+  }
+]

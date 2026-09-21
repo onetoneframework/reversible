@@ -1,0 +1,26 @@
+checkpoint g67k_d192_split_best.pt  epoch 2  train pairs 66853  valid pairs 3518
+HELD-OUT (400 rows): chrF 4.248  BLEU 4.067  exact 0.00%  token_acc 13.594%  hinge/token 25.313
+  JA  怖くて泣いていたら
+  REF 그러면 겁에 질리고 울었겠지요.
+  GEN 그런데 전 천심심할 수 들고 물어요.
+  JA  これを知ること無しに何を予想していたでしょうか?
+  REF 이 사실을 모른다면 어떤 예측을 했을까요?
+  GEN 정말 전 우리가 현실한 현실은 실제로하지 않아요.
+  JA  どうやってやるのか?
+  REF 어떻게 이런 일을 할 수 있을까요?
+  GEN "그께는 였죠. "상""
+  JA  倫理的英雄を賞賛してください
+  REF 인정해 주세요.
+  GEN 정말 어디야.
+
+{
+ "tokens": 4502,
+ "hinge_per_token": 25.3127,
+ "token_acc": 13.594,
+ "margin_active_frac": 0.8696,
+ "logit_std": 27.567,
+ "margin_true_minus_best_wrong": -22.263,
+ "chrf": 4.248,
+ "bleu": 4.067,
+ "seq_exact_match": 0.0
+}

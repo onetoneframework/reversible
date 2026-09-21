@@ -1,0 +1,27 @@
+{
+ "args": {
+  "dim": 192,
+  "epochs": 20,
+  "batch": 32,
+  "lr": 0.0003,
+  "threads": 4,
+  "eval_rows": 400,
+  "seed": 0,
+  "max_tok": 32,
+  "max_len": 40,
+  "out": "<local>/float_ceiling_d192_long.json"
+ },
+ "history": [
+  {
+   "epoch": 0,
+   "train_ce": 4.531701814580146,
+   "minutes": 49.4,
+   "valid_token_acc": 23.467432950191572,
+   "chrf": 6.664161320631518,
+   "bleu": 6.4217366807688245,
+   "exact": 0,
+   "rows": 400
+  }
+ ],
+ "best_chrf": 6.664161320631518
+}

@@ -1,0 +1,510 @@
+{
+  "config": {
+    "mode": "train",
+    "corpus": "both",
+    "max_pairs": 2000,
+    "vocab_size": 5000,
+    "max_len": 16,
+    "valid_frac": 0.05,
+    "dim": 96,
+    "ffn_hidden": 192,
+    "k_enc": 2,
+    "k_dec": 4,
+    "enc_pattern": "",
+    "dec_pattern": "ccaf",
+    "tok_mode": "char",
+    "score_leak": null,
+    "max_tok": 14,
+    "batch": 32,
+    "epochs": 2,
+    "lr_bits": 1,
+    "state_bits": 16,
+    "weight_bits": 8,
+    "accum_bits": 32,
+    "hidden_bits": 16,
+    "seed": 0,
+    "threads": 2,
+    "eval_every": 1,
+    "patience": 5,
+    "subs_pairs": 25000,
+    "subs_pool": 0,
+    "base_pairs": 8000,
+    "base_pool": 0,
+    "min_char_count": 20,
+    "max_eval": 100,
+    "momentum_bits": 7,
+    "score_exp2": 3,
+    "score_exp2_cap": 12,
+    "exp2_diag": false,
+    "attn_score_bits": 0,
+    "attn_mass_bits": 0,
+    "scheduled_sampling": 0,
+    "positional": 16,
+    "prefix_corrupt": 0,
+    "query_anchor": false,
+    "snapshot_epochs": [],
+    "probe_file": "",
+    "run_tag": "",
+    "chunk_head": 0,
+    "show_samples": 0,
+    "depths": [
+      2,
+      4,
+      8
+    ],
+    "out": "<local>/smoke_ce2.json",
+    "save_ckpt": "<local>/smoke_ce2.pt",
+    "resume": "",
+    "ckpt": "jako_model.pt",
+    "text": []
+  },
+  "data": {
+    "corpus": "both",
+    "zip": "tatoeba+ted2020",
+    "sha256": "a06cd974a19751280ec0be0cd3b52000630eb96ee6563fc9965dc18471327be1/f7a3a4b7f4d02532d4eb253fb0e474f7d15f1d14cb26ced39bc37fdbf40c7b9d",
+    "ja_file": "combined",
+    "ko_file": "combined",
+    "raw_lines": 359300,
+    "url": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2023-04-12/moses/ja-ko.txt.zip ; https://object.pouta.csc.fi/OPUS-TED2020/v1/moses/ja-ko.txt.zip",
+    "license": "CC-BY 2.0 FR ; CC BY-NC-ND 4.0 (TED)",
+    "cite": "OPUS Tatoeba v2023-04-12 ; OPUS TED2020 v1",
+    "clean_stats": {
+      "raw": 359300,
+      "empty": 3395,
+      "length": 53073,
+      "script": 97,
+      "dupe": 3021,
+      "acceptance": 1734,
+      "kept": 297980
+    },
+    "subtitle_filter": null,
+    "pairs_after_max_tok": {
+      "ted2020": 497,
+      "tatoeba": 3
+    },
+    "pairs_after_limit": 500,
+    "vocab_size": 5000,
+    "max_len": 16,
+    "train_encoded": 475,
+    "valid_encoded": 25,
+    "train_by_corpus": {
+      "ted2020": 472,
+      "tatoeba": 3
+    },
+    "valid_by_corpus": {
+      "ted2020": 25
+    },
+    "tokenizer": "tok_both_a20_5000_char.json"
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "train_hinge_per_token": 86.9523,
+      "train_token_acc": 0.931,
+      "train_margin_active_frac": 0.9915,
+      "param_grad_nonzero_pct": 22.821,
+      "weights_moved_since_init_pct": 2.47,
+      "grad_exponent_min": -28,
+      "grad_exponent_max": -21,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 0,
+      "max_weight": 25,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 99.989,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 638.8,
+      "wall_seconds": 8.1,
+      "process_rss_mb": 854.8,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 265,
+          "all_token_acc": 0.377,
+          "hinge_per_token": 80.883,
+          "eos_recall": 4.0,
+          "eos_false_positive": 7.917,
+          "content_acc": 0.0,
+          "content_hinge": 88.7597,
+          "high_freq_acc": 0.0,
+          "punct_acc": 0.0,
+          "eos_share_of_correct": 100.0,
+          "class_tokens": {
+            "high_freq": 101,
+            "eos": 25,
+            "content": 129,
+            "punct": 10
+          },
+          "position_acc": {
+            "pos0": 0.0,
+            "pos1": 0.0,
+            "pos2": 0.0,
+            "pos3": 0.0,
+            "pos4-7": 0.0,
+            "pos8+": 1.37
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 0.0,
+              "content_hinge": 88.7597,
+              "content_tokens": 129
+            }
+          },
+          "balanced_content_acc": 0.0,
+          "balanced_content_hinge": 88.7597
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 0.0,
+            "pos0_acc": 0.0
+          },
+          "shuffled": {
+            "content_acc": 0.7752,
+            "pos0_acc": 0.0
+          },
+          "zeroed": {
+            "content_acc": 0.7752,
+            "pos0_acc": 4.0
+          },
+          "content_acc_gap_real_minus_shuffled": -0.7752,
+          "pos0_acc_gap_real_minus_shuffled": 0.0,
+          "sequences": 25
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "転科違瀬 중킨金은 기땄 기은 중 중사",
+              "엑液 말씀화를悩珠「 답 말씀液 말씀液 말씀 말씀쿼",
+              "패 우리 우리令箋 우리춘伐 연구槽槽 그리고つ 연구 우리",
+              "冷맘 私お기 私束テ掛束阻醜醜醜 스",
+              "核 す科潔민素晴らしい循곤科モ遙科류科 す",
+              "령맘인지になりました맘인지になりました浮빈ワ貰浮령티떻",
+              "이야기 더였 이야기현外륙 친구 게侵 10 진 '럽外",
+              "결국 기蛮お誉訂ゃ 전団 閉団と隻訂"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 38.7,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 26.7,
+            "repeat_bigram_pct": 5.4,
+            "distinct_outputs": 8,
+            "mean_len": 23.62,
+            "median_len": 27,
+            "len_ratio_vs_reference": 2.821,
+            "eos_positions": [
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "lexical_anchor_hits": 0,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "転科違瀬 중킨金은 기땄 기麻違",
+              "엑液 말씀화를悩珠「 답瞭液訴共폴 말씀쑥",
+              "패 우리 우리令箋僕 연구槽 연구複槽 그리고つ 연구倍",
+              "冷맘 私お기 조刃 결국掛束阻醜醜 스すること",
+              "核 す科潔민素晴らしい循곤科モ遙軌쟁힉 우리",
+              "령맘인지になりました빈인지貰達었죠.는説솟噂貰천",
+              "이야기 더였 이야기현外륙 친구 게侵 10 진 '럽外",
+              "결국 기蛮お誉訂ゃ 전団 閉富 좋은뜩よね"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 40.7,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 11.9,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 8,
+            "mean_len": 22.88,
+            "median_len": 23,
+            "len_ratio_vs_reference": 2.731,
+            "eos_positions": [
+              13,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1,
+              -1
+            ],
+            "lexical_anchor_hits": 0,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 80.883,
+      "valid_token_acc": 0.377,
+      "valid_margin_active_frac": 0.9962,
+      "valid_logit_std": 24.979,
+      "valid_margin_true_minus_best_wrong": -79.883,
+      "select_gap": -0.7752,
+      "select_real_minus_zeroed": -0.7752,
+      "select_score": 0.0,
+      "select_tiebreak": 88.7597,
+      "saved_best": true,
+      "validations_since_best": 0
+    },
+    {
+      "epoch": 1,
+      "train_hinge_per_token": 76.9078,
+      "train_token_acc": 1.785,
+      "train_margin_active_frac": 0.9845,
+      "param_grad_nonzero_pct": 24.487,
+      "weights_moved_since_init_pct": 5.192,
+      "grad_exponent_min": -28,
+      "grad_exponent_max": -20,
+      "state_wrap_frac": 0.0,
+      "accum_saturations": 0,
+      "max_weight": 32,
+      "attn_grad_nonzero_pct": {
+        "enc0_Wq": 100.0,
+        "enc0_Wk": 100.0,
+        "enc0_Wv": 100.0,
+        "enc0_Wo": 100.0,
+        "dec0_Wq": 100.0,
+        "dec0_Wk": 100.0,
+        "dec0_Wv": 100.0,
+        "dec0_Wo": 100.0,
+        "dec1_Wq": 100.0,
+        "dec1_Wk": 100.0,
+        "dec1_Wv": 100.0,
+        "dec1_Wo": 100.0,
+        "dec2_Wq": 100.0,
+        "dec2_Wk": 100.0,
+        "dec2_Wv": 100.0,
+        "dec2_Wo": 100.0
+      },
+      "tokens_per_sec": 555.6,
+      "wall_seconds": 18.5,
+      "process_rss_mb": 841.8,
+      "metrics": {
+        "teacher_forced": {
+          "tokens": 265,
+          "all_token_acc": 2.264,
+          "hinge_per_token": 75.9132,
+          "eos_recall": 16.0,
+          "eos_false_positive": 15.0,
+          "content_acc": 0.0,
+          "content_hinge": 88.5116,
+          "high_freq_acc": 1.98,
+          "punct_acc": 0.0,
+          "eos_share_of_correct": 66.67,
+          "class_tokens": {
+            "high_freq": 101,
+            "eos": 25,
+            "content": 129,
+            "punct": 10
+          },
+          "position_acc": {
+            "pos0": 0.0,
+            "pos1": 0.0,
+            "pos2": 0.0,
+            "pos3": 0.0,
+            "pos4-7": 2.174,
+            "pos8+": 5.479
+          },
+          "by_corpus": {
+            "ted2020": {
+              "content_acc": 0.0,
+              "content_hinge": 88.5116,
+              "content_tokens": 129
+            }
+          },
+          "balanced_content_acc": 0.0,
+          "balanced_content_hinge": 88.5116
+        },
+        "source_conditioning": {
+          "real": {
+            "content_acc": 0.0,
+            "pos0_acc": 0.0
+          },
+          "shuffled": {
+            "content_acc": 0.0,
+            "pos0_acc": 0.0
+          },
+          "zeroed": {
+            "content_acc": 0.0,
+            "pos0_acc": 0.0
+          },
+          "content_acc_gap_real_minus_shuffled": 0.0,
+          "pos0_acc_gap_real_minus_shuffled": 0.0,
+          "sequences": 25
+        },
+        "free_running": {
+          "greedy": {
+            "outputs": [
+              "腫 법−",
+              "管廊廊管廊廊訴",
+              "洋賢",
+              "팜フリカ대을",
+              "크",
+              "드는이터",
+              "럽 우리漏럽漏漏럽 항상壮",
+              "팜"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 53.6,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 12.7,
+            "repeat_bigram_pct": 5.7,
+            "distinct_outputs": 8,
+            "mean_len": 4.75,
+            "median_len": 4,
+            "len_ratio_vs_reference": 0.567,
+            "eos_positions": [
+              3,
+              7,
+              2,
+              4,
+              1,
+              2,
+              9,
+              1
+            ],
+            "lexical_anchor_hits": 0,
+            "lexical_anchor_max": 8
+          },
+          "repeat": {
+            "outputs": [
+              "腫 법−",
+              "管廊倫廊革",
+              "洋賢",
+              "팜フリカ대을",
+              "크  말씀곽瓦크仲딛멉",
+              "드는이터",
+              "럽 우리漏럽",
+              "팜 눈"
+            ],
+            "blank_outputs": 0,
+            "korean_pct": 46.5,
+            "replacement_pct": 0.0,
+            "repeat_unigram_pct": 7.0,
+            "repeat_bigram_pct": 0.0,
+            "distinct_outputs": 8,
+            "mean_len": 5.12,
+            "median_len": 5,
+            "len_ratio_vs_reference": 0.612,
+            "eos_positions": [
+              3,
+              5,
+              2,
+              4,
+              9,
+              2,
+              4,
+              2
+            ],
+            "lexical_anchor_hits": 0,
+            "lexical_anchor_max": 8
+          }
+        }
+      },
+      "valid_hinge_per_token": 75.9132,
+      "valid_token_acc": 2.264,
+      "valid_margin_active_frac": 0.9774,
+      "valid_logit_std": 24.621,
+      "valid_margin_true_minus_best_wrong": -74.608,
+      "select_gap": 0.0,
+      "select_real_minus_zeroed": 0.0,
+      "select_score": 0.0,
+      "select_tiebreak": 88.5116,
+      "saved_best": true,
+      "validations_since_best": 0
+    }
+  ],
+  "before": null,
+  "after": {
+    "tokens": 265,
+    "hinge_per_token": 75.9132,
+    "token_acc": 2.264,
+    "margin_active_frac": 0.9774,
+    "logit_std": 24.621,
+    "margin_true_minus_best_wrong": -74.608,
+    "chrf": 0.141,
+    "bleu": 1.065,
+    "seq_exact_match": 0.0,
+    "samples": [
+      [
+        "怖くて泣いていたら",
+        "그러면 겁에 질리고 울었겠지요.",
+        "안煮賢걀ぼ안안貧ぼ 안 오 안안"
+      ],
+      [
+        "これを知ること無しに何を予想していたでしょうか?",
+        "이 사실을 모른다면 어떤 예측을 했을까요?",
+        "개늠빔 저l크 말씀크 상이라는이라는共炎"
+      ],
+      [
+        "どうやってやるのか?",
+        "어떻게 이런 일을 할 수 있을까요?",
+        "표患4자인負에짠樹 조かもしれません짠"
+      ],
+      [
+        "倫理的英雄を賞賛してください",
+        "인정해 주세요.",
+        ", 저는, 폭あります谷,4, 저는 ,適牙 "
+      ],
+      [
+        "これこそがタイムマシンなのです",
+        "이것이 우리의 타임머신입니다.",
+        "溢 모든였 말씀狩움仲者が을扇"
+      ],
+      [
+        "私は単純で明快な説明を信じません",
+        "저는 뻔한 이야기는 믿지 않습니다.",
+        "알繋態연づ"
+      ],
+      [
+        "これは単なる飾り言葉ではありません",
+        "그건 그저 싯구가 아니에요.",
+        ""
+      ],
+      [
+        "さぁ 立って",
+        "자, 일어나.",
+        "연구"
+      ],
+      [
+        "ほとんどの人は みな合理的なのです",
+        "거의 모든 이들이 합리적입니다.",
+        "復繋標品"
+      ],
+      [
+        "「女性 全員ですか?」",
+        "\"노년 여성들 전부요?",
+        "瀬 証위"
+      ]
+    ]
+  },
+  "activation": {
+    "encoder_cached_activation_bytes": 4947968,
+    "encoder_cachefree_peak_bytes": 2973696,
+    "decoder_cached_activation_bytes": 10829824,
+    "decoder_cachefree_peak_bytes": 3760128,
+    "parameter_bytes": 17448960,
+    "encoder_memory_bytes": 786432,
+    "token_buffer_bytes": 12288
+  },
+  "params": 2181120,
+  "total_wall_seconds": 21.8
+}

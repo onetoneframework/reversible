@@ -1,0 +1,9 @@
+{"train": 66853, "valid": 3518, "params": 4878336, "dim": 192, "cfg": {"softmax": true, "pow2": true, "exp2": false, "quantw": false, "sgd": false, "name": "hinge_softmax_pow21_adam"}, "loss": "hinge", "opt": "adam", "momentum_bits": 0, "lr": 0.0003}
+  ep0   train_hinge 1.549 | valid tok 15.46% | greedy chrF 5.53 BLEU 5.39 exact 0/400 | 12.6m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 소리를지 마할 수 있습니다.
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 이제 치료 이제완는 보세요.
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 아무도 생물을까요?
+  ep1   train_hinge 1.124 | valid tok 16.57% | greedy chrF 5.32 BLEU 5.33 exact 0/400 | 24.4m
+      JA 怖くて泣いていたら | REF 그러면 겁에 질리고 울었겠지요. | GEN 핸년 전에 경험했고 있습니다.
+      JA これを知ること無しに何を予想していたでしょうか? | REF 이 사실을 모른다면 어떤 예측을 했을까요? | GEN 그럼 무슨 일이냐 교육 ハ,할까요?
+      JA どうやってやるのか? | REF 어떻게 이런 일을 할 수 있을까요? | GEN 어떻게 일어날까요?

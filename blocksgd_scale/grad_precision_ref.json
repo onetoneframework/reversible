@@ -1,0 +1,922 @@
+{
+ "init": {
+  "forward_identical": true,
+  "reference": {
+   "hb": 32,
+   "accum": 63,
+   "saturations": 0
+  },
+  "rows": {
+   "hb16_acc32": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999954877823184,
+      "vote_sign_agree": 0.9999504656231425,
+      "vote_mass_agree": 0.999971388013008
+     },
+     "emb_tgt": {
+      "cosine": 0.9999913593202092,
+      "vote_sign_agree": 0.9999057226359951,
+      "vote_mass_agree": 0.999928196213295
+     },
+     "enc_self": {
+      "cosine": 0.9999955623198937,
+      "vote_sign_agree": 0.9997552818337548,
+      "vote_mass_agree": 0.9999956326588232
+     },
+     "enc_ffn": {
+      "cosine": 0.9999889687461833,
+      "vote_sign_agree": 0.9998909903526462,
+      "vote_mass_agree": 0.999989845076978
+     },
+     "dec_cross": {
+      "cosine": 0.9999879376627857,
+      "vote_sign_agree": 0.9996645846742392,
+      "vote_mass_agree": 0.9999927238111085
+     },
+     "dec_self": {
+      "cosine": 0.9999980985665194,
+      "vote_sign_agree": 0.9999727883751939,
+      "vote_mass_agree": 0.9999983404479712
+     },
+     "dec_ffn": {
+      "cosine": 0.9999999999724029,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999944731686905,
+      "vote_sign_agree": 0.9992771955186122,
+      "vote_mass_agree": 0.9999884464675963
+     }
+    }
+   },
+   "hb16_acc48": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999954877823184,
+      "vote_sign_agree": 0.9999504656231425,
+      "vote_mass_agree": 0.999971388013008
+     },
+     "emb_tgt": {
+      "cosine": 0.9999913593202092,
+      "vote_sign_agree": 0.9999057226359951,
+      "vote_mass_agree": 0.999928196213295
+     },
+     "enc_self": {
+      "cosine": 0.9999955623198937,
+      "vote_sign_agree": 0.9997552818337548,
+      "vote_mass_agree": 0.9999956326588232
+     },
+     "enc_ffn": {
+      "cosine": 0.9999889687461833,
+      "vote_sign_agree": 0.9998909903526462,
+      "vote_mass_agree": 0.999989845076978
+     },
+     "dec_cross": {
+      "cosine": 0.9999879376627857,
+      "vote_sign_agree": 0.9996645846742392,
+      "vote_mass_agree": 0.9999927238111085
+     },
+     "dec_self": {
+      "cosine": 0.9999980985665194,
+      "vote_sign_agree": 0.9999727883751939,
+      "vote_mass_agree": 0.9999983404479712
+     },
+     "dec_ffn": {
+      "cosine": 0.9999999999724029,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999944731686905,
+      "vote_sign_agree": 0.9992771955186122,
+      "vote_mass_agree": 0.9999884464675963
+     }
+    }
+   },
+   "hb16_acc63": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999954877823184,
+      "vote_sign_agree": 0.9999504656231425,
+      "vote_mass_agree": 0.999971388013008
+     },
+     "emb_tgt": {
+      "cosine": 0.9999913593202092,
+      "vote_sign_agree": 0.9999057226359951,
+      "vote_mass_agree": 0.999928196213295
+     },
+     "enc_self": {
+      "cosine": 0.9999955623198937,
+      "vote_sign_agree": 0.9997552818337548,
+      "vote_mass_agree": 0.9999956326588232
+     },
+     "enc_ffn": {
+      "cosine": 0.9999889687461833,
+      "vote_sign_agree": 0.9998909903526462,
+      "vote_mass_agree": 0.999989845076978
+     },
+     "dec_cross": {
+      "cosine": 0.9999879376627857,
+      "vote_sign_agree": 0.9996645846742392,
+      "vote_mass_agree": 0.9999927238111085
+     },
+     "dec_self": {
+      "cosine": 0.9999980985665194,
+      "vote_sign_agree": 0.9999727883751939,
+      "vote_mass_agree": 0.9999983404479712
+     },
+     "dec_ffn": {
+      "cosine": 0.9999999999724029,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999944731686905,
+      "vote_sign_agree": 0.9992771955186122,
+      "vote_mass_agree": 0.9999884464675963
+     }
+    }
+   },
+   "hb20_acc32": {
+    "saturations": 125,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9962288991406014,
+      "vote_sign_agree": 0.9970232188926375,
+      "vote_mass_agree": 0.9991953405639289
+     },
+     "emb_tgt": {
+      "cosine": 0.998771266964053,
+      "vote_sign_agree": 0.9981196822262962,
+      "vote_mass_agree": 0.9986324626174967
+     },
+     "enc_self": {
+      "cosine": 0.9962932748550543,
+      "vote_sign_agree": 0.988573915882257,
+      "vote_mass_agree": 0.9993770082261932
+     },
+     "enc_ffn": {
+      "cosine": 0.9980341637379482,
+      "vote_sign_agree": 0.9864396605822487,
+      "vote_mass_agree": 0.9989703504590565
+     },
+     "dec_cross": {
+      "cosine": 0.9986263611295221,
+      "vote_sign_agree": 0.9903998838549275,
+      "vote_mass_agree": 0.9995263381781029
+     },
+     "dec_self": {
+      "cosine": 0.9998544035592777,
+      "vote_sign_agree": 0.9985306522271503,
+      "vote_mass_agree": 0.9999175590468724
+     },
+     "dec_ffn": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9963522262699448,
+      "vote_sign_agree": 0.9938672438672439,
+      "vote_mass_agree": 0.99904066747371
+     }
+    }
+   },
+   "hb24_acc32": {
+    "saturations": 98750,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.38288429767522497,
+      "vote_sign_agree": 0.737994526001493,
+      "vote_mass_agree": 0.7967652739819349
+     },
+     "emb_tgt": {
+      "cosine": 0.480324124034321,
+      "vote_sign_agree": 0.8731336231336231,
+      "vote_mass_agree": 0.8896785224090191
+     },
+     "enc_self": {
+      "cosine": 0.3642348260426246,
+      "vote_sign_agree": 0.657802430867118,
+      "vote_mass_agree": 0.7210175831147302
+     },
+     "enc_ffn": {
+      "cosine": 0.6082456512578495,
+      "vote_sign_agree": 0.7179697093737208,
+      "vote_mass_agree": 0.8137906658223001
+     },
+     "dec_cross": {
+      "cosine": 0.5993581898897237,
+      "vote_sign_agree": 0.7366307372925147,
+      "vote_mass_agree": 0.8086901683614581
+     },
+     "dec_self": {
+      "cosine": 0.8546874417372997,
+      "vote_sign_agree": 0.9369300705011296,
+      "vote_mass_agree": 0.9627225279449781
+     },
+     "dec_ffn": {
+      "cosine": 0.9575713334636023,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999907148234157
+     },
+     "wout": {
+      "cosine": 0.8958813898380024,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999976279286187
+     },
+     "pos": {
+      "cosine": 0.3574712765049713,
+      "vote_sign_agree": 0.6805054151624549,
+      "vote_mass_agree": 0.7356815873631033
+     }
+    }
+   },
+   "hb24_acc63": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999999999312023,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "emb_tgt": {
+      "cosine": 0.999999999871075,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999992467105734
+     },
+     "enc_self": {
+      "cosine": 0.9999999999309828,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.999999935931815
+     },
+     "enc_ffn": {
+      "cosine": 0.999999999822543,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_cross": {
+      "cosine": 0.9999999998133127,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_self": {
+      "cosine": 0.9999999999686413,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_ffn": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999999999068896,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     }
+    }
+   },
+   "hb28_acc32": {
+    "saturations": 1159501,
+    "groups": {
+     "emb_src": {
+      "cosine": -0.015270962582941241,
+      "vote_sign_agree": 0.5015639739834169,
+      "vote_mass_agree": 0.49076725877159716
+     },
+     "emb_tgt": {
+      "cosine": 0.039337204799787924,
+      "vote_sign_agree": 0.5672503367327304,
+      "vote_mass_agree": 0.5672130448173676
+     },
+     "enc_self": {
+      "cosine": 0.015923963432326386,
+      "vote_sign_agree": 0.5183665706678259,
+      "vote_mass_agree": 0.51787517122221
+     },
+     "enc_ffn": {
+      "cosine": 0.09187257775410577,
+      "vote_sign_agree": 0.544417521984155,
+      "vote_mass_agree": 0.5431837228063628
+     },
+     "dec_cross": {
+      "cosine": 0.07177716764745481,
+      "vote_sign_agree": 0.5577807971014492,
+      "vote_mass_agree": 0.5575605642872183
+     },
+     "dec_self": {
+      "cosine": 0.26218079025431507,
+      "vote_sign_agree": 0.6707021791767555,
+      "vote_mass_agree": 0.6759421148217435
+     },
+     "dec_ffn": {
+      "cosine": 0.5999181379255911,
+      "vote_sign_agree": 0.9274868467682578,
+      "vote_mass_agree": 0.9344433773655817
+     },
+     "wout": {
+      "cosine": 0.6210011856677512,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999907470796479
+     },
+     "pos": {
+      "cosine": 0.009168336327158253,
+      "vote_sign_agree": 0.5263919016630514,
+      "vote_mass_agree": 0.5416599327885504
+     }
+    }
+   },
+   "hb32_acc32": {
+    "saturations": 1538213,
+    "groups": {
+     "emb_src": {
+      "cosine": -0.019648157713025825,
+      "vote_sign_agree": 0.5002001200720432,
+      "vote_mass_agree": 0.4860941063290088
+     },
+     "emb_tgt": {
+      "cosine": 0.030917118113389135,
+      "vote_sign_agree": 0.5685394417788784,
+      "vote_mass_agree": 0.5452446400227071
+     },
+     "enc_self": {
+      "cosine": 0.015936719534202354,
+      "vote_sign_agree": 0.5018890489521894,
+      "vote_mass_agree": 0.5011692862162708
+     },
+     "enc_ffn": {
+      "cosine": 0.08705252295111049,
+      "vote_sign_agree": 0.5443210279864968,
+      "vote_mass_agree": 0.5423694169378446
+     },
+     "dec_cross": {
+      "cosine": 0.06033079075157589,
+      "vote_sign_agree": 0.5559732589318066,
+      "vote_mass_agree": 0.555071587362462
+     },
+     "dec_self": {
+      "cosine": 0.22159781331212797,
+      "vote_sign_agree": 0.6391163587888021,
+      "vote_mass_agree": 0.637426206851386
+     },
+     "dec_ffn": {
+      "cosine": 0.477030474216339,
+      "vote_sign_agree": 0.8493061046432369,
+      "vote_mass_agree": 0.8458024797863699
+     },
+     "wout": {
+      "cosine": 0.580114127109016,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9998677859296272
+     },
+     "pos": {
+      "cosine": 0.008005327566154052,
+      "vote_sign_agree": 0.5212255444813584,
+      "vote_mass_agree": 0.5366763909695392
+     }
+    }
+   },
+   "hb32_acc48": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "emb_tgt": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "enc_self": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "enc_ffn": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_cross": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_self": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_ffn": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     }
+    }
+   }
+  }
+ },
+ "cp_p128d96": {
+  "forward_identical": true,
+  "reference": {
+   "hb": 32,
+   "accum": 63,
+   "saturations": 0
+  },
+  "rows": {
+   "hb16_acc32": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999939216267051,
+      "vote_sign_agree": 0.9997839706200043,
+      "vote_mass_agree": 0.9995701124378331
+     },
+     "emb_tgt": {
+      "cosine": 0.999999032872352,
+      "vote_sign_agree": 0.9991452991452991,
+      "vote_mass_agree": 0.9998906415176875
+     },
+     "enc_self": {
+      "cosine": 0.9999834953900667,
+      "vote_sign_agree": 0.9964891271806875,
+      "vote_mass_agree": 0.999883656501242
+     },
+     "enc_ffn": {
+      "cosine": 0.9996369328053432,
+      "vote_sign_agree": 0.9837032237161834,
+      "vote_mass_agree": 0.9981649161149554
+     },
+     "dec_cross": {
+      "cosine": 0.9999997298956022,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999988130316911
+     },
+     "dec_self": {
+      "cosine": 0.9999999749333958,
+      "vote_sign_agree": 0.9998367080339647,
+      "vote_mass_agree": 0.9999967920554184
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999865957594813,
+      "vote_sign_agree": 0.9994954591321897,
+      "vote_mass_agree": 0.9998920756549659
+     }
+    }
+   },
+   "hb16_acc48": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999939216267051,
+      "vote_sign_agree": 0.9997839706200043,
+      "vote_mass_agree": 0.9995701124378331
+     },
+     "emb_tgt": {
+      "cosine": 0.999999032872352,
+      "vote_sign_agree": 0.9991452991452991,
+      "vote_mass_agree": 0.9998906415176875
+     },
+     "enc_self": {
+      "cosine": 0.9999834953900667,
+      "vote_sign_agree": 0.9964891271806875,
+      "vote_mass_agree": 0.999883656501242
+     },
+     "enc_ffn": {
+      "cosine": 0.9996369328053432,
+      "vote_sign_agree": 0.9837032237161834,
+      "vote_mass_agree": 0.9981649161149554
+     },
+     "dec_cross": {
+      "cosine": 0.9999997298956022,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999988130316911
+     },
+     "dec_self": {
+      "cosine": 0.9999999749333958,
+      "vote_sign_agree": 0.9998367080339647,
+      "vote_mass_agree": 0.9999967920554184
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999865957594813,
+      "vote_sign_agree": 0.9994954591321897,
+      "vote_mass_agree": 0.9998920756549659
+     }
+    }
+   },
+   "hb16_acc63": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999939216267051,
+      "vote_sign_agree": 0.9997839706200043,
+      "vote_mass_agree": 0.9995701124378331
+     },
+     "emb_tgt": {
+      "cosine": 0.999999032872352,
+      "vote_sign_agree": 0.9991452991452991,
+      "vote_mass_agree": 0.9998906415176875
+     },
+     "enc_self": {
+      "cosine": 0.9999834953900667,
+      "vote_sign_agree": 0.9964891271806875,
+      "vote_mass_agree": 0.999883656501242
+     },
+     "enc_ffn": {
+      "cosine": 0.9996369328053432,
+      "vote_sign_agree": 0.9837032237161834,
+      "vote_mass_agree": 0.9981649161149554
+     },
+     "dec_cross": {
+      "cosine": 0.9999997298956022,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999988130316911
+     },
+     "dec_self": {
+      "cosine": 0.9999999749333958,
+      "vote_sign_agree": 0.9998367080339647,
+      "vote_mass_agree": 0.9999967920554184
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999865957594813,
+      "vote_sign_agree": 0.9994954591321897,
+      "vote_mass_agree": 0.9998920756549659
+     }
+    }
+   },
+   "hb20_acc32": {
+    "saturations": 51,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9998498689716956,
+      "vote_sign_agree": 0.9997851310700473,
+      "vote_mass_agree": 0.9996902335049341
+     },
+     "emb_tgt": {
+      "cosine": 0.9996240090511621,
+      "vote_sign_agree": 0.9991652754590985,
+      "vote_mass_agree": 0.9998874100917216
+     },
+     "enc_self": {
+      "cosine": 0.9993329797317265,
+      "vote_sign_agree": 0.9908279353328616,
+      "vote_mass_agree": 0.9996726242504129
+     },
+     "enc_ffn": {
+      "cosine": 0.9975185589159643,
+      "vote_sign_agree": 0.9888412283973642,
+      "vote_mass_agree": 0.9979448010436993
+     },
+     "dec_cross": {
+      "cosine": 0.9992316161075495,
+      "vote_sign_agree": 0.9913121002883837,
+      "vote_mass_agree": 0.9992250833434391
+     },
+     "dec_self": {
+      "cosine": 0.9999803120266505,
+      "vote_sign_agree": 0.9999727979979326,
+      "vote_mass_agree": 0.9999998217946878
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9998584534360122,
+      "vote_sign_agree": 0.9984871406959153,
+      "vote_mass_agree": 0.9998021851255708
+     }
+    }
+   },
+   "hb24_acc32": {
+    "saturations": 4562,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.7365704228658723,
+      "vote_sign_agree": 0.8749729612805538,
+      "vote_mass_agree": 0.9230861606788479
+     },
+     "emb_tgt": {
+      "cosine": 0.7415027875323379,
+      "vote_sign_agree": 0.8920502092050209,
+      "vote_mass_agree": 0.9313774720550301
+     },
+     "enc_self": {
+      "cosine": 0.5844594351296241,
+      "vote_sign_agree": 0.8412758892850338,
+      "vote_mass_agree": 0.9323485708005824
+     },
+     "enc_ffn": {
+      "cosine": 0.7183448397924733,
+      "vote_sign_agree": 0.8064173462055175,
+      "vote_mass_agree": 0.843914145287179
+     },
+     "dec_cross": {
+      "cosine": 0.785291434368308,
+      "vote_sign_agree": 0.8222145335020805,
+      "vote_mass_agree": 0.9111063464867659
+     },
+     "dec_self": {
+      "cosine": 0.7193853280133432,
+      "vote_sign_agree": 0.9342614286492672,
+      "vote_mass_agree": 0.9794451219272442
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 0.9991360805670667,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.6630890884175884,
+      "vote_sign_agree": 0.8534267133566783,
+      "vote_mass_agree": 0.9324044733659179
+     }
+    }
+   },
+   "hb24_acc63": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.9999999999121929,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999926241720634
+     },
+     "emb_tgt": {
+      "cosine": 0.9999999999789357,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "enc_self": {
+      "cosine": 0.9999999997423684,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999998912095346
+     },
+     "enc_ffn": {
+      "cosine": 0.9999999945222922,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 0.9999982510564712
+     },
+     "dec_cross": {
+      "cosine": 0.9999999999925935,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_self": {
+      "cosine": 0.9999999999996436,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.9999999997638525,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     }
+    }
+   },
+   "hb28_acc32": {
+    "saturations": 188879,
+    "groups": {
+     "emb_src": {
+      "cosine": -0.009976157926560534,
+      "vote_sign_agree": 0.5454351079751978,
+      "vote_mass_agree": 0.4574663342579037
+     },
+     "emb_tgt": {
+      "cosine": 0.4327579100953258,
+      "vote_sign_agree": 0.7261261261261261,
+      "vote_mass_agree": 0.8218658065309721
+     },
+     "enc_self": {
+      "cosine": -0.004965220520182871,
+      "vote_sign_agree": 0.5362890072849842,
+      "vote_mass_agree": 0.5424023503615575
+     },
+     "enc_ffn": {
+      "cosine": 0.22794534051162885,
+      "vote_sign_agree": 0.6627694782097677,
+      "vote_mass_agree": 0.7296448088230052
+     },
+     "dec_cross": {
+      "cosine": 0.4220293757766761,
+      "vote_sign_agree": 0.6818119921928192,
+      "vote_mass_agree": 0.7021584262237154
+     },
+     "dec_self": {
+      "cosine": 0.46071059525465385,
+      "vote_sign_agree": 0.7303012982771291,
+      "vote_mass_agree": 0.7967364394262131
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 0.7797367286841332,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.004425672948257038,
+      "vote_sign_agree": 0.5896551724137931,
+      "vote_mass_agree": 0.5997794507607469
+     }
+    }
+   },
+   "hb32_acc32": {
+    "saturations": 372663,
+    "groups": {
+     "emb_src": {
+      "cosine": 0.013893479214394502,
+      "vote_sign_agree": 0.5193298969072165,
+      "vote_mass_agree": 0.38757201786571643
+     },
+     "emb_tgt": {
+      "cosine": 0.3795468014657361,
+      "vote_sign_agree": 0.7313974591651543,
+      "vote_mass_agree": 0.7619456563842788
+     },
+     "enc_self": {
+      "cosine": 0.0066364365533000185,
+      "vote_sign_agree": 0.5366125567610192,
+      "vote_mass_agree": 0.5360723421058876
+     },
+     "enc_ffn": {
+      "cosine": 0.0439354781174444,
+      "vote_sign_agree": 0.5637590094252448,
+      "vote_mass_agree": 0.5009178029157034
+     },
+     "dec_cross": {
+      "cosine": 0.30590370513635146,
+      "vote_sign_agree": 0.6527767688507918,
+      "vote_mass_agree": 0.6513454313532842
+     },
+     "dec_self": {
+      "cosine": 0.34828135462319,
+      "vote_sign_agree": 0.6409145410943972,
+      "vote_mass_agree": 0.6407792820134175
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 0.7018468113778926,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 0.005889821269794784,
+      "vote_sign_agree": 0.5995260663507109,
+      "vote_mass_agree": 0.586543542701453
+     }
+    }
+   },
+   "hb32_acc48": {
+    "saturations": 0,
+    "groups": {
+     "emb_src": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "emb_tgt": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "enc_self": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "enc_ffn": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_cross": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_self": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "dec_ffn": {
+      "cosine": 0.0,
+      "vote_sign_agree": null,
+      "vote_mass_agree": null
+     },
+     "wout": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     },
+     "pos": {
+      "cosine": 1.0,
+      "vote_sign_agree": 1.0,
+      "vote_mass_agree": 1.0
+     }
+    }
+   }
+  }
+ }
+}

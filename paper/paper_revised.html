@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exact Reversible Integer Training Without Activation Caching</title>
+<style>
+@page { size: A4; margin: 20mm 18mm 22mm 18mm; }
+:root{ --ink:#1b2129; --ink2:#4a5461; --line:#cfd5dc; --accent:#1f6f8b; --soft:#eef3f6; --good:#2e7d4f; --bad:#b23a3a; --warn:#b7791f; }
+html,body{ background:#fff; color:var(--ink); font-family:"Cambria","Georgia","Times New Roman",serif; font-size:10.6pt; line-height:1.42; margin:0; }
+main{ max-width:178mm; margin:0 auto; padding:10mm 0 20mm; }
+h1{ font-family:"Segoe UI","Noto Sans KR",sans-serif; font-size:21pt; font-weight:600; line-height:1.15; margin:0 0 4pt; letter-spacing:-.01em; }
+.subtitle{ font-family:"Segoe UI",sans-serif; font-size:12pt; color:var(--ink2); margin:0 0 10pt; }
+.meta{ font-family:"Segoe UI",sans-serif; font-size:9.5pt; color:var(--ink2); margin:0 0 14pt; }
+h2{ font-family:"Segoe UI",sans-serif; font-size:13pt; font-weight:600; margin:18pt 0 6pt; break-after:avoid; }
+h3{ font-family:"Segoe UI",sans-serif; font-size:10.8pt; font-weight:600; margin:12pt 0 4pt; break-after:avoid; }
+p{ margin:0 0 7pt; text-align:justify; hyphens:auto; }
+ul,ol{ margin:0 0 7pt 18pt; padding:0; } li{ margin:2pt 0; }
+.abstract{ background:var(--soft); padding:9pt 12pt; margin:0 0 12pt; border-left:3px solid var(--accent); }
+.abstract p{ margin:0; }
+.abstract .lab{ font-family:"Segoe UI",sans-serif; font-weight:600; font-size:9.5pt; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:4pt; }
+table{ border-collapse:collapse; width:100%; font-size:9.2pt; margin:6pt 0 4pt; break-inside:avoid; font-family:"Segoe UI",sans-serif; }
+th,td{ padding:3.5pt 6pt; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
+th{ font-size:8.6pt; letter-spacing:.04em; text-transform:uppercase; color:var(--ink2); border-bottom:1.5px solid var(--ink2); }
+td.n,th.n{ text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.cap{ font-family:"Segoe UI",sans-serif; font-size:8.8pt; color:var(--ink2); margin:0 0 10pt; text-align:left; }
+.cap b{ color:var(--ink); }
+figure{ margin:10pt 0 4pt; break-inside:avoid; }
+figure svg{ width:100%; height:auto; display:block; }
+.schematic{ border:1px solid var(--line); padding:6pt; }
+code{ font-family:"Consolas","DejaVu Sans Mono",monospace; font-size:9.2pt; }
+pre{ font-family:"Consolas","DejaVu Sans Mono",monospace; font-size:8.4pt; line-height:1.35; background:var(--soft); padding:7pt 9pt; margin:5pt 0 9pt; white-space:pre-wrap; overflow-wrap:anywhere; }
+.eq{ font-family:"Cambria Math","Cambria",serif; text-align:center; margin:5pt 0 8pt; font-size:10.6pt; }
+.note{ border-left:3px solid var(--bad); padding:5pt 10pt; background:#fbf1f1; margin:6pt 0 9pt; font-size:9.8pt; }
+.claim{ border-left:3px solid var(--good); padding:5pt 10pt; background:#eef6f0; margin:6pt 0 9pt; font-size:9.8pt; }
+.hyp{ border-left:3px solid var(--warn); padding:5pt 10pt; background:#fbf6ea; margin:6pt 0 9pt; font-size:9.8pt; }
+.pb{ break-before:page; }
+.refs{ font-size:9.2pt; } .refs li{ margin:2pt 0; }
+.small{ font-size:9.2pt; color:var(--ink2); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Exact Reversible Integer Training Without Activation Caching</h1>
+<p class="subtitle">Scale-preserving integer adjoints and per-layer updates in a bit-exact reversible network, with sequence-learning experiments</p>
+<p class="meta">Jeong Seong Yeol · South Korea · kdp7584@gmail.com<br>Research draft, revision 3 · 9 September 2026</p>
+
+<div class="abstract">
+<span class="lab">Abstract</span>
+<p>We train networks whose weights, states and adjoints are integers, whose intermediate states are reconstructed bit-exactly from deterministic additive couplings so that no activation tape is stored, and whose parameters are updated layer by layer during the reconstruction so that no full-depth gradient buffer exists either. Gradient scale survives depth because each adjoint block carries one shared exponent: on the digits benchmark this change alone, with everything else fixed, turns a depth-16 collapse (13.6 ± 2.6%) into 72.3 ± 5.8% over five seeds, and the final 8-bit-weight configuration holds 87% at depths 8, 16 and 32 while the reconstructed activation working set stays at 1.49 MB against a 27.3 MB cached tape at depth 32, at 1.9–2.0× the cached backward's time. Grouped couplings with a dispersing permutation keep 78.7 ± 2.0% on Fashion-MNIST against 79.0 ± 1.3% for dense integer couplings at one eighth of the coupling parameters and multiply-accumulates. Two sequence-learning studies support trainability: a Japanese→Korean model with integer base-2 attention memorises 512 training pairs with the unchanged integer optimizer once momentum is enabled (472/512 greedy exact reproductions; routing the source pathway to momentum 0 reaches the pre-set criterion in half the optimizer steps), and on 66,853 training pairs the model reaches 26.0% validation token accuracy, with integer averaging of three neighbouring checkpoints raising held-out chrF from 7.08 to 7.86 on the selection rows and from 7.86 to 8.42 on rows not used for selection, against 9.8 for a float model with the same objective. A diagnostic that had suggested noisy integer gradients is retracted; the cause — saturation of 32-bit backward accumulators at mantissas wider than 16 bits — is identified. Translation quality is not established by any model here; the sequence results are finite-set learning and validation-selected generalisation measurements, reported with their controls.</p>
+</div>
+
+<h2>1. Contributions, scope and prior work</h2>
+<p>The central claim is architectural: in a network that keeps integer semantics throughout, combining bit-exact additive reconstruction with scale-preserving block-floating adjoints and per-layer updates removes the activation tape and the full-depth gradient buffer, and the resulting integer surrogate gradients train the network. Everything else in the paper — grouped compaction, the sequence extension, the optimizer experiments, checkpoint averaging — supports that claim or bounds it.</p>
+<table>
+<tr><th style="width:30%">Contribution</th><th>Evidence and boundary</th></tr>
+<tr><td><b>Exact reconstruction with per-layer updates, integer semantics throughout</b></td><td>inverse(forward(v)) = v and reconstructed = cached backward, bit for bit, on MLP, convolution, attention and encoder–decoder couplings at every tested depth; per-layer step = batched step. Activation working set constant over depth; parameters and optimizer state are separate terms.</td></tr>
+<tr><td><b>Scale-preserving integer adjoints</b></td><td>Backward-only intervention on digits: K = 16 from 13.6% to 72.3%, five seeds, distributions disjoint. Tensor-wide exponent beats per-sample at K = 32.</td></tr>
+<tr><td>Grouped couplings with dispersing mixing</td><td>Fashion-MNIST 78.7% at 1/8 coupling cost; group-preserving roll/xor loses 5 points. An empirical condition at the tested widths, not a theorem.</td></tr>
+<tr><td>Sequence trainability (supporting)</td><td>512 pairs: 472/512 with momentum 7; split momentum 7/0 meets the criterion at 7,200 steps versus 14,400. 67k pairs: 26.0% validation token accuracy, chrF 7.86 after averaging. Single trajectories except where a second seed is stated.</td></tr>
+<tr><td>Gradient-precision correction</td><td>Production backward (hidden_bits 16, accum 32) is elementwise identical to its unsaturated evaluation and agrees with a 32-bit-mantissa backward to cosine 0.99999; hidden_bits ≥ 20 saturates. An earlier “noisy gradient” diagnostic is retracted.</td></tr>
+</table>
+
+<h3>1.1 Relationship to prior work, and what is added</h3>
+<p>Additive reversible couplings come from NICE and RevNet [1, 2]; exact fixed-point reversal in recurrent networks from [4]; integer training with shared-scale gradients from WAGE, integer mixed-precision training and NITI [6–8, 11]; channel mixing across groups from ShuffleNet [12]. Two neighbours are closest. NITI [8] trains with integer-only arithmetic and per-layer block exponents but stores activations for backpropagation as any non-reversible network does; this paper removes that storage and shows the block-floating adjoint is what keeps a <em>reversible</em> integer stack trainable at depth (Section 4.1). Zhang et al. [5] obtain bit-exact reversibility of transformer activations without changing the architecture, in floating point; here the forward, the reconstruction, the adjoints and the optimizer are all integer-valued, the reconstruction is exact by construction of the modular coupling rather than by a numerical correction, and the layer update is scheduled inside the reconstruction so that the full-depth gradient buffer is also absent. The grouped compaction with a constructive dispersing permutation, the integer base-2 attention with a row-coupled surrogate adjoint, and the optimizer findings are, to our knowledge, not in those works. No priority claim is made beyond the tested combination.</p>
+
+<h3>1.2 How to read the evidence</h3>
+<p>Sections 2–5 give the system and the image results (five seeds, mean ± sample s.d.). Section 6 records the corrected sequence formulation, Section 7 the deferred-debt investigation on the 8k run. Sections 8–14 report the sequence experiments: single trajectories unless a second seed is stated; every number was read from the run logs and JSON histories listed in Appendix A, whose hashes are in Appendix A.5. Observations and their proposed explanations are separated: explanations appear in boxes marked <em>hypothesis</em> and are not counted among the findings.</p>
+
+<h2>2. Exact integer reconstruction</h2>
+<h3>2.1 Additive coupling</h3>
+<p>Split an integer state into v = [a, b]. With integer parameter matrices U and V, form a deterministic coupling function f from shifted matrix products and a ReLU:</p>
+<div class="eq">z = Q<sub>t</sub>(aUᵀ), &nbsp; h = max(z, 0), &nbsp; f(a) = Q<sub>t</sub>(hVᵀ), &nbsp; F(a, b) = [a, b + f(a)] mod 2<sup>b<sub>s</sub></sup></div>
+<p>Q<sub>t</sub> applies a per-row power-of-two right shift chosen from the row's magnitude bit length so the result fits t + 2 bits (t = 5, seven-bit outputs, in every configuration below). Bit lengths are computed with integer shifts and comparisons. A fixed permutation exchanges and mixes the state halves between couplings. The inverse is the same computation with a subtraction:</p>
+<div class="eq">F<sup>−1</sup>(a, b) = [a, b − f(a)] mod 2<sup>b<sub>s</sub></sup></div>
+<p>Subtraction exactly undoes addition in the fixed-width modular state space, so f itself need not be invertible; it must only be recomputable — parameters, masks, external encoder memory and any stochastic choices must match the forward evaluation.</p>
+
+<figure class="schematic">
+<!--FIG:fig1_schematic-->
+<figcaption class="cap"><b>Figure 1.</b> Exact coupling reconstruction and local backward order. The backward undoes the permutation, recomputes f(a) with the forward parameters, recovers b exactly, forms the parameter gradients and the input adjoint from the recomputed intermediates, and only then updates the layer. No activation tape and no full-depth gradient buffer exist.</figcaption>
+</figure>
+
+<h3>2.2 Reconstruction and update ordering</h3>
+<p>The backward first undoes the inter-layer permutation, then recomputes the local coupling intermediates and recovers b. The fused implementation reuses those intermediates to form the parameter gradients and the input adjoint. Only after these old-parameter computations are complete is that layer updated. This ordering removes the full-depth gradient buffer in addition to the activation tape; the per-layer step is bit-identical to a batched step over all parameters (gate 4, every architecture). Shared parameters or global gradient-dependent optimizer operations would need additional scheduling; the tested architectures and BlockSGD do not.</p>
+
+<h3>2.3 Exactness is not overflow tolerance</h3>
+<p>State wraparound preserves the additive inverse but can destroy accuracy: at 8-bit states on digits, reconstruction stays exact while 7.7% of state elements wrap and accuracy falls to 12.4% (Section 4.3). The inverse guarantee says nothing about matrix-product accumulators, and Section 12 shows a case where 32-bit backward accumulators silently saturate. Product-reduction bounds and deterministic arithmetic semantics remain necessary at every stage.</p>
+
+<h2>3. Shared-exponent adjoints and updates</h2>
+<h3>3.1 Preserve scale through depth</h3>
+<p>The backward represents an adjoint tensor by an integer mantissa m and one exponent e, interpreted as m·2<sup>e</sup>. A forward right shift s changes the adjoint scale through e ← e − s; mantissa renormalisation transfers its shift into the exponent; addition aligns exponents before combining mantissas. Discarding this metadata changes the relative scale of propagated and residual gradients and destroys deep training (Figure 2). The representation is block floating point [8, 11], not a new number format. A tensor-wide exponent outperformed a per-sample exponent at K = 32 (84.1 ± 2.4% versus 61.0 ± 25.0%); the measured per-sample exponent spread at initialisation was only 1–2 bits, so the finer granularity bought nothing and cost stability.</p>
+
+<h3>3.2 Loss and integer error feedback</h3>
+<p>The image experiments and the sequence memorisation runs use a multiclass margin surrogate: when the margin is violated, the output gradient is +1 on the largest wrong logit and −1 on the true logit. The 67k runs use an integer base-2 cross-entropy head instead (Section 13). BlockSGD block-normalises each parameter gradient's mantissa to 12 bits, accumulates it, and emits a clipped unit move when the accumulator crosses 2<sup>shift</sup>, keeping the un-emitted residual:</p>
+<pre>gn  = renorm(gm, 12)                 # per-tensor block normalisation; the exponent e is not used here
+acc -= gn
+q   = clamp(sign(acc) · (|acc| >> shift), -1, +1)
+w  += q;  w = clamp(w, -2^(wb-1), 2^(wb-1) - 1)
+acc -= q << shift                    # shift = 11 + lr_bits; lr_bits >= 1 keeps |acc| < 2^shift</pre>
+<p>The shared exponent is essential during propagation; the parameter update then uses its own block normalisation and deliberately does not treat the absolute exponent as a learning rate. The step is a sign-type update with error feedback, not a real-valued SGD step.</p>
+
+<h3>3.3 Momentum, as implemented</h3>
+<p>BlockSGD's momentum option (<code>momentum_bits</code> = k) is an integer exponential average inserted before the accumulator, shift-only and per parameter, so per-layer and batched stepping remain equivalent:</p>
+<pre>m -= rshift0(m, k);  m += gn;  gn = renorm(m, 12)     # decay 1 - 2^-k per step</pre>
+<p>With k = 7 the decay is 127/128 per step: after 128 steps (eight epochs of the 512-pair task at batch 32) a fraction (127/128)<sup>128</sup> ≈ 0.37 of any initial buffer content remains; after 300 steps about 0.10. <em>Split momentum</em> routes each parameter tensor to one of two canonical BlockSGD instances: target-side tensors (target embedding and positional table, decoder self-attention, decoder FFN, output head) step with k = 7, and the source pathway (source embedding and positional table, encoder blocks, decoder cross-attention) with k = 0. No optimizer code is duplicated; a gate over 48 real training steps on the 512-pair model (282,755 weight moves) confirms that routing with k = 7 on both sides is bit-identical to the uniform optimizer in all 25 parameter tensors.</p>
+
+<table>
+<tr><th>Quantity</th><th>Image study (Sections 4–5)</th><th>Sequence study (Sections 6–14)</th></tr>
+<tr><td>Weights / gradient mantissas</td><td>8-bit weights, 8-bit gradient mantissas, 12-bit state</td><td>8-bit weights and tables (10-bit weights at 67k), 16-bit adjoint mantissas, 16-bit state</td></tr>
+<tr><td>Activations</td><td>7-bit linear outputs (t = 5)</td><td>7-bit linear outputs and attention scores; 32-bit saturating accumulators</td></tr>
+<tr><td>Optimizer</td><td>BlockSGD, lr_bits 1–2</td><td>BlockSGD, param_bits 12, lr_bits 1 (shift 12), clip 1; momentum 7 uniform or 7/0 split</td></tr>
+<tr><td>Stability condition</td><td colspan="2">2<sup>shift</sup> > 2<sup>param_bits</sup> − 1, i.e. lr_bits ≥ 1; lr_bits = 0 leaves the residual unbounded (32-way lookup oscillates 6–25%; lr_bits 1–3 reach 32/32).</td></tr>
+</table>
+<p class="small">A magnitude-bit target such as hidden_bits = 16 is a normalisation target, not a native signed-container guarantee; the prototype stores everything in int64 with explicit range enforcement. Native low-bit deployment would need stated signed ranges and checked intermediate bounds.</p>
+
+<h2>4. Depth, grouping and image accuracy</h2>
+<h3>4.1 Controlled depth failure</h3>
+<p>On digits, changing only the backward representation rescues K = 16: the legacy mantissa-only backward reaches 13.6 ± 2.6%, the shared-exponent backward 72.3 ± 5.8%, and the five per-seed pairs do not overlap (Figure 2b). At K = 8 the legacy backward is still adequate (86.9 ± 3.8% versus 68.7 ± 8.8%), so this is a depth-specific rescue. With the final 8-bit-weight, 8-bit-gradient and 12-bit-state configuration, K = 8/16/32 reach 87.3 ± 2.2 / 86.7 ± 0.8 / 86.8 ± 1.0%: accuracy no longer depends on depth.</p>
+
+<figure>
+<!--FIG:fig2_digits-->
+<figcaption class="cap"><b>Figure 2.</b> Digits, five seeds. (a) Legacy backward, shared-exponent backward (only the backward changes at K = 8 and 16; at K = 32 the exponent-aware optimizer is also enabled), and the final configuration. (b) The K = 16 seeds individually: 16.4/9.6/14.9/13.1/14.0% against 79.6/65.8/76.0/72.7/67.3%.</figcaption>
+</figure>
+
+<h3>4.2 Compaction and a constructive mixing rule</h3>
+<p>Retain U and V entries only where input and output indices share a residue class modulo g. Compacting the nonzero entries yields g dense submatrices with parameter and multiply-accumulate counts reduced by 1/g; the coupling stays exactly reversible because f remains deterministic in a. Between couplings the grid-transpose permutation</p>
+<div class="eq">p(i) = ⌊i / g⌋ + (i mod g) · (M / g)</div>
+<p>distributes each old residue group uniformly over the next layer's groups when M/g is divisible by g, combined with the half exchange. Roll and xor controls, which preserve group identity, are substantially worse at narrow per-group widths. Cross-group mixing is necessary in the tested models; the particular permutation is one constructive choice, not the only one.</p>
+
+<h3>4.3 State width</h3>
+<p>For a fixed digits seed, 63-, 12- and 10-bit states give the same 89.33%. At 8 bits accuracy falls to 12.44% with 7.7% of state elements wrapping, while reconstruction stays exact. The inverse guarantee and the empirical accuracy limit are separate facts and are reported separately.</p>
+
+<h2>5. Memory, compute and Fashion-MNIST</h2>
+<figure>
+<!--FIG:fig3_memory_fmnist-->
+<figcaption class="cap"><b>Figure 3.</b> (a) Digits MLP: the reconstructed working set is 1,491,456 bytes at K = 8, 16 and 32, against 6.8, 13.6 and 27.3 MB for the cached tape (decimal MB, int64 containers). (b) Fashion-MNIST, K = 16, M = H = 832, 20,000 training images, full test set, two epochs, batch 128, five seeds; coupling parameter counts inside the bars. All grouped bars use grid transpose except the roll/xor control.</figcaption>
+</figure>
+<table>
+<tr><th>Configuration</th><th class="n">Accuracy (%)</th><th class="n">Relative MACs</th><th class="n">Coupling parameters</th><th class="n">Minutes/run</th></tr>
+<tr><td>Float, Adam + cross-entropy</td><td class="n">80.74 ± 1.81</td><td class="n">—</td><td class="n">—</td><td class="n">9.9</td></tr>
+<tr><td>Integer dense</td><td class="n">79.00 ± 1.29</td><td class="n">1.000</td><td class="n">22,151,168</td><td class="n">53.9</td></tr>
+<tr><td>Integer g = 4</td><td class="n">79.34 ± 0.77</td><td class="n">0.250</td><td class="n">5,537,792</td><td class="n">16.0</td></tr>
+<tr><td>Integer g = 8</td><td class="n">78.71 ± 1.98</td><td class="n">0.125</td><td class="n">2,768,896</td><td class="n">8.9</td></tr>
+<tr><td>g = 8, roll/xor control</td><td class="n">73.44 ± 1.04</td><td class="n">0.125</td><td class="n">2,768,896</td><td class="n">9.4</td></tr>
+</table>
+<p class="cap"><b>Table 1.</b> The float row changes optimizer and objective as well as arithmetic; it is a system reference, not an arithmetic ablation. Two epochs do not establish the gap at convergence.</p>
+<p><b>What is constant, and what the memory claim covers.</b> Only the reversible activation working set is constant in depth. In the digits profile, parameters plus optimizer state are 95% of the total at K = 64 once the full-depth gradient buffer is gone. In the sequence model the encoder and decoder cache-free working sets are 2,252,800 and 2,777,088 bytes at K = 2, 4 and 8, while the cached tape grows 3.59× from K = 2 to 8; the 3,644-pair sequence run had a peak process RSS of 611 MB, which includes the Python runtime and workspaces. The reconstructed backward costs 1.92–1.98× the cached backward's wall time in the reference implementation. A comparison against gradient checkpointing at matched total peak memory has not been made and is required before the memory result is quoted as a system advantage rather than a structural property.</p>
+<p><b>What is measured.</b> The implementation uses int64 containers and a float64 GEMM route that is exact under asserted bounds and cross-checked against int64. The arithmetic semantics are integer; the timings say nothing about native int8 kernels, energy or cross-device bit equality.</p>
+
+<h2>6. Corrected sequence formulation</h2>
+<p>The sequence extension embeds Japanese token IDs, applies reversible encoder and decoder blocks (patterns “af” and “ccaf”: attention, cross-attention, cross-attention, FFN), and generates Korean tokens greedily. Decoder reconstruction treats encoder memory and the mask as fixed external inputs. Three corrections were needed before any sequence result could be trusted:</p>
+<table>
+<tr><th style="width:24%">Correction</th><th>What was wrong</th><th>What the fix established</th></tr>
+<tr><td>Valid-entry causal normalisation</td><td>Masked future and PAD scores participated in the per-row power-of-two shift before masking; a future-target mutation gate exposed the leak.</td><td>Normalisation statistics over valid entries only. Every pre-fix translation metric is a diagnostic of the defective forward, not a causal result.</td></tr>
+<tr><td>Learned integer positional tables</td><td>The model had no positional signal.</td><td>On 32 pairs the table alone changed greedy exact reproduction from 0/32 to 32/32; necessary, not sufficient at scale.</td></tr>
+<tr><td>Row-coupled score adjoint</td><td>A diagonal (per-entry) attention backward could not learn even with a softmax forward.</td><td>A base-2 integer forward with softmax's row coupling in the backward reaches 64/64 in the float bisect and 91.5% content on 64 integer pairs.</td></tr>
+<tr><td>Optimizer threshold</td><td>lr_bits = 0 leaves the error-feedback residual unbounded.</td><td>lr_bits ≥ 1; old lr_bits = 0 controls are not valid.</td></tr>
+</table>
+
+<h3>6.1 Integer base-2 attention and its surrogate</h3>
+<p>After subtracting the maximum valid score, the forward maps score differences to powers of two: w<sub>i</sub> = 2<sup>rshift0(s<sub>i</sub> − max, 3) + 12</sup>, clamped at zero, so a row has at most 13 weight levels. The backward uses competitive row coupling,</p>
+<div class="eq">∂L/∂s<sub>i</sub> = w<sub>i</sub>(g<sub>i</sub> − ḡ), &nbsp; ḡ = ⌊Σ<sub>j</sub> w<sub>j</sub>g<sub>j</sub> / Σ<sub>j</sub> w<sub>j</sub>⌋,</div>
+<p>one integer weighted sum and one integer floor division per row. The production arithmetic is integer-only but not division-free. Against a float row-coupled reference on identical inputs the integer adjoint has cosine 0.99392; the diagonal variant has 0.65094.</p>
+
+<h3>6.2 Structural verification</h3>
+<p>Every new sequence probe in this revision re-ran the full gate set before training: exact inverse, cache-free = cached backward, per-layer = batched stepping, attention adjoint cosine against autograd (ReLU mirror), future-target mutation at cuts 1/3/6, batch/PAD invariance, masked-memory content invariance, and a live check that the coupled adjoint differs from the diagonal one. All passed (9/9) at the d96 sequence configuration. The split-momentum routing was separately verified bit-identical to the canonical optimizer (Section 3.3).</p>
+
+<h2>7. Deferred debt on the 8k run: a causal pathology, not a solution</h2>
+<p>On the 7,600-pair integer run the optimizer failed in a different way, traced in Appendices F–H of the 5 September manuscript. Legal single-coordinate cross-attention moves improved the content margin in 62.9% of 256 probes, yet the unrestricted joint update (a median 1,918 coordinates per batch) worsened it, and decoder cross-attention was the group whose removal most repaired the step. A cap on cross-attention firings suppressed the epoch-40→41 regression; adaptive shadow selection improved the current-batch objective but deferred most cross updates, and the retained error-feedback debt of those deferred firings was shown by an accumulator-only intervention (95% paired confidence interval [+18.17, +20.28] on the source-memory margin) to degrade later source conditioning. The mediator is persistent fired-pool recurrence and starvation (median fired-but-unselected run of 22 steps), not top-rank occupancy. A prespecified TTL16 rule bounds the debt and recovers the 64-step margin, but over a full epoch its train hinge is worse than every comparison (Figure 4). Bounded debt is an established pathology and a suppressible one, not an optimizer.</p>
+<figure>
+<!--FIG:fig4_debt-->
+<figcaption class="cap"><b>Figure 4.</b> 8k run, matched replays from the verified epoch-41 state. (a) Real-minus-zeroed content margin G<sub>RZ</sub> after 64 updates on the full 400-example set. (b) Train hinge after one full epoch from the same state; TTL16 fails the teacher-forced criteria it was designed to protect.</figcaption>
+</figure>
+<p>The 512-pair results below do not rerun this trajectory. Momentum was never enabled in the 8k diagnostics; whether it removes the debt pathology at that scale is untested.</p>
+
+<h2 class="pb">8. The split-momentum study</h2>
+<h3>8.1 Question and configuration</h3>
+<p>Plain BlockSGD memorises 32, 64 and 128 pairs (32/32, 53/64, 111/128 at d = 96) and had been reported to fail flat at 512 pairs (0/512 after 7,200 steps, teacher-forced content ≤ 0.5%). The question is whether the optimizer's momentum option, and where it is applied, changes that. All 512-pair runs use the historical configuration: d = 96, FFN 192, two encoder and four decoder blocks, learned positional tables of 16 rows, batch 32 (16 steps per epoch), lr_bits 1, 8-bit weights and tables, base-2 attention with shift 3 and cap 12, the coupled adjoint, and the hinge head. The 512 pairs are the historical set (a superset of the 128 set; no duplicate sources or targets, no source with two targets; hash in Appendix A.5). Evaluation every 150 epochs: teacher-forced content accuracy (non-EOS tokens), position-0 accuracy (first target token from the source alone), greedy exact reproductions out of 512, and content accuracy under real, shuffled and zeroed encoder memory on a fixed 64-sentence slice — which is why the real-source probe and the full teacher-forced number differ by a few points.</p>
+
+<figure class="schematic">
+<!--FIG:fig5_routing-->
+<figcaption class="cap"><b>Figure 5.</b> Split momentum. One SharedGrad list from the cache-free backward; each parameter index is stepped by exactly one of two canonical BlockSGD instances. The groups are an implementation partition — decoder FFN and output head also process source-conditioned states.</figcaption>
+</figure>
+
+<h3>8.2 The 256-pair control: what momentum does early</h3>
+<p><b>Observation.</b> On 256 pairs, where plain BlockSGD learns source conditioning (position-0 12.9% at epoch 150), enabling uniform momentum 7 raises teacher-forced content from 8.3% to 23.0% at the same epoch while position-0 falls to 1.2% and the zeroed-source probe (31.5%) exceeds the real-source probe (22.7%): early in training the model predicts better when the source is removed (Figure 6a). On 512 pairs the same delay appears in the uniform run — position-0 stays below 9% until epoch 450 and reaches 83% at 750 — and disappears when the source pathway is routed to momentum 0 (Figure 7c). Source momentum 3 already loses the effect (position-0 1.95% at epoch 150 versus 14.3% at 0), and target momentum 5 is slower than 7 (greedy 2/512 versus 179/512 at epoch 300).</p>
+<div class="hyp"><b>Hypothesis, not measured.</b> The proposed explanation is that source-pathway gradients of different examples conflict, so their exponential average carries little signal until the shared target structure has been learned, whereas per-batch (momentum-free) updates on those tensors move on each example's own signal. This would account for the delay and for its removal by the split. Neither gradient cancellation across examples nor the per-tensor update alignment has been measured; the uniform run's later takeoff and higher endpoint show that momentum delays source conditioning here rather than preventing it.</div>
+
+<h2>9. Settings that do not repair the 512-pair stall</h2>
+<p>Before accepting momentum as the answer, six alternatives were tested one variable at a time from the historical configuration (Table 2). Within their budgets none reached more than 5% teacher-forced content, while the momentum runs pass 50% by epoch 300. Two of them were controls that locate the cause.</p>
+<table>
+<tr><th>Hypothesis</th><th>Single-variable test</th><th class="n">TF content</th><th>Outcome in the tested budget</th></tr>
+<tr><td>Too many steps per epoch / too much displacement</td><td>128 pairs at batch 8 (16 steps/epoch; same per-epoch displacement as 512@b32, 13–30% of attention weights per epoch, Figure 6b)</td><td class="n">66.2% at ep300, 8/128</td><td>128 learns normally → displacement alone is not the cause</td></tr>
+<tr><td>Batch gradients too noisy (consensus)</td><td>512 pairs at batch 128 (4 steps/epoch, like 128@b32)</td><td class="n">0.46% at ep300</td><td>no improvement</td></tr>
+<tr><td>Step rate too high</td><td>lr_bits 3 (shift 14)</td><td class="n">0.17% at ep150</td><td>no improvement</td></tr>
+<tr><td>Weight grid too coarse</td><td>10-bit projection weights, tables at int8 scale</td><td class="n">2.58% at ep300, rising slowly</td><td>alive, far below momentum</td></tr>
+<tr><td>Activations too coarse</td><td>9-bit linear outputs (t = 7), scores pinned at 7 bits</td><td class="n">0.14% at ep150; 2,841 saturations</td><td>no improvement</td></tr>
+<tr><td>Attention mass unbounded</td><td>row-mass normalisation to 10 bits</td><td class="n">5.3% at ep300, then flat</td><td>insufficient alone</td></tr>
+<tr><td>Data defects</td><td>duplicate/conflict audit of the 512 set</td><td class="n">0 duplicates, 0 conflicts</td><td>excluded</td></tr>
+</table>
+<p class="cap"><b>Table 2.</b> Each arm changes one thing from the historical 512-pair configuration (0/512, TF ≤ 0.5%). Budgets differ because arms were stopped once they were clearly behind; a longer budget could change the two slowly rising arms, so the table shows what did not help within 150–450 epochs, not what can never help.</p>
+<figure>
+<!--FIG:fig8_mechanism-->
+<figcaption class="cap"><b>Figure 6.</b> (a) 256 pairs, epoch 150: uniform momentum 7 versus plain BlockSGD on the five probes. (b) Realised per-epoch displacement of the canonical BlockSGD from a common initialisation, three-epoch mean per parameter group: displacement follows steps per epoch × step rate, not dataset size, and the 128-pair batch-8 control learns at the displacement of 512@b32.</figcaption>
+</figure>
+<p>The 256-pair control (Figure 8b) is the intermediate case: plain BlockSGD learns source conditioning but slowly (TF 66.3%, 12/256 at epoch 750) and oscillates. The stall is graded in the number of examples rather than switched on at 512.</p>
+
+<h2>10. 512 pairs: completed runs</h2>
+<figure>
+<!--FIG:fig6_512-->
+<figcaption class="cap"><b>Figure 7.</b> 512 pairs, one point per 150-epoch checkpoint. Plain BlockSGD (historical, stopped at epoch 450), uniform momentum 7 (1800 epochs), split momentum 7/0 seed 0 (1800 epochs) and seed 1 (checkpoint-saving rerun to epoch 600). Dotted lines: the CASE A criterion.</figcaption>
+</figure>
+<table>
+<tr><th>Epoch</th><th class="n">Steps</th><th class="n" colspan="3">Uniform momentum 7<br>TF % · pos0 % · greedy</th><th class="n" colspan="3">Split 7/0, seed 0<br>TF % · pos0 % · greedy</th><th class="n" colspan="3">Split 7/0, seed 1<br>TF % · pos0 % · greedy</th></tr>
+<tr><td>150</td><td class="n">2,400</td><td class="n">18.1</td><td class="n">2.2</td><td class="n">0</td><td class="n">53.7</td><td class="n">14.3</td><td class="n">4</td><td class="n">68.9</td><td class="n">27.7</td><td class="n">23</td></tr>
+<tr><td>300</td><td class="n">4,800</td><td class="n">49.3</td><td class="n">2.3</td><td class="n">0</td><td class="n">91.6</td><td class="n">70.3</td><td class="n">179</td><td class="n">91.4</td><td class="n">78.3</td><td class="n">218</td></tr>
+<tr><td>450</td><td class="n">7,200</td><td class="n">67.2</td><td class="n">8.8</td><td class="n">2</td><td class="n"><b>94.7</b></td><td class="n">83.4</td><td class="n"><b>275</b></td><td class="n">93.4</td><td class="n">77.7</td><td class="n">260</td></tr>
+<tr><td>600</td><td class="n">9,600</td><td class="n">78.0</td><td class="n">34.8</td><td class="n">40</td><td class="n">94.8</td><td class="n">85.0</td><td class="n">325</td><td class="n">95.5</td><td class="n">82.6</td><td class="n">335</td></tr>
+<tr><td>750</td><td class="n">12,000</td><td class="n">93.0</td><td class="n">83.4</td><td class="n">238</td><td class="n">97.5</td><td class="n">88.9</td><td class="n">374</td><td class="n" colspan="3">—</td></tr>
+<tr><td>900</td><td class="n">14,400</td><td class="n"><b>96.4</b></td><td class="n">91.6</td><td class="n"><b>362</b></td><td class="n">96.9</td><td class="n">88.9</td><td class="n">382</td><td class="n" colspan="3">—</td></tr>
+<tr><td>1050</td><td class="n">16,800</td><td class="n">98.1</td><td class="n">97.7</td><td class="n">432</td><td class="n">97.5</td><td class="n">91.4</td><td class="n">412</td><td class="n" colspan="3">—</td></tr>
+<tr><td>1200</td><td class="n">19,200</td><td class="n">98.2</td><td class="n">95.7</td><td class="n">439</td><td class="n">98.4</td><td class="n">94.5</td><td class="n">436</td><td class="n" colspan="3">—</td></tr>
+<tr><td>1350</td><td class="n">21,600</td><td class="n">98.7</td><td class="n">96.5</td><td class="n">454</td><td class="n">98.5</td><td class="n">94.9</td><td class="n">438</td><td class="n" colspan="3">—</td></tr>
+<tr><td>1500</td><td class="n">24,000</td><td class="n">98.9</td><td class="n">97.3</td><td class="n">453</td><td class="n">99.0</td><td class="n">96.9</td><td class="n">441</td><td class="n" colspan="3">—</td></tr>
+<tr><td>1650</td><td class="n">26,400</td><td class="n">98.7</td><td class="n">97.5</td><td class="n">459</td><td class="n">99.0</td><td class="n">96.9</td><td class="n"><b>464</b></td><td class="n" colspan="3">—</td></tr>
+<tr><td>1800</td><td class="n">28,800</td><td class="n"><b>99.4</b></td><td class="n">97.9</td><td class="n"><b>472</b></td><td class="n">98.7</td><td class="n">95.3</td><td class="n">454</td><td class="n" colspan="3">—</td></tr>
+</table>
+<p class="cap"><b>Table 3.</b> Every checkpoint of the three momentum runs (source: <code>i512_mom7_full.json</code>, <code>i512_split_m7_s0.json</code>, <code>i512_split_ckpt.json</code>). Plain BlockSGD: 0/512 and TF 0.52/0.38/0.49% at epochs 150/300/450.</p>
+
+<div class="claim"><b>CASE A</b> (teacher-forced content ≥ 90% and greedy exact ≥ 256/512, fixed before the runs) is first observed for split momentum at epoch 450 (7,200 steps — the budget at which the historical run had 0/512) and for uniform momentum at epoch 900 (14,400 steps): half the steps at the 150-epoch reporting resolution, not an exact crossing time. Uniform momentum ends higher (472 against a split peak of 464 at epoch 1650 and 454 at 1800); both oscillate by about ±10 sequences after epoch 1350. Seed 1 of the split configuration is ahead of seed 0 at epochs 150, 300 and 600 and behind at 450 (260 versus 275). The historical “0/512” was the momentum-free optimizer; the momentum runs of that time were stopped at epoch ≤ 750, before source conditioning takes off in the uniform run (position-0 8.8% at epoch 450, 34.8% at 600, 83.4% at 750).</div>
+
+<p><b>Reload and unseen sentences.</b> Reloading the uniform epoch-1800 checkpoint and decoding greedily reproduces 472/512 training pairs (chrF 95.1, char-BLEU 95.2). On 64 sentences from the same corpus that were never trained on, it produces 0 exact matches, chrF 5.05, char-BLEU 4.58; the split checkpoints at epochs 300 and 450 give chrF 5.75 and 4.91 on 48 unseen sentences (Section 14). This is source-conditioned memorisation of 512 pairs, demonstrated by generation without any target prefix; it is not translation of new sentences.</p>
+
+<h2>11. Small sets: no regression, faster convergence</h2>
+<figure>
+<!--FIG:fig7_small-->
+<figcaption class="cap"><b>Figure 8.</b> (a) 128 pairs: plain BlockSGD over 3,000 epochs (best 111/128 at epoch 2,700) against split momentum over 900 (124/128 at epoch 900). (b) 256 pairs with plain BlockSGD: teacher-forced content, position-0 and greedy exact; the run peaks at epoch 750 (66.3%, 12/256) and regresses at 900.</figcaption>
+</figure>
+<p>At 128 pairs split momentum reaches 102/128 by epoch 300 and 124/128 (TF 99.6%, real-source probe 100%) by epoch 900; it exceeds the plain optimizer's best over 3,000 epochs (111/128, at epoch 2,700) by epoch 450. The two runs share model, seed and data and differ only in the optimizer; the plain run is 3.3× longer, and no single “speed-up factor” is quoted because the two curves have different shapes.</p>
+
+<h2>12. Correction: the production gradient is unsaturated; wide mantissas are not</h2>
+<p>An earlier diagnostic compared the production gradient (hidden_bits 16, accum_bits 32) against a “wide reference” at hidden_bits 40 with the same 32-bit accumulators and found encoder cosines of 0.002–0.017. That conclusion was wrong and is retracted: the reference was the broken measurement. The backward routines <code>dense_linear_backward</code> and <code>bmm_backward_shared</code> saturate their matrix products at accum_bits, and the weight-gradient reduction over batch × T rows needs about hb + 16 + log<sub>2</sub>(rows) bits in the worst case; the normalised operands of the 16-bit path stay inside 32 bits, while at hb ≥ 24 they do not.</p>
+<figure>
+<!--FIG:fig9_gradient-->
+<figcaption class="cap"><b>Figure 9.</b> One training batch of the 512-pair model at initialisation. (a) Cosine of each configuration's gradient against the unsaturated reference (hidden_bits 32, accum_bits 63, whose forward is bit-identical to the 32-bit forward). (b) Saturated backward accumulators per batch (log scale).</figcaption>
+</figure>
+<table>
+<tr><th>hb / accum</th><th class="n">Saturations</th><th class="n">enc_self</th><th class="n">enc_ffn</th><th class="n">dec_cross</th><th class="n">dec_self</th><th class="n">dec_ffn</th><th class="n">wout</th></tr>
+<tr><td>16 / 32 (production)</td><td class="n">0</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td></tr>
+<tr><td>16 / 48, 16 / 63</td><td class="n">0</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td></tr>
+<tr><td>20 / 32</td><td class="n">125</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td></tr>
+<tr><td>24 / 32</td><td class="n">98,750</td><td class="n">0.36</td><td class="n">0.61</td><td class="n">0.60</td><td class="n">0.85</td><td class="n">0.96</td><td class="n">0.90</td></tr>
+<tr><td>28 / 32</td><td class="n">1,159,501</td><td class="n">0.02</td><td class="n">0.09</td><td class="n">0.07</td><td class="n">0.26</td><td class="n">0.60</td><td class="n">0.62</td></tr>
+<tr><td>32 / 32</td><td class="n">1,538,213</td><td class="n">0.02</td><td class="n">0.09</td><td class="n">0.06</td><td class="n">0.22</td><td class="n">0.48</td><td class="n">0.58</td></tr>
+<tr><td>32 / 48</td><td class="n">0</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td><td class="n">1.00</td></tr>
+</table>
+<p class="cap"><b>Table 4.</b> Cosine (rounded) against the hb 32 / accum 63 reference, all parameter groups, initial state; the trained cp_p128d96 state gives the same pattern.</p>
+<p>Cosine alone does not establish element-level agreement, so three finer statements were measured on two batches at two model states (Appendix A.3, <code>grad_exactness.json</code>). First, the production backward is <em>elementwise identical</em>, mantissa and exponent, to the same 16-bit backward run with 63-bit accumulators: no accumulator ever clips, so the production gradient is exactly what its integer definition specifies. Second, against the 32-bit-mantissa backward the unrounded cosine is 0.999995–0.999999, the 12-bit BlockSGD votes derived from the two agree in sign on 99.72–99.996% of coordinates and in value on 92–95%, and the represented values differ elementwise by a mean relative deviation of 3–18% that is dominated by near-zero elements (maximum relative deviations of 2–3 × 10<sup>3</sup> occur on elements the reference puts at the bottom of its range). Third, the 16-bit mantissa is not simply the truncated image of the 32-bit one (5–27% of elements): each stage of the 16-bit backward renormalises, so its rounding accumulates through depth. The correct statement is therefore: the production gradient is the exact integer surrogate it is defined to be, and it is a rounded version of the wider surrogate whose direction and update signs it reproduces to well under 0.3%; “exact real gradient” is not claimed. Consequences: the historical hb24/hb28/hb32 runs on 512 pairs were training on clipped gradients (hb24's partial success was a clipping side-effect), any wide-mantissa reference must widen the accumulators, and the saturation counter <code>R.STATS["accum_saturations"]</code> is now reported in every run — it is zero for every result in this paper except where stated.</p>
+
+<h2 class="pb">13. 66,853 training pairs: continuation and integer checkpoint averaging</h2>
+<h3>13.1 Configuration and the float references</h3>
+<p>The full short-sentence split of the mixed TED/Tatoeba corpus (<code>--max-tok 14 --max-len 16</code>) has 66,853 training and 3,518 validation pairs; the historical “8k” runs used 7,600 of them. The model is d = 192 (4,878,336 parameters), character tokenisation with a 5,000-token vocabulary, batch 32 (2,089 steps per epoch). Three float references on this split fix what the integer model is compared against: float Adam with softmax cross-entropy reaches 33% validation token accuracy and held-out chrF 11.3; the token hinge caps float at 17% / chrF 5.2 whatever the attention; an integer-implementable base-2 cross-entropy with an exact per-row normaliser recovers 28.7% / chrF 9.8. On the integer side the same head ported (p<sub>i</sub> = 2<sup>l<sub>i</sub> − max</sup> for classes within 20 of the row maximum, one integer division per row, 24-bit fixed-point p/Z) changed nothing at 8-bit weights, and every int8 run logs a maximum weight magnitude of 128 from epoch 0; with 10-bit weights the same run climbs monotonically (12.5 → 21.6% over 12 epochs), twelve-bit weights are slower per epoch and never catch up, and uniform momentum trails the split.</p>
+<div class="hyp"><b>Hypothesis, not measured.</b> The reading that the int8 weight clamp is the binding constraint is an association (clamped weights present; 10-bit helps) and not a causal test: the number of updates blocked by the clamp, and the interaction of range with step size, have not been measured.</div>
+
+<h3>13.2 Resumed trajectory, and what the resume restored</h3>
+<figure>
+<!--FIG:fig10_67k-->
+<figcaption class="cap"><b>Figure 10.</b> (a) Validation all-token and content accuracy per epoch. The run was paused at epoch 13 and continued from its last checkpoint by an optimizer restart (Section 13.2, not a full-state resume). (b) Held-out greedy chrF on the first 400 validation rows for single checkpoints, integer averages, and the float references.</figcaption>
+</figure>
+<table>
+<tr><th>Epoch</th><th class="n">13</th><th class="n">14</th><th class="n">15</th><th class="n">16</th><th class="n">17</th><th class="n">18</th><th class="n">19</th><th class="n">20–25</th></tr>
+<tr><td>All-token %</td><td class="n">22.5</td><td class="n">24.6</td><td class="n">25.4</td><td class="n">23.2</td><td class="n"><b>26.0</b></td><td class="n">26.1</td><td class="n">22.9</td><td class="n">22.1–23.2</td></tr>
+<tr><td>Content %</td><td class="n">9.6</td><td class="n">12.7</td><td class="n">13.2</td><td class="n">10.4</td><td class="n"><b>14.5</b></td><td class="n">14.2</td><td class="n">9.5</td><td class="n">8.6–10.8</td></tr>
+<tr><td>Real − shuffled source, pp</td><td class="n">+3.0</td><td class="n">+6.5</td><td class="n">+7.3</td><td class="n">+4.0</td><td class="n">+6.3</td><td class="n">+7.6</td><td class="n">+1.9</td><td class="n">+1.5–3.6</td></tr>
+</table>
+<p class="cap"><b>Table 5.</b> Individual epochs 20–25 are 22.6/10.8, 23.1/10.1, 23.2/9.7, 23.2/9.5, 22.1/10.7 and 22.2/8.6 (all-token/content). Patience 8 stopped the run at epoch 25.</p>
+<div class="note"><b>The continuation is an optimizer restart, not a full-state resume.</b> The trainer's <code>--resume</code> restores the weights and the accumulators of the target-side BlockSGD instance. It does not restore the source-side accumulators, either momentum buffer, the data-order generator (the permutation sequence restarts from that of epoch 0, so epochs 14–25 re-use the batch orders of epochs 0–11), the epoch counter, the best-checkpoint state or the patience counter. With decay 127/128 the momentum buffers do not “refill” in 128 steps — 37% of a buffer's content still reflects its initial state after 128 steps and 10% after 300 — so the first epoch after the restart runs on partly zeroed momentum. The gain from epoch 13 to 17 (+3.5 all-token, +5.0 content) may therefore be continued training, a restart effect, or both; the control that separates them — a resume from a complete saved optimizer state versus a restart from the same weights — has not been run. The trainer now saves the full state; the control is the first item of Appendix A.6.</div>
+<p>After epoch 18 the run oscillates within a band of 22–26% all-token accuracy. Halving the step rate (lr_bits 2) from the epoch-17 checkpoint reduces the source gap from +6.3 to 0.0 and position-0 from 13% to 3% within one epoch and keeps falling; restarting from an averaged checkpoint at lr_bits 1 returns to the same band (22.9% / 12.6% after one epoch, 22.8% / 10.1% after two). A second averaging cycle does not compound the gain: eight epochs from the epoch-16–18 mean stayed in the band (best single 24.5% / 12.9%), and the mean of that cycle's best ± 1 epoch scores chrF 7.23 on the selection rows and 8.36 on the independent rows — the same per-cycle gain of about +0.7 over its own single checkpoint, but no improvement over the first average (7.86 / 8.42), which remains the best integer model.</p>
+<div class="hyp"><b>Hypothesis, not measured.</b> The band is consistent with a ±1 sawtooth of the sign-type update around a basin the weights cannot settle into, and the lr_bits-2 collapse with the momentum-free source pathway needing the full step rate. Neither the orbit nor the basin has been characterised in weight space; the observations are the band and the two continuations.</div>
+
+<h3>13.3 Integer checkpoint averaging</h3>
+<p>Averaging the weights of neighbouring epoch checkpoints removes most of the oscillation. The rule is integer: for n aligned checkpoints with sum S per weight, the averaged weight is sign(S)·⌊(2|S| + n) / (2n)⌋ (nearest integer, ties away from zero), computed in int64 and written back onto the 10-bit grid; the script <code>avg_ckpts.py</code> is listed in Appendix A.4.</p>
+<table>
+<tr><th>Checkpoint (held-out rows 1–400)</th><th class="n">chrF</th><th class="n">char-BLEU</th><th class="n">Token acc</th><th class="n">Hinge/token</th></tr>
+<tr><td>epoch 7 (earlier best)</td><td class="n">5.85</td><td class="n">5.48</td><td class="n">19.0%</td><td class="n">7.33</td></tr>
+<tr><td>epoch 12</td><td class="n">6.60</td><td class="n">6.38</td><td class="n">21.6%</td><td class="n">5.64</td></tr>
+<tr><td>epoch 17 (best single)</td><td class="n">7.08</td><td class="n">6.83</td><td class="n">26.0%</td><td class="n">4.32</td></tr>
+<tr><td><b>mean of epochs 16, 17, 18</b></td><td class="n"><b>7.86</b></td><td class="n"><b>7.66</b></td><td class="n">27.3%</td><td class="n">3.94</td></tr>
+<tr><td>mean of epochs 14–18</td><td class="n">7.39</td><td class="n">7.21</td><td class="n"><b>27.8%</b></td><td class="n">3.52</td></tr>
+<tr><td>mean of epochs 14, 15, 16, 17, 18, 22, 25</td><td class="n">5.10</td><td class="n">4.29</td><td class="n">23.1%</td><td class="n">3.44</td></tr>
+<tr><td>float mirror, same base-2 CE head, exp2 attention, Adam</td><td class="n">9.8</td><td class="n">—</td><td class="n">28.7%</td><td class="n">—</td></tr>
+<tr><td>float cross-entropy, softmax, Adam, d192</td><td class="n">11.3</td><td class="n">—</td><td class="n">33.1%</td><td class="n">—</td></tr>
+</table>
+<p class="cap"><b>Table 6.</b> Averaging three neighbours around the best checkpoint gains +0.78 chrF and +0.83 char-BLEU on the selection rows; the seven-checkpoint window that spans the epoch-19 drop loses 2 chrF. The windows were chosen on the same 400 rows that score them.</p>
+<table>
+<tr><th>Checkpoint (held-out rows 401–1200, never used for selection)</th><th class="n">chrF</th><th class="n">char-BLEU</th><th class="n">Token acc</th><th class="n">Hinge/token</th></tr>
+<tr><td>epoch 12</td><td class="n">7.06</td><td class="n">6.94</td><td class="n">22.0%</td><td class="n">5.57</td></tr>
+<tr><td>epoch 17 (best single)</td><td class="n">7.86</td><td class="n">7.98</td><td class="n">26.0%</td><td class="n">4.28</td></tr>
+<tr><td><b>mean of epochs 16, 17, 18</b> (prespecified rule: best ± 1)</td><td class="n"><b>8.42</b></td><td class="n"><b>8.56</b></td><td class="n">27.6%</td><td class="n">3.88</td></tr>
+<tr><td>mean of epochs 14–18</td><td class="n">8.16</td><td class="n">8.32</td><td class="n"><b>28.0%</b></td><td class="n">3.45</td></tr>
+</table>
+<p class="cap"><b>Table 6b.</b> The same checkpoints scored on 800 validation rows that played no part in choosing the window. The three-neighbour mean gains +0.56 chrF and +0.58 char-BLEU over the single best checkpoint, the five-neighbour mean +0.30; the ordering of Table 6 is preserved. These rows are still validation data of the same split, not a separate test split.</p>
+<p>The remaining differences are: float cross-entropy to the float base-2 head, 1.5 chrF (the objective); the float base-2 head to the averaged integer model, 1.9 chrF. The second difference is the whole integer training stack — 10-bit weights and 7-bit activations, the sign-type optimizer with its momentum routing, and the integer head — and cannot be assigned to arithmetic alone; the float BlockSGD replica that would isolate the optimizer diverges to NaN on this data. The averaged checkpoint (<code>g67k_d192_w10_ce2_avg16_18.pt</code>) is the current best integer model.</p>
+<div class="hyp"><b>Hypothesis, not measured.</b> That the wide window fails because it mixes two basins separated by the epoch-19 drop is the natural reading of Table 6; it has not been tested by, for example, interpolating between the epoch-18 and epoch-19 weights.</div>
+
+<h2>14. Memorisation is not translation</h2>
+<figure>
+<!--FIG:fig11_unseen-->
+<figcaption class="cap"><b>Figure 11.</b> Greedy chrF on trained pairs and on pairs from the same corpus that were never trained on, for the memorisation checkpoints and the 67k model. The 67k model has no memorised training score comparable to the others and is shown on held-out data only.</figcaption>
+</figure>
+<table>
+<tr><th>Checkpoint</th><th class="n">Trained pairs: exact · chrF · char-BLEU</th><th class="n">Never-trained pairs: exact · chrF · char-BLEU</th></tr>
+<tr><td>128 pairs, plain BlockSGD, epoch 3000</td><td class="n">104/128 · 89.2 · 90.3</td><td class="n">0/32 · 3.0 · 2.3</td></tr>
+<tr><td>512 pairs, split 7/0, epoch 300</td><td class="n">218/512 · 54.2 · 56.8</td><td class="n">0/48 · 5.8 · 5.4</td></tr>
+<tr><td>512 pairs, split 7/0, epoch 450</td><td class="n">260/512 · 59.6 · 61.8</td><td class="n">0/48 · 4.9 · 4.9</td></tr>
+<tr><td>512 pairs, uniform 7, epoch 1800</td><td class="n">472/512 · 95.1 · 95.2</td><td class="n">0/64 · 5.1 · 4.6</td></tr>
+<tr><td>66,853 pairs, 10-bit, mean ep16–18</td><td class="n">—</td><td class="n">1/400 · 7.9 · 7.7</td></tr>
+</table>
+<p class="cap"><b>Table 7.</b> Reload evaluations by <code>translate_test.py</code> and <code>jako_eval_ckpt.py</code>. The 128-pair reload gives 104/128 where the training-time evaluator reported 111/128 at its best epoch; the saved checkpoint is the final epoch (104 at epoch 3000), not the best.</p>
+<p>The same boundary holds for float training on the same data. A float Adam control on the 7,600-pair split reached 92.9% teacher-forced train content, 45% exact full-sequence reproduction and very large correct-source gaps, while its held-out content accuracy peaked at 13.8% and fell as memorisation progressed; on the 67k split float cross-entropy reaches chrF 11.3. Usable Japanese→Korean translation is not demonstrated by any model in this paper. On the numbers available, the corpus (short TED-dominated fragments) and the objective bound float performance well below usable quality before integer arithmetic enters; the integer stack then costs a further 1.9 chrF whose decomposition is open.</p>
+
+<h2>15. Discussion and conclusion</h2>
+<h3>15.1 What is established</h3>
+<ul>
+<li>Bit-exact reconstruction and cache-free, gradient-buffer-free backward with a constant activation working set, for MLP, convolution, attention and encoder–decoder couplings, verified by equality gates at every tested depth, with integer semantics throughout.</li>
+<li>Shared-exponent adjoints are what makes deep integer training work: a controlled backward-only change turns a depth-16 collapse into normal learning.</li>
+<li>Grouped couplings with dispersing permutations keep accuracy at 1/8 of the coupling cost; group-preserving mixing does not.</li>
+<li>The integer sequence system, with the canonical optimizer and momentum enabled, memorises 512 source-conditioned pairs to 92% exact reproduction; split momentum reaches the criterion in half the steps and, at 128 pairs, exceeds the plain optimizer's 3,000-epoch best by epoch 450. Uniform momentum delays source conditioning early (256- and 512-pair observations) and ends higher.</li>
+<li>Six alternative settings for the 512-pair stall do not help within their budgets; the production gradient is unsaturated and reproduces a wider backward's update signs to 0.3%; the earlier gradient-noise diagnostic is retracted with its cause identified.</li>
+<li>At 67k pairs the integer model reaches 26% validation token accuracy; integer averaging of adjacent checkpoints gains 0.8 chrF on the selection rows and 0.6 on 800 validation rows never used for selection, while lowering the step rate does not.</li>
+</ul>
+<h3>15.2 What is not established</h3>
+<ul>
+<li>Translation quality. Every model scores near zero on never-trained sentences at 512 pairs and chrF 7.9 at 67k; the float ceiling on the same data is 11.3.</li>
+<li>Any of the mechanisms proposed in the hypothesis boxes: gradient cancellation, the weight clamp as binding constraint, the sawtooth orbit, basin mixing.</li>
+<li>Whether the post-restart gain at 67k is continued training or the restart itself.</li>
+<li>Multi-seed statistics for sequence results (two seeds agree at 512 pairs; everything else is one trajectory), and an averaging gain on a separate test split (Table 6b uses validation rows outside the selection set, not a test split).</li>
+<li>A memory comparison against gradient checkpointing at matched peak memory, and native low-bit efficiency: all arithmetic runs in int64 containers with asserted bounds.</li>
+<li>Whether momentum removes the deferred-debt pathology of the momentum-free 8k run.</li>
+</ul>
+<h3>15.3 Conclusion</h3>
+<p>Exact reconstruction, scale-preserving integer adjoints and per-layer updates give activation-cache-free integer training that matches float accuracy on the image tasks within one to two points and holds it to depth 32. The integer sequence model memorises 512 translation pairs with its unchanged optimizer once momentum is enabled, and reaches a quarter of the tokens on a 67k corpus, within 1.9 chrF of the float model that shares its objective. The next controlled steps are the resume-versus-restart control and a second seed at 67k, the averaging gain on an untouched test set, a checkpointing baseline for the memory claim, and the momentum optimizer on the 8k trajectory on which the debt pathology was measured.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>L. Dinh, D. Krueger, Y. Bengio. NICE: Non-linear independent components estimation. ICLR workshop, 2015.</li>
+<li>A. Gomez, M. Ren, R. Urtasun, R. Grosse. The reversible residual network: backpropagation without storing activations. NeurIPS, 2017.</li>
+<li>T. Hascoet, Q. Febvre, W. Zhuang, Y. Ariki, T. Takiguchi. Layer-wise invertibility for extreme memory cost reduction of CNN training. arXiv:1910.11127, 2019.</li>
+<li>M. MacKay, P. Vicol, J. Ba, R. Grosse. Reversible recurrent neural networks. NeurIPS, 2018.</li>
+<li>G. Zhang, J. P. Lewis, W. B. Kleijn. On exact bit-level reversible transformers without changing architecture. ICML, 2025.</li>
+<li>S. Wu, G. Li, F. Chen, L. Shi. Training and inference with integers in deep neural networks. ICLR, 2018.</li>
+<li>D. Das et al. Mixed precision training of convolutional neural networks using integer operations. ICLR, 2018.</li>
+<li>M. Wang, S. Rasoulinezhad, P. Leong, H. So. NITI: Training integer neural networks using integer-only arithmetic. IEEE TPDS, 2022.</li>
+<li>A. Pirillo, L. Colombo, M. Roveri. NITRO-D: Native integer-only training of deep convolutional neural networks. arXiv:2407.11698, 2024.</li>
+<li>J. Song, R. Lee. PocketNN: Integer-only training and inference of neural networks via direct feedback alignment and pocket activations in pure C++. arXiv:2201.02863, 2022.</li>
+<li>M. Drumond, T. Lin, M. Jaggi, B. Falsafi. Training DNNs with hybrid block floating point. NeurIPS, 2018.</li>
+<li>X. Zhang, X. Zhou, M. Lin, J. Sun. ShuffleNet: An extremely efficient convolutional neural network for mobile devices. CVPR, 2018.</li>
+<li>J. Lin et al. On-device training under 256KB memory. NeurIPS, 2022.</li>
+</ol>
+<h3>Acknowledgement and visual disclosure</h3>
+<p class="small">Claude (Anthropic) ran the 512-pair, precision and 67k continuation experiments of Sections 8–14 under the author's direction and drafted this revision; ChatGPT (OpenAI) assisted with the previous consolidation. Every chart is drawn deterministically from the run logs and histories named in Appendix A; the two schematics are drawn from the algorithm as implemented. No generated artwork is used. Research direction, experimental design and responsibility for the claims remain with the author.</p>
+
+<h2>Appendix A. Reproduction and provenance</h2>
+<p class="small">All paths are relative to <code>res/Platform/Python/reversible/</code> of the repository at commit bf3ffd89 (9 September 2026), Python 3.13 with the CPU PyTorch wheel; the corpus zips and the cached tokenizer live in <code>_jako_data/</code>. The historical harness, the split runner and the 67k trainer are in the repository; the diagnostic scripts of A.3 are in <code>blocksgd_scale/</code>.</p>
+<h3>A.1 Image experiments</h3>
+<pre>python reversible_integer_final.py --method equiv --K 16
+python reversible_integer_final.py --method implequiv --K 32
+python reversible_integer_final.py --method stepequiv --K 32
+python int8_reversible.py --K 16 --state-bits 12 --groups 4 --perm transpose
+python int8_reversible.py --K 16 --state-bits 8</pre>
+<p class="small">Digits experiments use 3–4 epochs except the controlled backward comparison, which uses 6; means and sample standard deviations over seeds 0–4.</p>
+<h3>A.2 512-pair runs</h3>
+<pre># uniform momentum 7, canonical harness
+python reversible_jako_overfit32.py --pairs 512 --dim 96 --ffn-hidden 192 --positional 16 \
+  --max-jaccard 1.0 --batch 32 --quick --score-exp2 3 --lr-bits 1 --epochs 1800 --report-every 150 \
+  --momentum-bits 7 --out i512_mom7_full.json
+# split momentum 7/0: same model, data, gates and BlockSGD, routed by blocksgd_scale/blocksgd_wbits_runner.py
+python blocksgd_scale/blocksgd_wbits_runner.py --pairs 512 --batch 32 --lr-bits 1 --weight-bits 8 \
+  --table-bits 8 --momentum-bits 7 --source-momentum-bits 0 --epochs 1800 --report-every 150 \
+  --out blocksgd_scale/i512_split_m7_s0.json
+# reload and unseen-sentence evaluation
+python blocksgd_scale/translate_test.py --ckpt blocksgd_scale/i512_mom7_full.pt</pre>
+<h3>A.3 Diagnostics and gates</h3>
+<pre>python blocksgd_scale/grad_precision_ref.py   # hb in {16,20,24,28,32} x accum in {32,48,63}; saturations (Table 4)
+python grad_exactness.py                      # elementwise identity, unrounded cosine, vote agreement (Section 12)
+python blocksgd_scale/epoch_firing_diag.py    # realised per-epoch displacement per parameter group (Figure 6b)
+python split_equivalence_gate.py              # split(m7,s7) == uniform m7 over 48 steps, bit-identical</pre>
+<h3>A.4 67k runs, averaging and held-out scoring</h3>
+<pre># training (generalize/run_jobs.ps1 -Job int-d192-w10-ce2 expands to exactly this)
+python jako_train_split.py --mode train --corpus both --max-pairs 0 --base-pairs 0 --vocab-size 5000 \
+  --min-char-count 20 --max-len 16 --max-tok 14 --tok-mode char --valid-frac 0.05 --k-enc 2 --k-dec 4 \
+  --dec-pattern ccaf --lr-bits 1 --hidden-bits 16 --state-bits 16 --accum-bits 32 --positional 16 \
+  --score-exp2 3 --batch 32 --eval-every 1 --patience 8 --max-eval 512 --seed 0 --show-samples 10 \
+  --snapshot-epochs 0 1 2 4 8 16 --dim 192 --ffn-hidden 384 --weight-bits 10 --momentum-bits 7 \
+  --source-momentum-bits 0 --head ce2 --ce2-shift 0 --ce2-cap 20 --ce2-norm exact --epochs 30 --threads 12 \
+  --save-ckpt generalize/runs_laptop/g67k_d192_w10_ce2.pt --out generalize/runs_laptop/g67k_d192_w10_ce2.json
+# continuation used in Section 13.2 (optimizer restart; see the note there): the same arguments plus
+  --epochs 17 --resume generalize/runs_laptop/g67k_d192_w10_ce2_last.pt \
+  --save-ckpt generalize/runs_laptop/g67k_d192_w10_ce2_r2.pt --out generalize/runs_laptop/g67k_d192_w10_ce2_r2.json
+# integer mean of checkpoints (sign(S) * floor((2|S| + n) / (2n)))
+python avg_ckpts.py generalize/runs_laptop/g67k_d192_w10_ce2_avg16_18.pt \
+  generalize/runs_laptop/g67k_d192_w10_ce2_r2_best.pt generalize/runs_laptop/g67k_d192_w10_ce2_r2_ep2.pt \
+  generalize/runs_laptop/g67k_d192_w10_ce2_r2_ep4.pt        # r2 epochs 3, 2, 4 = overall 17, 16, 18
+# held-out scoring (rows 1-400 for selection; --offset 400 --n 800 for the untouched rows of Table 6b)
+python jako_eval_ckpt.py --ckpt generalize/runs_laptop/g67k_d192_w10_ce2_avg16_18.pt --max-pairs 0 --base-pairs 0 --n 400</pre>
+<pre># avg_ckpts.py, complete
+import sys, torch
+out, ins = sys.argv[1], sys.argv[2:]
+cks = [torch.load(p, weights_only=False) for p in ins]; n = len(cks); avg = []
+for ws in zip(*[c["weights"] for c in cks]):
+    s = torch.stack([w.to(torch.int64) for w in ws]).sum(0)
+    avg.append(torch.where(s >= 0, (2 * s + n) // (2 * n), -((2 * (-s) + n) // (2 * n))))
+base = dict(cks[0]); base["weights"] = avg; base["opt_acc"] = None; base["averaged_from"] = ins
+torch.save(base, out)</pre>
+<h3>A.5 Provenance (SHA-256, first 16 hex digits)</h3>
+<table>
+<tr><th>Artifact</th><th>Hash</th><th>Role</th></tr>
+<tr><td><code>_jako_data/tok_both_a20_5000_char.json</code></td><td><code>f08d3457c542522f</code></td><td>tokenizer of every sequence run</td></tr>
+<tr><td>512-pair list (<code>pick_pairs(ds, tok, 512, 1.0, 16)</code>, JSON, seed 0)</td><td><code>605a6282eeeaf535</code></td><td>Sections 8–10, 14</td></tr>
+<tr><td><code>cp_p128d96.json</code> (128 pairs and plain-BlockSGD history)</td><td><code>a68cab3bf2e69b88</code></td><td>Figure 8a, Table 7</td></tr>
+<tr><td><code>blocksgd_scale/i512_mom7_full.pt</code></td><td><code>cc6cf3984ab57738</code></td><td>uniform epoch 1800, 472/512</td></tr>
+<tr><td><code>blocksgd_scale/i512_split_m7_s0.pt</code></td><td><code>a28e9bea8e5240f6</code></td><td>split epoch 1800</td></tr>
+<tr><td><code>generalize/runs_laptop/g67k_d192_w10_ce2_r2_best.pt</code> (epoch 17)</td><td><code>449b85fbb6f0e774</code></td><td>Table 6</td></tr>
+<tr><td><code>…_r2_ep2.pt</code>, <code>…_r2_ep4.pt</code> (epochs 16, 18)</td><td><code>8949983536bfc1fa</code>, <code>471c3083d28e9b69</code></td><td>averaging inputs</td></tr>
+<tr><td><code>generalize/runs_laptop/g67k_d192_w10_ce2_avg16_18.pt</code></td><td><code>89a3ba725bf0710a</code></td><td>best integer model</td></tr>
+<tr><td><code>reversible_integer_final.py</code> / <code>reversible_jako_mt.py</code> / <code>reversible_arch.py</code></td><td><code>ee22aee1e7486d56</code> / <code>e8b1e10f62ef10aa</code> / <code>5959fadfe5f3f782</code></td><td>core implementation</td></tr>
+<tr><td><code>jako_train_split.py</code> / <code>blocksgd_scale/blocksgd_wbits_runner.py</code></td><td><code>505e1ad963c03886</code> / <code>3bda56368f5327d8</code></td><td>split routing</td></tr>
+</table>
+<h3>A.6 Controls still owed</h3>
+<ol>
+<li>Resume-versus-restart at 67k: continue from a complete saved optimizer state (both accumulators, both momentum buffers, data-order generator position) and, separately, restart from the same weights; compare epochs 14–18.</li>
+<li>A second 67k seed with the same arguments.</li>
+<li>The fixed averaging rule (mean of best ± 1 epoch) scored on validation rows never used for selection (Table 6b gives the first such measurement) and on a held-out test split.</li>
+<li>Peak-memory and wall-time comparison against gradient checkpointing at matched depth.</li>
+<li>Uniform and split momentum on the 7,600-pair trajectory of Section 7.</li>
+</ol>
+
+<h2>Appendix B. Metric definitions</h2>
+<table>
+<tr><th style="width:26%">Item</th><th>Definition used throughout</th></tr>
+<tr><td>Steps</td><td>epoch × ⌈pairs / batch⌉: 512/b32 gives 16 steps per epoch, 256/b32 eight, 128/b32 four, 67k/b32 2,089.</td></tr>
+<tr><td>TF content</td><td>Teacher-forced accuracy over non-EOS target tokens of the whole set; EOS-heavy all-token accuracy is reported separately.</td></tr>
+<tr><td>Position 0</td><td>Accuracy of the first target token, where the decoder sees only BOS and the source.</td></tr>
+<tr><td>Greedy exact</td><td>Number of sequences whose greedy decode, from BOS with no target prefix, equals the reference exactly.</td></tr>
+<tr><td>Real / shuffled / zeroed</td><td>TF content accuracy with the correct encoder memory, with memories permuted across the batch, and with memory zeroed, on a fixed slice of min(64, N) sequences — hence a few points' difference from the full-set TF number.</td></tr>
+<tr><td>Source gap</td><td>Real minus shuffled, in percentage points of content accuracy. The 8k appendices' G<sub>RZ</sub> is instead a difference of target margins.</td></tr>
+<tr><td>chrF / char-BLEU</td><td>Character n-gram F (n ≤ 6, β = 2) and character-level BLEU-4 of greedy decodes against references; both on characters throughout, including the main tables.</td></tr>
+<tr><td>Best versus last</td><td>Tables state which; saved checkpoints are the last epoch unless named “best”.</td></tr>
+<tr><td>Seeds</td><td>Image results: five seeds, mean ± sample s.d. Sequence results: seed 0 unless stated; seed 1 where given.</td></tr>
+</table>
+
+<h2>Appendix C. Historical appendices B–H of the 5 September manuscript</h2>
+<p>The original Appendices B–H (architecture generalisation, the first real-sequence extension, the causal-normalisation defect, the post-correction results and float controls, and the three deferred-debt appendices) are unchanged by this revision and are not reprinted; the 5 September manuscript carries them with their tables and figures. Their standing:</p>
+<table>
+<tr><th style="width:34%">Appendix</th><th>Standing after this revision</th></tr>
+<tr><td>B. Convolution and attention couplings</td><td>Unchanged. Structural gates pass at K = 2–8; attention needs 16-bit adjoint mantissas to train in that configuration, consistent with Section 12's finding that 16 bits is also the widest unsaturated setting under 32-bit accumulators.</td></tr>
+<tr><td>C. First sequence extension (3,644 pairs)</td><td>Memory accounting stands; its learning metrics predate the causal fix and are historical.</td></tr>
+<tr><td>D. Causal-normalisation defect</td><td>Unchanged; the fix is part of every result here.</td></tr>
+<tr><td>E. Post-correction results and float controls</td><td>Table E4's line “512, d96: 0/512, ≤ 67%, source gap ≈ 0” is superseded by Section 10; the 8k held-out result and the float controls stand.</td></tr>
+<tr><td>F, G, H. Deferred debt</td><td>Unchanged as measurements of the momentum-free 8k trajectory (summarised in Section 7).</td></tr>
+</table>
+
+</main>
+</body>
+</html>

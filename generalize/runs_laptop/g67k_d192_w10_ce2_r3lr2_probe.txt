@@ -1,0 +1,92 @@
+============================================================================
+[2026-09-08 22:38:59] g67k-d192-w10-ce2-r3lr2epoch 0 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  그리고 이것은 : 뭘까요?
+REPEAT  그리고 이것은 : 감사합니다.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  그리고 이것은 : 뭘까요?
+REPEAT  그리고 이것은 : 감사합니다.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  그리고 이것은 : 뭘까요?
+REPEAT  그리고 이것은 : 네.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  그리고 이것은 : 감사합니다.
+REPEAT  그리고 이것은 : 감사합니다.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  그리고 이것은 : 뭘까요?
+REPEAT  그리고 이것은 : 아름을 수 있습니다.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  그리고 이것은 : 뭘까요?
+REPEAT  그리고 이것은 : 감사합니다.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  글쎄요,
+REPEAT  글쎄요,
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  그리고 이것은 : 어지 않죠.
+REPEAT  그리고 이것은 : 네,
+
+  greedy  korean% 66.0   repl% 0.0   rep_uni% 10.2   rep_bi% 0.0    distinct 4
+  repeat  korean% 66.7   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 5
+
+============================================================================
+[2026-09-08 23:17:05] g67k-d192-w10-ce2-r3lr2epoch 1 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  이는,
+REPEAT  이는,
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  이는, "그램을 보지지지고
+REPEAT  이는, "그램을 보지고
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  이는, "라고요.
+REPEAT  이는, "라고요.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  이는,
+REPEAT  이는,
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  이는, 이를 굉장입니다.
+REPEAT  이는, "그램을까요?
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  이걸 보지지지지고
+REPEAT  이걸 보지,
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  이는,
+REPEAT  이는,
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  이는,
+REPEAT  이는,
+
+  greedy  korean% 69.0   repl% 0.0   rep_uni% 8.2    rep_bi% 4.7    distinct 5
+  repeat  korean% 64.9   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 5
+

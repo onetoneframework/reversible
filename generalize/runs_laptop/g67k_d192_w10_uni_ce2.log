@@ -1,0 +1,98 @@
+output head: integer base-2 cross-entropy (shift 0, cap 20, norm exact)
+{"corpus": "both", "train_pairs": 66853, "train_by_corpus": {"ted2020": 66393, "tatoeba": 460}, "valid_by_corpus": {"ted2020": 3496, "tatoeba": 22}, "valid_pairs": 3518, "vocab": 5000, "params": 4878336, "dim": 192, "k_enc": 2, "k_dec": 4, "state_bits": 16, "weight_bits": 10, "accum_bits": 32, "hidden_bits": 16, "lr_bits": 1, "optimizer_stable": true, "train_prefix_corruption": 0.0, "train_scheduled_sampling": 0.0, "eval_prefix_corruption": 0.0, "query_anchor": false, "positional_encoding": 16, "attn_row_mass_bits": 0, "score_exp2": 3, "exp2_coupled": true, "momentum_bits": 7, "threads": 8}
+  ep0   all 12.281% content  2.8915% bal  2.8752% | cont r/s/z  3.571/ 3.348/ 6.250 gap +0.2232 | pos0 r/s/z  0.00/ 0.00/ 0.00 | eosFP  1.57% eos_sh  69.2% | anchors 0/8 blank 0 len 17.8 kor 69% rep 11.5%
+{"epoch": 0, "train_hinge_per_token": 44.3824, "train_token_acc": 10.13, "train_margin_active_frac": 0.9013, "param_grad_nonzero_pct": 35.56, "weights_moved_since_init_pct": 76.629, "grad_exponent_min": -31, "grad_exponent_max": -23, "state_wrap_frac": 0.0, "accum_saturations": 6, "max_weight": 347, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 482.3, "wall_seconds": 1465.1, "process_rss_mb": 1054.0, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 12.281, "hinge_per_token": 35.3715, "eos_recall": 91.992, "eos_false_positive": 1.57, "content_acc": 2.8915, "content_hinge": 44.0518, "high_freq_acc": 7.484, "punct_acc": 2.92, "eos_share_of_correct": 69.16, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 0.781, "pos1": 6.055, "pos2": 3.137, "pos3": 4.743, "pos4-7": 8.285, "pos8+": 27.888}, "by_corpus": {"ted2020": {"content_acc": 2.8752, "content_hinge": 44.0486, "content_tokens": 3478}}, "balanced_content_acc": 2.8752, "balanced_content_hinge": 44.0486}, "source_conditioning": {"real": {"content_acc": 3.5714, "pos0_acc": 0.0}, "shuffled": {"content_acc": 3.3482, "pos0_acc": 0.0}, "zeroed": {"content_acc": 6.25, "pos0_acc": 0.0}, "content_acc_gap_real_minus_shuffled": 0.2232, "pos0_acc_gap_real_minus_shuffled": 0.0, "sequences": 128}, "free_running": {"greedy": {"outputs": ["\" 하나의 문제한 A戯 살아지네요.", "누 시장한 증 시한 일으잖아요.", "\" 차가 여 여 여적한 차한 차한 문제", "지금 도 이야기한 이야기하고 싶한 일의 인살 있었습니다.", "여전히 다른 고맙鼻c아요.", "가지롬 서로을丘을 하예요.", "이게 좀 받 도전한 일으잖아요.", "도움이씬 있어요."], "blank_outputs": 0, "korean_pct": 68.6, "replacement_pct": 0.0, "repeat_unigram_pct": 11.5, "repeat_bigram_pct": 3.1, "distinct_outputs": 8, "mean_len": 17.75, "median_len": 17, "len_ratio_vs_reference": 2.119, "eos_positions": [12, 11, 13, 13, 8, 8, 10, 5], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["\" 하나의 문제한 A戯 살아지네요.", "누 시장한 증이라고 일으ない기를 바잖아요.", "\" 차가 여전히린한 차이 중요지 않습니다.", "지금 도 이야기한 다른 모든 것 비이라고 이건 계속 하지요.", "여전히 다른 고맙鼻c아요.", "가지롬 서로을丘켓츠젊대로顧ぇ습니다", "이게 좀 받 도전한 일으잖아요.", "도움이씬 있어요."], "blank_outputs": 0, "korean_pct": 69.6, "replacement_pct": 0.0, "repeat_unigram_pct": 1.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 19.5, "median_len": 19, "len_ratio_vs_reference": 2.328, "eos_positions": [12, 13, 12, 13, 8, 12, 10, 5], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 35.3715, "valid_token_acc": 12.281, "valid_margin_active_frac": 0.881, "valid_logit_std": 27.742, "valid_margin_true_minus_best_wrong": -32.063, "valid_tatoeba": {"token_acc": 15.578, "hinge_per_token": 36.4121, "tokens": 199}, "valid_ted2020": {"token_acc": 12.241, "hinge_per_token": 35.382, "tokens": 5547}, "select_gap": 0.2232, "select_real_minus_zeroed": -2.6786, "select_score": 0.0, "select_tiebreak": 44.0486, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 13:03:58] g67k-d192-w10-uni-ce2epoch 0 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  " 하나의 문제한 A戯 살아지네요.
+REPEAT  " 하나의 문제한 A戯 살아지네요.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  누 시장한 증 시한 일으잖아요.
+REPEAT  누 시장한 증이라고 일으ない기를 바잖아요.
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  " 차가 여 여 여적한 차한 차한 문제
+REPEAT  " 차가 여전히린한 차이 중요지 않습니다.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  지금 도 이야기한 이야기하고 싶한 일의 인살 있었습니다.
+REPEAT  지금 도 이야기한 다른 모든 것 비이라고 이건 계속 하지요.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  여전히 다른 고맙鼻c아요.
+REPEAT  여전히 다른 고맙鼻c아요.
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  가지롬 서로을丘을 하예요.
+REPEAT  가지롬 서로을丘켓츠젊대로顧ぇ습니다
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  이게 좀 받 도전한 일으잖아요.
+REPEAT  이게 좀 받 도전한 일으잖아요.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  도움이씬 있어요.
+REPEAT  도움이씬 있어요.
+
+  greedy  korean% 68.6   repl% 0.0   rep_uni% 11.5   rep_bi% 3.1    distinct 8
+  repeat  korean% 69.6   repl% 0.0   rep_uni% 1.0    rep_bi% 0.0    distinct 8
+
+  ep1   all 11.362% content  3.4068% bal  3.4215% | cont r/s/z  3.683/ 2.790/ 6.027 gap +0.8928 | pos0 r/s/z  0.78/ 1.56/ 0.78 | eosFP  0.40% eos_sh  60.6% | anchors 0/8 blank 0 len 18.1 kor 72% rep 18.8%
+{"epoch": 1, "train_hinge_per_token": 27.8967, "train_token_acc": 12.736, "train_margin_active_frac": 0.8771, "param_grad_nonzero_pct": 26.057, "weights_moved_since_init_pct": 78.623, "grad_exponent_min": -34, "grad_exponent_max": -25, "state_wrap_frac": 0.0, "accum_saturations": 1, "max_weight": 397, "attn_grad_nonzero_pct": {"enc0_Wq": 100.0, "enc0_Wk": 100.0, "enc0_Wv": 100.0, "enc0_Wo": 100.0, "dec0_Wq": 100.0, "dec0_Wk": 100.0, "dec0_Wv": 100.0, "dec0_Wo": 100.0, "dec1_Wq": 100.0, "dec1_Wk": 100.0, "dec1_Wv": 100.0, "dec1_Wo": 100.0, "dec2_Wq": 100.0, "dec2_Wk": 100.0, "dec2_Wv": 100.0, "dec2_Wo": 100.0}, "tokens_per_sec": 478.3, "wall_seconds": 2954.7, "process_rss_mb": 810.6, "metrics": {"teacher_forced": {"tokens": 5545, "all_token_acc": 11.362, "hinge_per_token": 26.422, "eos_recall": 74.609, "eos_false_positive": 0.397, "content_acc": 3.4068, "content_hinge": 32.4165, "high_freq_acc": 8.411, "punct_acc": 8.029, "eos_share_of_correct": 60.63, "class_tokens": {"content": 3493, "high_freq": 1403, "eos": 512, "punct": 137}, "position_acc": {"pos0": 2.344, "pos1": 3.516, "pos2": 3.333, "pos3": 3.557, "pos4-7": 7.546, "pos8+": 26.211}, "by_corpus": {"ted2020": {"content_acc": 3.4215, "content_hinge": 32.4235, "content_tokens": 3478}}, "balanced_content_acc": 3.4215, "balanced_content_hinge": 32.4235}, "source_conditioning": {"real": {"content_acc": 3.683, "pos0_acc": 0.781}, "shuffled": {"content_acc": 2.7902, "pos0_acc": 1.562}, "zeroed": {"content_acc": 6.0268, "pos0_acc": 0.781}, "content_acc_gap_real_minus_shuffled": 0.8928, "pos0_acc_gap_real_minus_shuffled": -0.781, "sequences": 128}, "free_running": {"greedy": {"outputs": ["자녀에게 맛고 있습니다. 수 있습니다.", "샘일까요?", "좋은 말称 생각I 좋은 말해요.", "놀라 괜찮은 괜찮은도 보이성도 전", "병습 진 진다리고 진학습니까?", "우리는 상대전은 진전입니다.요.\"해요.\"입니다.", "타였다리고 성취전치 진전해요.", "(웃음) 오래? 보이죠?년성꼭 했기는도 보이죠?"], "blank_outputs": 0, "korean_pct": 72.4, "replacement_pct": 0.0, "repeat_unigram_pct": 18.8, "repeat_bigram_pct": 6.4, "distinct_outputs": 8, "mean_len": 18.12, "median_len": 18, "len_ratio_vs_reference": 2.164, "eos_positions": [9, 2, 9, 14, 10, 14, 12, 14], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}, "repeat": {"outputs": ["자녀에게 맛고 있습니다. 수 있을 겁니다.", "샘일까요?", "좋은 말称 생각I모가 느꼈어요.", "놀라 괜찮은 전 3전자식을 느낍니다.", "병습 진스플고 좋습니다", "우리는 상대전은 진실 수르고 있으킵니다.", "타였다리고 성취전치 진면에서 아니에요.", "(웃음) 오래? 보이죠?년성꼭 했기는도였어요."], "blank_outputs": 0, "korean_pct": 74.2, "replacement_pct": 0.0, "repeat_unigram_pct": 0.0, "repeat_bigram_pct": 0.0, "distinct_outputs": 8, "mean_len": 18.12, "median_len": 21, "len_ratio_vs_reference": 2.164, "eos_positions": [10, 2, 10, 14, 8, 14, 13, 14], "lexical_anchor_hits": 0, "lexical_anchor_max": 8}}}, "valid_hinge_per_token": 26.422, "valid_token_acc": 11.362, "valid_margin_active_frac": 0.8909, "valid_logit_std": 27.962, "valid_margin_true_minus_best_wrong": -24.021, "valid_tatoeba": {"token_acc": 10.05, "hinge_per_token": 28.0804, "tokens": 199}, "valid_ted2020": {"token_acc": 11.376, "hinge_per_token": 26.4417, "tokens": 5547}, "select_gap": 0.8928, "select_real_minus_zeroed": -2.3438, "select_score": 0.0, "select_tiebreak": 32.4235, "saved_best": true, "validations_since_best": 0}
+============================================================================
+[2026-09-08 13:28:49] g67k-d192-w10-uni-ce2epoch 1 (in-training probe)
+============================================================================
+JA      こんにちは。
+REF     안녕하세요.
+GREEDY  자녀에게 맛고 있습니다. 수 있습니다.
+REPEAT  자녀에게 맛고 있습니다. 수 있을 겁니다.
+
+JA      私は学生です。
+REF     저는 학생입니다.
+GREEDY  샘일까요?
+REPEAT  샘일까요?
+
+JA      三つください。
+REF     세 개 주세요.
+GREEDY  좋은 말称 생각I 좋은 말해요.
+REPEAT  좋은 말称 생각I모가 느꼈어요.
+
+JA      今日は暑いです。
+REF     오늘은 덥습니다.
+GREEDY  놀라 괜찮은 괜찮은도 보이성도 전
+REPEAT  놀라 괜찮은 전 3전자식을 느낍니다.
+
+JA      駅はどこですか。
+REF     역은 어디입니까?
+GREEDY  병습 진 진다리고 진학습니까?
+REPEAT  병습 진스플고 좋습니다
+
+JA      水を飲みます。
+REF     물을 마십니다.
+GREEDY  우리는 상대전은 진전입니다.요."해요."입니다.
+REPEAT  우리는 상대전은 진실 수르고 있으킵니다.
+
+JA      わかりません。
+REF     모르겠습니다.
+GREEDY  타였다리고 성취전치 진전해요.
+REPEAT  타였다리고 성취전치 진면에서 아니에요.
+
+JA      何時に始まりますか。
+REF     몇 시에 시작합니까?
+GREEDY  (웃음) 오래? 보이죠?년성꼭 했기는도 보이죠?
+REPEAT  (웃음) 오래? 보이죠?년성꼭 했기는도였어요.
+
+  greedy  korean% 72.4   repl% 0.0   rep_uni% 18.8   rep_bi% 6.4    distinct 8
+  repeat  korean% 74.2   repl% 0.0   rep_uni% 0.0    rep_bi% 0.0    distinct 8
+

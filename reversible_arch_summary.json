@@ -1,0 +1,42 @@
+[
+  {
+    "arch": "conv",
+    "seeds": 3,
+    "acc_mean_pct": 49.46,
+    "acc_std_pct": 0.58,
+    "per_seed_pct": [
+      50.04,
+      48.88,
+      49.46
+    ],
+    "chance_pct": 10.0,
+    "parameter_count": 36864,
+    "inverse_exact": true,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "sec_per_run": 122.6,
+    "act_cachefree_bytes": 5845504,
+    "act_cachefree_ratio_K2_to_K16": 1.0,
+    "act_cached_ratio_K2_to_K16": 6.505
+  },
+  {
+    "arch": "attn",
+    "seeds": 3,
+    "acc_mean_pct": 8.63,
+    "acc_std_pct": 1.07,
+    "per_seed_pct": [
+      9.09,
+      7.4,
+      9.39
+    ],
+    "chance_pct": 10.0,
+    "parameter_count": 32768,
+    "inverse_exact": true,
+    "state_wrap_frac": 0.0,
+    "accum_saturations": 0,
+    "sec_per_run": 37.0,
+    "act_cachefree_bytes": 1335296,
+    "act_cachefree_ratio_K2_to_K16": 1.0,
+    "act_cached_ratio_K2_to_K16": 3.268
+  }
+]

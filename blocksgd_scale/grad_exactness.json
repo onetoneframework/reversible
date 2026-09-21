@@ -1,0 +1,54 @@
+{
+ "init_batch0": {
+  "saturations_hb16_acc32": 0,
+  "saturations_hb16_acc63": 0,
+  "saturations_ref": 0,
+  "hb16_acc32_equals_hb16_acc63_elementwise": true,
+  "cosine_vs_hb32_acc63": 0.999994774509175,
+  "max_relative_deviation": 2848.391304347826,
+  "mean_relative_deviation": 0.03533687914859985,
+  "nonzero_reference_elements": 375719,
+  "fraction_16bit_mantissa_is_truncated_image_of_32bit": 0.263255251930299,
+  "vote_sign_agreement": 0.9998499653044767,
+  "vote_value_equal_fraction": 0.9240197696596244
+ },
+ "init_batch8": {
+  "saturations_hb16_acc32": 0,
+  "saturations_hb16_acc63": 0,
+  "saturations_ref": 0,
+  "hb16_acc32_equals_hb16_acc63_elementwise": true,
+  "cosine_vs_hb32_acc63": 0.9999988128697657,
+  "max_relative_deviation": 3461.1290322580644,
+  "mean_relative_deviation": 0.03042483898724251,
+  "nonzero_reference_elements": 377135,
+  "fraction_16bit_mantissa_is_truncated_image_of_32bit": 0.2705026051679107,
+  "vote_sign_agreement": 0.9999648760665517,
+  "vote_value_equal_fraction": 0.9389579665492958
+ },
+ "cp_p128d96_batch0": {
+  "saturations_hb16_acc32": 0,
+  "saturations_hb16_acc63": 0,
+  "saturations_ref": 0,
+  "hb16_acc32_equals_hb16_acc63_elementwise": true,
+  "cosine_vs_hb32_acc63": 0.9999863129525879,
+  "max_relative_deviation": 2281.6147897535043,
+  "mean_relative_deviation": 0.1844418036649513,
+  "nonzero_reference_elements": 236414,
+  "fraction_16bit_mantissa_is_truncated_image_of_32bit": 0.05345707107024119,
+  "vote_sign_agreement": 0.9971600223299336,
+  "vote_value_equal_fraction": 0.9520351929284038
+ },
+ "cp_p128d96_batch8": {
+  "saturations_hb16_acc32": 0,
+  "saturations_hb16_acc63": 0,
+  "saturations_ref": 0,
+  "hb16_acc32_equals_hb16_acc63_elementwise": true,
+  "cosine_vs_hb32_acc63": 0.9999972478501622,
+  "max_relative_deviation": 3275.8,
+  "mean_relative_deviation": 0.1014065477844573,
+  "nonzero_reference_elements": 326325,
+  "fraction_16bit_mantissa_is_truncated_image_of_32bit": 0.2192384892361909,
+  "vote_sign_agreement": 0.9986051225895182,
+  "vote_value_equal_fraction": 0.9461982834507042
+ }
+}

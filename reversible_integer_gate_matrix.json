@@ -1,0 +1,282 @@
+[
+  {
+    "config": "default (all options off)",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 9,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  },
+  {
+    "config": "widths only g=1",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 8,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  },
+  {
+    "config": "widths g=1 state8",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 8,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  },
+  {
+    "config": "g=4 transpose",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 8,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  },
+  {
+    "config": "g=8 transpose H256",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 8,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  },
+  {
+    "config": "g=8 default perm",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 8,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  },
+  {
+    "config": "g=4 transpose phase_step=1",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 8,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  },
+  {
+    "config": "g=2 no widths",
+    "passed": true,
+    "equiv": {
+      "method": "equivalence",
+      "K": 8,
+      "seed": 0,
+      "hidden_mantissa_bits": 9,
+      "network_inverse_exact": true,
+      "all_layer_inputs_equal": true,
+      "all_parameter_gradient_mantissas_equal": true,
+      "all_parameter_gradient_exponents_equal": true,
+      "max_parameter_gradient_mantissa_abs_diff": 0,
+      "final_input_gradient_mantissa_equal": true,
+      "final_input_gradient_exponent_equal": true,
+      "cached_activation_bytes": 262144,
+      "reversible_activation_cache_bytes": 0
+    },
+    "implequiv": {
+      "method": "implequiv",
+      "K": 8,
+      "seed": 0,
+      "reconstructed_input_equal": true,
+      "all_parameter_gradients_equal": true,
+      "final_input_gradient_equal": true
+    },
+    "stepequiv": {
+      "method": "stepequiv",
+      "K": 8,
+      "seed": 0,
+      "batches_compared": 10,
+      "weights_and_accumulators_identical_every_step": true,
+      "first_divergent_step": null
+    }
+  }
+]
